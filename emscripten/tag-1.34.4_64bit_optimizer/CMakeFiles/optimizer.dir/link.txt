@@ -1,0 +1,1 @@
+/usr/bin/c++    -std=c++11 -fno-exceptions -fno-rtti -O2 -g -DNDEBUG -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/optimizer.dir/optimizer.cpp.o CMakeFiles/optimizer.dir/parser.cpp.o CMakeFiles/optimizer.dir/simple_ast.cpp.o  -o optimizer  
