@@ -1,0 +1,35 @@
+#!! addons:
+    #!! apt:
+        #!! packages:
+        #!! - build-essential
+        #!! - cmake
+        #!! - g++
+        #!! - gcc
+        #!! sources:
+        #!! - ppa:ubuntu-toolchain-r/test
+#!! before_install:
+    #!! # init xvfb
+    #!! # http://docs.travis-ci.com/user/gui-and-headless-browsers/
+    #!! - "export DISPLAY=:99.0 && sh -e /etc/init.d/xvfb start"
+branches:
+    only:
+    - alpha
+    - beta
+    - master
+env:
+    global:
+    # this value is auto-created by shTravisEncryptYml
+    - secure: XhWZlyeNFMDl8acsiRgff3+YGVXb4ggPISEsOoLx/HSW9n1IScMG501XGaHXnr2gw5cABXV4gRscAZW4aFD9CoeKSI8QP4ziiQchENWcLPqcCrdwh7apENYWErU91lBXjRbpY0myXmxby5xZLYnerSDqeq1IrdLKHq+wrKn79OQ= # AES_256_KEY
+    # this value is auto-created by shTravisEncryptYml
+    # - AES_ENCRYPTED_SH: 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 # AES_ENCRYPTED_SH
+language:
+    - node_js
+    #!! - objective-c
+script:
+    # if not in node js-env, the run npm install
+    - if [ ! "$TRAVIS_NODE_VERSION" ]; then npm install; fi
+    - npm run-script build-ci
+# http://docs.travis-ci.com/user/workers/container-based-infrastructure
+sudo:
+    false
+    #!! required
