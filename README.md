@@ -19,12 +19,11 @@ this package will run a standalone, browser-compatible version of the nedb v1.8.
 
 # documentation
 #### todo
+- npm publish 2016.8.3
 - fix test on published package in build
 - none
 
-#### change since c2ad975d
-- npm publish 2016.8.2
-- disable test on published package in build
+#### change since 3ea735ed
 - none
 
 #### this package requires
@@ -275,18 +274,14 @@ textarea[readonly] {\n\
 </head>\n\
 <body>\n\
     <h1>\n\
-<!-- utility2-comment\n\
         <a\n\
+<!-- utility2-comment\n\
             {{#if envDict.npm_package_homepage}}\n\
             href="{{envDict.npm_package_homepage}}"\n\
             {{/if envDict.npm_package_homepage}}\n\
             target="_blank"\n\
-        >\n\
 utility2-comment -->\n\
-            {{envDict.npm_package_name}} v{{envDict.npm_package_version}}\n\
-<!-- utility2-comment\n\
-        </a>\n\
-utility2-comment -->\n\
+        >{{envDict.npm_package_name}} v{{envDict.npm_package_version}}</a>\n\
 <!-- utility2-comment\n\
         {{#if envDict.NODE_ENV}}\n\
         (NODE_ENV={{envDict.NODE_ENV}})\n\
@@ -443,7 +438,7 @@ export npm_config_mode_auto_restart=1 && \
 utility2 shRun shIstanbulCover test.js",
         "test": "export PORT=$(utility2 shServerPortRandom) && utility2 test test.js"
     },
-    "version": "2016.8.2"
+    "version": "2016.8.3"
 }
 ```
 
