@@ -1,4 +1,4 @@
-/* istanbul instrument in package nedb-lite */
+/* istanbul instrument in package sandbox2 */
 /*jslint
     browser: true,
     maxerr: 8,
@@ -46,7 +46,7 @@
                 __dirname: __dirname,
                 module: module,
                 moduleExports: __dirname + '/index.js',
-                moduleName: 'nedb-lite'
+                moduleName: 'sandbox2'
             });
             /* istanbul ignore next */
             if (module.isRollup) {
@@ -468,7 +468,7 @@
             'header',
             '/assets.utility2.rollup.js',
             'local.utility2.stateInit',
-            '/assets.nedb-lite.js',
+            '/assets.sandbox2.js',
             '/assets.example.js',
             '/assets.test.js'
         ].map(function (key) {

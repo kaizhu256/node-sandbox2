@@ -1,19 +1,19 @@
-nedb-lite
+sandbox2
 =========
 this package will run a standalone, browser-compatible version of the nedb v1.8.0 database with zero npm-dependencies
 
-[![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-nedb-lite.svg)](https://travis-ci.org/kaizhu256/node-nedb-lite)
+[![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-sandbox2.svg)](https://travis-ci.org/kaizhu256/node-sandbox2)
 
-[![NPM](https://nodei.co/npm/nedb-lite.png?downloads=true)](https://www.npmjs.com/package/nedb-lite)
+[![NPM](https://nodei.co/npm/sandbox2.png?downloads=true)](https://www.npmjs.com/package/sandbox2)
 
-[![package-listing](https://kaizhu256.github.io/node-nedb-lite/build/screen-capture.gitLsTree.svg)](https://github.com/kaizhu256/node-nedb-lite)
+[![package-listing](https://kaizhu256.github.io/node-sandbox2/build/screen-capture.gitLsTree.svg)](https://github.com/kaizhu256/node-sandbox2)
 
 
 
 # live test-server
-- [https://kaizhu256.github.io/node-nedb-lite/build..beta..travis-ci.org/app/index.html](https://kaizhu256.github.io/node-nedb-lite/build..beta..travis-ci.org/app/index.html)
+- [https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/app/index.html](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/app/index.html)
 
-[![github.com test-server](https://kaizhu256.github.io/node-nedb-lite/build/screen-capture.githubDeploy.browser._2Fnode-nedb-lite_2Fbuild..alpha..travis-ci.org_2Fapp_2Findex.html.png)](https://kaizhu256.github.io/node-nedb-lite/build..beta..travis-ci.org/app/index.html)
+[![github.com test-server](https://kaizhu256.github.io/node-sandbox2/build/screen-capture.githubDeploy.browser._2Fnode-sandbox2_2Fbuild..alpha..travis-ci.org_2Fapp_2Findex.html.png)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/app/index.html)
 
 
 
@@ -33,22 +33,22 @@ this package will run a standalone, browser-compatible version of the nedb v1.8.
 - nedb derived from https://github.com/louischatriot/nedb/blob/cadf4ef434e517e47c4e9ca1db5b89e892ff5981/browser-version/out/nedb.js
 
 #### api-doc
-- [https://kaizhu256.github.io/node-nedb-lite/build/doc.api.html](https://kaizhu256.github.io/node-nedb-lite/build/doc.api.html)
+- [https://kaizhu256.github.io/node-sandbox2/build/doc.api.html](https://kaizhu256.github.io/node-sandbox2/build/doc.api.html)
 
-[![api-doc](https://kaizhu256.github.io/node-nedb-lite/build/screen-capture.docApiCreate.browser._2Fhome_2Ftravis_2Fbuild_2Fkaizhu256_2Fnode-nedb-lite_2Ftmp_2Fbuild_2Fdoc.api.html.png)](https://kaizhu256.github.io/node-nedb-lite/build/doc.api.html)
+[![api-doc](https://kaizhu256.github.io/node-sandbox2/build/screen-capture.docApiCreate.browser._2Fhome_2Ftravis_2Fbuild_2Fkaizhu256_2Fnode-sandbox2_2Ftmp_2Fbuild_2Fdoc.api.html.png)](https://kaizhu256.github.io/node-sandbox2/build/doc.api.html)
 
 
 
-# build-status [![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-nedb-lite.svg)](https://travis-ci.org/kaizhu256/node-nedb-lite)
-[![build commit status](https://kaizhu256.github.io/node-nedb-lite/build/build.badge.svg)](https://travis-ci.org/kaizhu256/node-nedb-lite)
+# build-status [![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-sandbox2.svg)](https://travis-ci.org/kaizhu256/node-sandbox2)
+[![build commit status](https://kaizhu256.github.io/node-sandbox2/build/build.badge.svg)](https://travis-ci.org/kaizhu256/node-sandbox2)
 
-| git-branch : | [master](https://github.com/kaizhu256/node-nedb-lite/tree/master) | [beta](https://github.com/kaizhu256/node-nedb-lite/tree/beta) | [alpha](https://github.com/kaizhu256/node-nedb-lite/tree/alpha)|
+| git-branch : | [master](https://github.com/kaizhu256/node-sandbox2/tree/master) | [beta](https://github.com/kaizhu256/node-sandbox2/tree/beta) | [alpha](https://github.com/kaizhu256/node-sandbox2/tree/alpha)|
 |--:|:--|:--|:--|
-| test-server 1 : | [![github.com test-server](https://kaizhu256.github.io/node-nedb-lite/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-nedb-lite/build..master..travis-ci.org/app/index.html) | [![github.com test-server](https://kaizhu256.github.io/node-nedb-lite/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-nedb-lite/build..beta..travis-ci.org/app/index.html) | [![github.com test-server](https://kaizhu256.github.io/node-nedb-lite/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-nedb-lite/build..alpha..travis-ci.org/app/index.html)|
-| test-server 2 : | [![heroku.com test-server](https://kaizhu256.github.io/node-nedb-lite/heroku-logo.75x25.png)](https://hrku01-nedb-lite-master.herokuapp.com) | [![heroku.com test-server](https://kaizhu256.github.io/node-nedb-lite/heroku-logo.75x25.png)](https://hrku01-nedb-lite-beta.herokuapp.com) | [![heroku.com test-server](https://kaizhu256.github.io/node-nedb-lite/heroku-logo.75x25.png)](https://hrku01-nedb-lite-alpha.herokuapp.com)|
-| test-report : | [![test-report](https://kaizhu256.github.io/node-nedb-lite/build..master..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-nedb-lite/build..master..travis-ci.org/test-report.html) | [![test-report](https://kaizhu256.github.io/node-nedb-lite/build..beta..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-nedb-lite/build..beta..travis-ci.org/test-report.html) | [![test-report](https://kaizhu256.github.io/node-nedb-lite/build..alpha..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-nedb-lite/build..alpha..travis-ci.org/test-report.html)|
-| coverage : | [![istanbul coverage](https://kaizhu256.github.io/node-nedb-lite/build..master..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-nedb-lite/build..master..travis-ci.org/coverage.html/index.html) | [![istanbul coverage](https://kaizhu256.github.io/node-nedb-lite/build..beta..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-nedb-lite/build..beta..travis-ci.org/coverage.html/index.html) | [![istanbul coverage](https://kaizhu256.github.io/node-nedb-lite/build..alpha..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-nedb-lite/build..alpha..travis-ci.org/coverage.html/index.html)|
-| build-artifacts : | [![build-artifacts](https://kaizhu256.github.io/node-nedb-lite/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-nedb-lite/tree/gh-pages/build..master..travis-ci.org) | [![build-artifacts](https://kaizhu256.github.io/node-nedb-lite/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-nedb-lite/tree/gh-pages/build..beta..travis-ci.org) | [![build-artifacts](https://kaizhu256.github.io/node-nedb-lite/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-nedb-lite/tree/gh-pages/build..alpha..travis-ci.org)|
+| test-server 1 : | [![github.com test-server](https://kaizhu256.github.io/node-sandbox2/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/app/index.html) | [![github.com test-server](https://kaizhu256.github.io/node-sandbox2/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/app/index.html) | [![github.com test-server](https://kaizhu256.github.io/node-sandbox2/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/app/index.html)|
+| test-server 2 : | [![heroku.com test-server](https://kaizhu256.github.io/node-sandbox2/heroku-logo.75x25.png)](https://hrku01-sandbox2-master.herokuapp.com) | [![heroku.com test-server](https://kaizhu256.github.io/node-sandbox2/heroku-logo.75x25.png)](https://hrku01-sandbox2-beta.herokuapp.com) | [![heroku.com test-server](https://kaizhu256.github.io/node-sandbox2/heroku-logo.75x25.png)](https://hrku01-sandbox2-alpha.herokuapp.com)|
+| test-report : | [![test-report](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/test-report.html) | [![test-report](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/test-report.html) | [![test-report](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/test-report.html)|
+| coverage : | [![istanbul coverage](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/coverage.html/index.html) | [![istanbul coverage](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/coverage.html/index.html) | [![istanbul coverage](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/coverage.html/index.html)|
+| build-artifacts : | [![build-artifacts](https://kaizhu256.github.io/node-sandbox2/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-sandbox2/tree/gh-pages/build..master..travis-ci.org) | [![build-artifacts](https://kaizhu256.github.io/node-sandbox2/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-sandbox2/tree/gh-pages/build..beta..travis-ci.org) | [![build-artifacts](https://kaizhu256.github.io/node-sandbox2/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-sandbox2/tree/gh-pages/build..alpha..travis-ci.org)|
 
 #### master branch
 - stable branch
@@ -66,10 +66,10 @@ this package will run a standalone, browser-compatible version of the nedb v1.8.
 
 
 # quickstart web example
-![screen-capture](https://kaizhu256.github.io/node-nedb-lite/build/screen-capture.testExampleJs.browser..png)
+![screen-capture](https://kaizhu256.github.io/node-sandbox2/build/screen-capture.testExampleJs.browser..png)
 
 #### to run this example, follow the instruction in the script below
-- [example.js](https://kaizhu256.github.io/node-nedb-lite/build/example.js)
+- [example.js](https://kaizhu256.github.io/node-sandbox2/build/example.js)
 ```javascript
 /*
 example.js
@@ -84,7 +84,7 @@ instruction
     4. edit or paste script in browser to eval
 */
 
-/* istanbul instrument in package nedb-lite */
+/* istanbul instrument in package sandbox2 */
 /*jslint
     bitwise: true,
     browser: true,
@@ -125,7 +125,7 @@ instruction
             ? window.Nedb.local
             : module.isRollup
             ? module
-            : require('nedb-lite').local;
+            : require('sandbox2').local;
         // init global
         local.global = local.modeJs === 'browser'
             ? window
@@ -302,7 +302,7 @@ utility2-comment -->\n\
     <input class="onchange zeroPixel" type="file" id="nedbImportInput1">\n\
     <label>edit or paste script below to\n\
         <a\n\
-            href="https://kaizhu256.github.io/node-nedb-lite/build/doc.api.html"\n\
+            href="https://kaizhu256.github.io/node-sandbox2/build/doc.api.html"\n\
             target="_blank"\n\
         >eval</a>\n\
     </label>\n\
@@ -331,7 +331,7 @@ persistentTable2.insert({ field1: "hello", field2: "world"}, function () {\n\
 utility2-comment -->\n\
     <script src="assets.utility2.rollup.js"></script>\n\
     <script src="jsonp.utility2.stateInit?callback=window.utility2.stateInit"></script>\n\
-    <script src="assets.nedb-lite.js"></script>\n\
+    <script src="assets.sandbox2.js"></script>\n\
     <script src="assets.example.js"></script>\n\
     <script src="assets.test.js"></script>\n\
 <!-- utility2-comment\n\
@@ -361,7 +361,7 @@ utility2-comment -->\n\
             local['/assets.example.js'] = local.fs.readFileSync(__filename, 'utf8');
         } catch (ignore) {
         }
-        local['/assets.nedb-lite.js'] = local.fs.readFileSync(
+        local['/assets.sandbox2.js'] = local.fs.readFileSync(
             local.Nedb.__dirname + '/index.js',
             'utf8'
         );
@@ -375,7 +375,7 @@ utility2-comment -->\n\
             switch (local.url.parse(request.url).pathname) {
             case '/':
             case '/assets.example.js':
-            case '/assets.nedb-lite.js':
+            case '/assets.sandbox2.js':
             case '/assets.test.js':
                 response.end(local[local.url.parse(request.url).pathname]);
                 break;
@@ -394,10 +394,10 @@ utility2-comment -->\n\
 ```
 
 #### output from electron
-![screen-capture](https://kaizhu256.github.io/node-nedb-lite/build/screen-capture.testExampleJs.browser..png)
+![screen-capture](https://kaizhu256.github.io/node-sandbox2/build/screen-capture.testExampleJs.browser..png)
 
 #### output from shell
-![screen-capture](https://kaizhu256.github.io/node-nedb-lite/build/screen-capture.testExampleJs.svg)
+![screen-capture](https://kaizhu256.github.io/node-sandbox2/build/screen-capture.testExampleJs.svg)
 
 
 
@@ -445,7 +445,7 @@ utility2 shRun shIstanbulCover test.js",
 
 
 # changelog of last 50 commits
-[![screen-capture](https://kaizhu256.github.io/node-nedb-lite/build/screen-capture.gitLog.svg)](https://github.com/kaizhu256/node-nedb-lite/commits)
+[![screen-capture](https://kaizhu256.github.io/node-sandbox2/build/screen-capture.gitLog.svg)](https://github.com/kaizhu256/node-sandbox2/commits)
 
 
 
