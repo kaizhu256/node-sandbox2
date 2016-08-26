@@ -1,25 +1,25 @@
 /*
- * assets.nedb-lite.js
+ * assets.sandbox2.js
  *
  * this package will run a standalone, browser-compatible version of the nedb v1.8.0 database
  * with zero npm-dependencies
  *
  * browser example:
- *     <script src="assets.nedb-lite.js"></script>
+ *     <script src="assets.sandbox2.js"></script>
  *     <script>
  *     var table = new window.Nedb();
  *     table.insert({ field1: 'hello', field2: 'world'}, console.log.bind(console));
  *     </script>
  *
  * node example:
- *     var Nedb = require('./assets.nedb-lite.js');
+ *     var Nedb = require('./assets.sandbox2.js');
  *     var table = new Nedb();
  *     table.insert({ field1: 'hello', field2: 'world'}, console.log.bind(console));
  */
 
 
 
-/* istanbul instrument in package nedb-lite */
+/* istanbul instrument in package sandbox2 */
 /*jslint
     browser: true,
     maxerr: 8,
@@ -9694,7 +9694,7 @@ return /******/ (function(modules) { // webpackBootstrap
     // run node js-env code - post-init
     case 'node':
         // init exports
-        local.Nedb = module['./lib.nedb.js'] = module['nedb-lite'] = module.exports;
+        local.Nedb = module['./lib.nedb.js'] = module['sandbox2'] = module.exports;
         local.Nedb.__dirname = __dirname;
         local.Nedb.NODE_ENV = process.env.NODE_ENV;
         // require modules
