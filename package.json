@@ -7,7 +7,7 @@
         "utility2": "kaizhu256/node-utility2#alpha"
     },
     "engines": { "node": ">=4.2" },
-    "homepage": "https://github.com/kaizhu256/node-nedb-lite",
+    "homepage": "https://github.com/kaizhu256/node-sandbox2",
     "keywords": [
         "browser",
         "db",
@@ -19,11 +19,11 @@
         "web", "web-sql", "websql"
     ],
     "license": "MIT",
-    "name": "nedb-lite",
+    "name": "sandbox2",
     "os": ["darwin", "linux"],
     "repository": {
         "type": "git",
-        "url": "https://github.com/kaizhu256/node-nedb-lite.git"
+        "url": "https://github.com/kaizhu256/node-sandbox2.git"
     },
     "scripts": {
         "build-ci": "utility2 shRun shReadmeBuild",
@@ -33,5 +33,5 @@
 
         "test": "export PORT=$(utility2 shServerPortRandom) && utility2 test test.js"
     },
-    "version": "2016.8.3"
+    "version": "0.0.2"
 }

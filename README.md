@@ -79,7 +79,7 @@ this script will will run a browser version of nedb
 instruction
     1. save this script as example.js
     2. run the shell command:
-        $ npm install nedb-lite && export PORT=8081 && node example.js
+        $ npm install sandbox2 && export PORT=8081 && node example.js
     3. open a browser to http://localhost:8081
     4. edit or paste script in browser to eval
 */
@@ -412,7 +412,7 @@ utility2-comment -->\n\
         "utility2": "kaizhu256/node-utility2#alpha"
     },
     "engines": { "node": ">=4.2" },
-    "homepage": "https://github.com/kaizhu256/node-nedb-lite",
+    "homepage": "https://github.com/kaizhu256/node-sandbox2",
     "keywords": [
         "browser",
         "db",
@@ -424,11 +424,11 @@ utility2-comment -->\n\
         "web", "web-sql", "websql"
     ],
     "license": "MIT",
-    "name": "nedb-lite",
+    "name": "sandbox2",
     "os": ["darwin", "linux"],
     "repository": {
         "type": "git",
-        "url": "https://github.com/kaizhu256/node-nedb-lite.git"
+        "url": "https://github.com/kaizhu256/node-sandbox2.git"
     },
     "scripts": {
         "build-ci": "utility2 shRun shReadmeBuild",
@@ -438,7 +438,7 @@ export npm_config_mode_auto_restart=1 && \
 utility2 shRun shIstanbulCover test.js",
         "test": "export PORT=$(utility2 shServerPortRandom) && utility2 test test.js"
     },
-    "version": "2016.8.3"
+    "version": "0.0.2"
 }
 ```
 
@@ -461,9 +461,9 @@ shBuildCiTestPre() {(set -e
     # test example.js
     (export MODE_BUILD=testExampleJs &&
         shRunScreenCapture shReadmeTestJs example.js) || return $?
-    #!! # test published-package
-    #!! (export MODE_BUILD=npmTestPublished &&
-        #!! shRunScreenCapture shNpmTestPublished) || return $?
+    # test published-package
+    (export MODE_BUILD=npmTestPublished &&
+        shRunScreenCapture shNpmTestPublished) || return $?
 )}
 
 shBuildCiTestPost() {(set -e
