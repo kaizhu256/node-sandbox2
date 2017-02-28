@@ -1,8 +1,8 @@
 sandbox2
-=========
-this package will run a standalone, browser-compatible version of the nedb v1.8.0 database with zero npm-dependencies
+========
+sandbox
 
-[![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-sandbox2.svg)](https://travis-ci.org/kaizhu256/node-sandbox2)
+[![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-sandbox2.svg)](https://travis-ci.org/kaizhu256/node-sandbox2) [![istanbul-coverage](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/coverage.html/index.html)
 
 [![NPM](https://nodei.co/npm/sandbox2.png?downloads=true)](https://www.npmjs.com/package/sandbox2)
 
@@ -10,44 +10,49 @@ this package will run a standalone, browser-compatible version of the nedb v1.8.
 
 
 
-# live test-server
+# cdn download
+- [https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/app/assets.jslint.rollup.js](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/app/assets.jslint.rollup.js)
+
+
+
+# live demo
 - [https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/app/index.html](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/app/index.html)
 
-[![github.com test-server](https://kaizhu256.github.io/node-sandbox2/build/screen-capture.githubDeploy.browser._2Fnode-sandbox2_2Fbuild..alpha..travis-ci.org_2Fapp_2Findex.html.png)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/app/index.html)
+[![github.com test-server](https://kaizhu256.github.io/node-sandbox2/build/screen-capture.deployGithub.browser._2Fnode-sandbox2_2Fbuild..alpha..travis-ci.org_2Fapp_2Findex.html.png)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/app/index.html)
 
 
 
 # documentation
+#### api-doc
+- [https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/api-doc.html](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/api-doc.html)
+
+[![api-doc](https://kaizhu256.github.io/node-sandbox2/build/screen-capture.apiDoc.browser._2Fhome_2Ftravis_2Fbuild_2Fkaizhu256_2Fnode-sandbox2_2Ftmp_2Fbuild_2Fapi-doc.html.png)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/api-doc.html)
+
 #### todo
-- npm publish 2016.8.3
-- fix test on published package in build
 - none
 
-#### change since 3ea735ed
+#### change since 89307aed
+- npm publish 0.0.10
 - none
 
 #### this package requires
 - darwin or linux os
 
 #### additional info
-- nedb derived from https://github.com/louischatriot/nedb/blob/cadf4ef434e517e47c4e9ca1db5b89e892ff5981/browser-version/out/nedb.js
-
-#### api-doc
-- [https://kaizhu256.github.io/node-sandbox2/build/doc.api.html](https://kaizhu256.github.io/node-sandbox2/build/doc.api.html)
-
-[![api-doc](https://kaizhu256.github.io/node-sandbox2/build/screen-capture.docApiCreate.browser._2Fhome_2Ftravis_2Fbuild_2Fkaizhu256_2Fnode-sandbox2_2Ftmp_2Fbuild_2Fdoc.api.html.png)](https://kaizhu256.github.io/node-sandbox2/build/doc.api.html)
+- csslint code derived from https://github.com/CSSLint/csslint/blob/v0.10.0/release/csslint.js
+- jslint code derived from https://github.com/douglascrockford/JSLint/blob/394bf291bfa3881bb9827b9fc7b7d1112d83f313/jslint.js
 
 
 
-# build-status [![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-sandbox2.svg)](https://travis-ci.org/kaizhu256/node-sandbox2)
+# build status [![travis-ci.org build-status](https://api.travis-ci.org/kaizhu256/node-sandbox2.svg)](https://travis-ci.org/kaizhu256/node-sandbox2)
 [![build commit status](https://kaizhu256.github.io/node-sandbox2/build/build.badge.svg)](https://travis-ci.org/kaizhu256/node-sandbox2)
 
 | git-branch : | [master](https://github.com/kaizhu256/node-sandbox2/tree/master) | [beta](https://github.com/kaizhu256/node-sandbox2/tree/beta) | [alpha](https://github.com/kaizhu256/node-sandbox2/tree/alpha)|
 |--:|:--|:--|:--|
-| test-server 1 : | [![github.com test-server](https://kaizhu256.github.io/node-sandbox2/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/app/index.html) | [![github.com test-server](https://kaizhu256.github.io/node-sandbox2/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/app/index.html) | [![github.com test-server](https://kaizhu256.github.io/node-sandbox2/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/app/index.html)|
-| test-server 2 : | [![heroku.com test-server](https://kaizhu256.github.io/node-sandbox2/heroku-logo.75x25.png)](https://hrku01-sandbox2-master.herokuapp.com) | [![heroku.com test-server](https://kaizhu256.github.io/node-sandbox2/heroku-logo.75x25.png)](https://hrku01-sandbox2-beta.herokuapp.com) | [![heroku.com test-server](https://kaizhu256.github.io/node-sandbox2/heroku-logo.75x25.png)](https://hrku01-sandbox2-alpha.herokuapp.com)|
+| test-server-1 : | [![github.com test-server](https://kaizhu256.github.io/node-sandbox2/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/app/index.html) | [![github.com test-server](https://kaizhu256.github.io/node-sandbox2/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/app/index.html) | [![github.com test-server](https://kaizhu256.github.io/node-sandbox2/GitHub-Mark-32px.png)](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/app/index.html)|
+| test-server-2 : | [![heroku.com test-server](https://kaizhu256.github.io/node-sandbox2/heroku-logo.75x25.png)](https://h1-jslint-master.herokuapp.com) | [![heroku.com test-server](https://kaizhu256.github.io/node-sandbox2/heroku-logo.75x25.png)](https://h1-jslint-beta.herokuapp.com) | [![heroku.com test-server](https://kaizhu256.github.io/node-sandbox2/heroku-logo.75x25.png)](https://h1-jslint-alpha.herokuapp.com)|
 | test-report : | [![test-report](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/test-report.html) | [![test-report](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/test-report.html) | [![test-report](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/test-report.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/test-report.html)|
-| coverage : | [![istanbul coverage](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/coverage.html/index.html) | [![istanbul coverage](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/coverage.html/index.html) | [![istanbul coverage](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/coverage.html/index.html)|
+| coverage : | [![istanbul-coverage](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..master..travis-ci.org/coverage.html/index.html) | [![istanbul-coverage](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/coverage.html/index.html) | [![istanbul-coverage](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/coverage.badge.svg)](https://kaizhu256.github.io/node-sandbox2/build..alpha..travis-ci.org/coverage.html/index.html)|
 | build-artifacts : | [![build-artifacts](https://kaizhu256.github.io/node-sandbox2/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-sandbox2/tree/gh-pages/build..master..travis-ci.org) | [![build-artifacts](https://kaizhu256.github.io/node-sandbox2/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-sandbox2/tree/gh-pages/build..beta..travis-ci.org) | [![build-artifacts](https://kaizhu256.github.io/node-sandbox2/glyphicons_144_folder_open.png)](https://github.com/kaizhu256/node-sandbox2/tree/gh-pages/build..alpha..travis-ci.org)|
 
 #### master branch
@@ -74,17 +79,18 @@ this package will run a standalone, browser-compatible version of the nedb v1.8.
 /*
 example.js
 
-this script will will run a browser version of nedb
+this script will demo the browser-version of jslint and csslint
 
 instruction
     1. save this script as example.js
     2. run the shell command:
-        $ npm install sandbox2 && export PORT=8081 && node example.js
-    3. open a browser to http://localhost:8081
-    4. edit or paste script in browser to eval
+        $ npm install sandbox2 && PORT=8081 node example.js
+    3. play with the browser-demo on http://127.0.0.1:8081
 */
 
-/* istanbul instrument in package sandbox2 */
+
+
+/* istanbul instrument in package jslint */
 /*jslint
     bitwise: true,
     browser: true,
@@ -119,17 +125,14 @@ instruction
                     'node';
             }
         }());
-        /* istanbul ignore next */
-        // re-init local
-        local = local.modeJs === 'browser'
-            ? window.Nedb.local
-            : module.isRollup
-            ? module
-            : require('sandbox2').local;
         // init global
         local.global = local.modeJs === 'browser'
             ? window
             : global;
+        // init utility2_rollup
+        local = local.global.utility2_rollup || (local.modeJs === 'browser'
+            ? local.global.utility2_jslint
+            : require('sandbox2'));
         // export local
         local.global.local = local;
     }());
@@ -137,81 +140,108 @@ instruction
 
 
 
+    // post-init
+    /* istanbul ignore next */
     // run browser js-env code - post-init
     case 'browser':
-        ['error', 'log'].forEach(function (key) {
-            console['_' + key] = console[key];
-            console[key] = function () {
-                console['_' + key].apply(console, arguments);
-                document.querySelector('#outputTextarea1').value +=
-                    Array.prototype.slice.call(arguments).map(function (arg) {
-                        return typeof arg === 'string'
-                            ? arg
-                            : local.Nedb.jsonStringifyOrdered(arg, null, 4);
-                    }).join(' ') + '\n';
-            };
-        });
-        /* istanbul ignore next */
-        local.testRun = function (event) {
-            var reader, tmp;
-            switch (event && event.currentTarget.id) {
-            case 'nedbExportButton1':
-                tmp = window.URL.createObjectURL(new window.Blob([local.Nedb.dbExport()]));
-                document.querySelector('#nedbExportA1').href = tmp;
-                document.querySelector('#nedbExportA1').click();
-                setTimeout(function () {
-                    window.URL.revokeObjectURL(tmp);
-                }, 30000);
-                break;
-            case 'nedbImportButton1':
-                document.querySelector('#nedbImportInput1').click();
-                break;
-            case 'nedbImportInput1':
-                document.querySelector('#outputTextarea1').value = '';
-                console.log('importing nedb-database ...');
-                reader = new window.FileReader();
-                tmp = document.querySelector('#nedbImportInput1').files[0];
-                if (!tmp) {
-                    return;
-                }
-                reader.addEventListener('load', function () {
-                    local.Nedb.dbImport(reader.result, function () {
-                        console.log('... imported nedb-database');
-                    });
+        local.testRunBrowser = function (event) {
+            if (!event || (event &&
+                    event.currentTarget &&
+                    event.currentTarget.className &&
+                    event.currentTarget.className.includes &&
+                    event.currentTarget.className.includes('onreset'))) {
+                // reset output
+                Array.from(
+                    document.querySelectorAll('body > .resettable')
+                ).forEach(function (element) {
+                    switch (element.tagName) {
+                    case 'INPUT':
+                    case 'TEXTAREA':
+                        element.value = '';
+                        break;
+                    default:
+                        element.textContent = '';
+                    }
                 });
-                reader.readAsText(tmp);
-                break;
-            case 'nedbResetButton1':
-                document.querySelector('#outputTextarea1').value = '';
-                console.log('resetting nedb-database ...');
-                local.Nedb.dbReset(function () {
-                    console.log('... resetted nedb-database');
-                });
-                break;
+            }
+            switch (event && event.currentTarget && event.currentTarget.id) {
             case 'testRunButton1':
-                local.modeTest = true;
-                local.utility2.testRun(local);
+                // show tests
+                if (document.querySelector('#testReportDiv1').style.display === 'none') {
+                    document.querySelector('#testReportDiv1').style.display = 'block';
+                    document.querySelector('#testRunButton1').textContent =
+                        'hide internal test';
+                    local.modeTest = true;
+                    local.testRunDefault(local);
+                // hide tests
+                } else {
+                    document.querySelector('#testReportDiv1').style.display = 'none';
+                    document.querySelector('#testRunButton1').textContent = 'run internal test';
+                }
                 break;
+            // custom-case
             default:
-                document.querySelector('#outputTextarea1').value = '';
+                // jslint #inputTextareaEval1
+                local.jslint.jslintAndPrint(
+                    document.querySelector('#inputTextareaEval1').value,
+                    'inputTextareaEval1.js'
+                );
+                document.querySelector('#outputPreJslint1').textContent =
+                    local.jslint.errorText
+                    .replace((/\u001b\[\d+m/g), '')
+                    .trim();
+                // csslint #inputTextareaCsslint1
+                local.jslint.jslintAndPrint(
+                    document.querySelector('#inputTextareaCsslint1').value,
+                    'inputTextareaCsslint1.css'
+                );
+                document.querySelector('#outputPreCsslint1').textContent =
+                    local.jslint.errorText
+                    .replace((/\u001b\[\d+m/g), '')
+                    .trim();
+            }
+            if (document.querySelector('#inputTextareaEval1') && (!event || (event &&
+                    event.currentTarget &&
+                    event.currentTarget.className &&
+                    event.currentTarget.className.includes &&
+                    event.currentTarget.className.includes('oneval')))) {
+                // try to eval input-code
                 try {
                     /*jslint evil: true*/
-                    eval(document.querySelector('#inputTextarea1').value);
+                    eval(document.querySelector('#inputTextareaEval1').value);
                 } catch (errorCaught) {
-                    document.querySelector('#outputTextarea1').value = errorCaught.stack;
+                    console.error(errorCaught.stack);
                 }
             }
         };
+        // log stderr and stdout to #outputTextareaStdout1
+        ['error', 'log'].forEach(function (key) {
+            console[key + '_original'] = console[key];
+            console[key] = function () {
+                var element;
+                console[key + '_original'].apply(console, arguments);
+                element = document.querySelector('#outputTextareaStdout1');
+                if (!element) {
+                    return;
+                }
+                // append text to #outputTextareaStdout1
+                element.value += Array.from(arguments).map(function (arg) {
+                    return typeof arg === 'string'
+                        ? arg
+                        : JSON.stringify(arg, null, 4);
+                }).join(' ') + '\n';
+                // scroll textarea to bottom
+                element.scrollTop = element.scrollHeight;
+            };
+        });
         // init event-handling
         ['change', 'click', 'keyup'].forEach(function (event) {
-            Array.prototype.slice.call(
-                document.querySelectorAll('.on' + event)
-            ).forEach(function (element) {
-                element.addEventListener(event, local.testRun);
+            Array.from(document.querySelectorAll('.on' + event)).forEach(function (element) {
+                element.addEventListener(event, local.testRunBrowser);
             });
         });
         // run tests
-        local.testRun();
+        local.testRunBrowser();
         break;
 
 
@@ -224,114 +254,118 @@ instruction
         // require modules
         local.fs = require('fs');
         local.http = require('http');
-        local.path = require('path');
         local.url = require('url');
         // init assets
+        local.assetsDict = local.assetsDict || {};
         /* jslint-ignore-begin */
-        local.templateIndexHtml = '\
+        local.assetsDict['/assets.index.template.html'] = '\
 <!doctype html>\n\
 <html lang="en">\n\
 <head>\n\
 <meta charset="UTF-8">\n\
-<title>\n\
-{{envDict.npm_package_name}} v{{envDict.npm_package_version}}\n\
-</title>\n\
+<meta name="viewport" content="width=device-width, initial-scale=1">\n\
+<title>{{env.npm_package_nameAlias}} v{{env.npm_package_version}}</title>\n\
 <style>\n\
 /*csslint\n\
     box-sizing: false,\n\
-    ids: false,\n\
     universal-selector: false\n\
 */\n\
 * {\n\
     box-sizing: border-box;\n\
 }\n\
 body {\n\
-    background-color: #fff;\n\
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;\n\
+    background: #dde;\n\
+    font-family: Arial, Helvetica, sans-serif;\n\
+    margin: 2rem;\n\
 }\n\
 body > * {\n\
     margin-bottom: 1rem;\n\
 }\n\
-body > button {\n\
-    width: 15rem;\n\
+</style>\n\
+<style>\n\
+/*csslint\n\
+    ids: false\n\
+*/\n\
+#outputPreCsslint1,\n\
+#outputPreJslint1 {\n\
+    color: #d00;\n\
 }\n\
 textarea {\n\
     font-family: monospace;\n\
-    height: 16rem;\n\
+    height: 10rem;\n\
     width: 100%;\n\
 }\n\
 textarea[readonly] {\n\
-    background-color: #ddd;\n\
-}\n\
-.zeroPixel {\n\
-    border: 0;\n\
-    height: 0;\n\
-    margin: 0;\n\
-    padding: 0;\n\
-    width: 0;\n\
+    background: #ddd;\n\
 }\n\
 </style>\n\
 </head>\n\
 <body>\n\
-    <h1>\n\
-        <a\n\
 <!-- utility2-comment\n\
-            {{#if envDict.npm_package_homepage}}\n\
-            href="{{envDict.npm_package_homepage}}"\n\
-            {{/if envDict.npm_package_homepage}}\n\
-            target="_blank"\n\
+    <div id="ajaxProgressDiv1" style="background: #d00; height: 2px; left: 0; margin: 0; padding: 0; position: fixed; top: 0; transition: background 0.5s, width 1.5s; width: 25%;"></div>\n\
 utility2-comment -->\n\
-        >{{envDict.npm_package_name}} v{{envDict.npm_package_version}}</a>\n\
+    <h1>\n\
 <!-- utility2-comment\n\
-        {{#if envDict.NODE_ENV}}\n\
-        (NODE_ENV={{envDict.NODE_ENV}})\n\
-        {{/if envDict.NODE_ENV}}\n\
+        <a\n\
+            {{#if env.npm_package_homepage}}\n\
+            href="{{env.npm_package_homepage}}"\n\
+            {{/if env.npm_package_homepage}}\n\
+            target="_blank"\n\
+        >\n\
+utility2-comment -->\n\
+            {{env.npm_package_nameAlias}} v{{env.npm_package_version}}\n\
+<!-- utility2-comment\n\
+        </a>\n\
 utility2-comment -->\n\
     </h1>\n\
-    <h3>{{envDict.npm_package_description}}</h3>\n\
+    <h3>{{env.npm_package_description}}</h3>\n\
 <!-- utility2-comment\n\
     <h4><a download href="assets.app.js">download standalone app</a></h4>\n\
-    <button class="onclick" id="testRunButton1">run internal test</button><br>\n\
-    <div class="testReportDiv" style="display: none;"></div>\n\
+    <button class="onclick onreset" id="testRunButton1">run internal test</button><br>\n\
+    <div id="testReportDiv1" style="display: none;"></div>\n\
 utility2-comment -->\n\
 \n\
-    <button class="onclick" id="nedbResetButton1">reset nedb-database</button><br>\n\
-    <button class="onclick" id="nedbExportButton1">save nedb-database to file</button><br>\n\
-    <a download="nedb.persistence.json" href="" id="nedbExportA1"></a>\n\
-    <button class="onclick" id="nedbImportButton1">load nedb-database from file</button><br>\n\
-    <input class="onchange zeroPixel" type="file" id="nedbImportInput1">\n\
-    <label>edit or paste script below to\n\
-        <a\n\
-            href="https://kaizhu256.github.io/node-sandbox2/build/doc.api.html"\n\
-            target="_blank"\n\
-        >eval</a>\n\
-    </label>\n\
-<textarea class="onkeyup" id="inputTextarea1">\n\
-window.table = new window.Nedb();\n\
-table.insert({ field1: "hello", field2: "world"}, console.log.bind(console));\n\
 \n\
-window.persistentTable1 = window.Nedb.dbTableCreate({ name: "persistentTable1" });\n\
-persistentTable1.insert({ field1: "hello", field2: "world"}, function () {\n\
-    console.log();\n\
-    console.log(persistentTable1.export());\n\
-});\n\
 \n\
-window.persistentTable2 = window.Nedb.dbTableCreate({ name: "persistentTable2" });\n\
-persistentTable2.insert({ field1: "hello", field2: "world"}, function () {\n\
-    console.log();\n\
-    console.log(persistentTable2.export());\n\
-});\n\
+    <div>edit or paste script below to\n\
+        <a href="http://www.jslint.com" target="_blank">jslint</a>\n\
+    </div>\n\
+<textarea class="oneval onkeyup onreset" id="inputTextareaEval1">\n\
+/*jslint\n\
+    browser: true,\n\
+    es6: true\n\
+*/\n\
+const message = "hello";\n\
+console.log(message);\n\
+console.log(null);\n\
 </textarea>\n\
+    <pre id="outputPreJslint1"></pre>\n\
+    <div>edit or paste script below to\n\
+        <a \n\
+            href="https://github.com/CSSLint/csslint/wiki/Command-line-interface#options" \n\
+            target="_blank"\n\
+        >csslint</a>\n\
+    </div>\n\
+<textarea class="oneval onkeyup onreset" id="inputTextareaCsslint1">\n\
+/*csslint\n\
+    box-sizing: false,\n\
+*/\n\
+body {\n\
+    box-sizing: border-box;\n\
+    margin: 0px;\n\
+}\n\
+</textarea>\n\
+    <pre id="outputPreCsslint1"></pre>\n\
     <label>stderr and stdout</label>\n\
-    <textarea id="outputTextarea1" readonly></textarea>\n\
+    <textarea class="resettable" id="outputTextareaStdout1" readonly></textarea>\n\
 <!-- utility2-comment\n\
     {{#if isRollup}}\n\
-    <script src="assets.app.min.js"></script>\n\
+    <script src="assets.app.js"></script>\n\
     {{#unless isRollup}}\n\
 utility2-comment -->\n\
     <script src="assets.utility2.rollup.js"></script>\n\
-    <script src="jsonp.utility2.stateInit?callback=window.utility2.stateInit"></script>\n\
-    <script src="assets.sandbox2.js"></script>\n\
+    <script src="jsonp.utility2._stateInit?callback=window.utility2._stateInit"></script>\n\
+    <script src="assets.jslint.rollup.js"></script>\n\
     <script src="assets.example.js"></script>\n\
     <script src="assets.test.js"></script>\n\
 <!-- utility2-comment\n\
@@ -341,53 +375,64 @@ utility2-comment -->\n\
 </html>\n\
 ';
         /* jslint-ignore-end */
-        local['/'] = local.templateIndexHtml
-            .replace((/\{\{envDict\.(\w+?)\}\}/g), function (match0, match1) {
-                // jslint-hack
-                String(match0);
-                switch (match1) {
-                case 'npm_package_description':
-                    return 'example module';
-                case 'npm_package_name':
-                    return 'example';
-                case 'npm_package_version':
-                    return '0.0.1';
+        if (local.templateRender) {
+            local.assetsDict['/'] = local.templateRender(
+                local.assetsDict['/assets.index.template.html'],
+                {
+                    env: local.objectSetDefault(local.env, {
+                        npm_package_description: 'example module',
+                        npm_package_nameAlias: 'example',
+                        npm_package_version: '0.0.1'
+                    })
                 }
-            });
-        if (module.isRollup) {
-            break;
+            );
+        } else {
+            local.assetsDict['/'] = local.assetsDict['/assets.index.template.html']
+                .replace((/\{\{env\.(\w+?)\}\}/g), function (match0, match1) {
+                    // jslint-hack
+                    String(match0);
+                    switch (match1) {
+                    case 'npm_package_description':
+                        return 'example module';
+                    case 'npm_package_nameAlias':
+                        return 'example';
+                    case 'npm_package_version':
+                        return '0.0.1';
+                    }
+                });
         }
-        try {
-            local['/assets.example.js'] = local.fs.readFileSync(__filename, 'utf8');
-        } catch (ignore) {
-        }
-        local['/assets.sandbox2.js'] = local.fs.readFileSync(
-            local.Nedb.__dirname + '/index.js',
-            'utf8'
-        );
         // run the cli
-        if (module !== require.main) {
+        if (local.global.utility2_rollup || module !== require.main) {
             break;
         }
-        // start server
-        console.log('server starting on port ' + process.env.PORT);
-        local.http.createServer(function (request, response) {
-            switch (local.url.parse(request.url).pathname) {
-            case '/':
-            case '/assets.example.js':
-            case '/assets.sandbox2.js':
-            case '/assets.test.js':
-                response.end(local[local.url.parse(request.url).pathname]);
-                break;
-            default:
-                response.end();
-            }
-        }).listen(process.env.PORT);
-        // if $npm_config_timeout_exit is defined,
+        local.assetsDict['/assets.example.js'] = local.assetsDict['/assets.example.js'] ||
+            local.fs.readFileSync(__filename, 'utf8');
+        local.assetsDict['/assets.jslint.rollup.js'] =
+            local.assetsDict['/assets.jslint.rollup.js'] || local.fs.readFileSync(
+                local.jslint.__dirname + '/lib.jslint.js',
+                'utf8'
+            ).replace((/^#!/), '//');
+        local.assetsDict['/favicon.ico'] = local.assetsDict['/favicon.ico'] || '';
+        // if $npm_config_timeout_exit exists,
         // then exit this process after $npm_config_timeout_exit ms
         if (Number(process.env.npm_config_timeout_exit)) {
             setTimeout(process.exit, Number(process.env.npm_config_timeout_exit));
         }
+        // start server
+        if (local.global.utility2_serverHttp1) {
+            break;
+        }
+        process.env.PORT = process.env.PORT || '8081';
+        console.log('server starting on port ' + process.env.PORT);
+        local.http.createServer(function (request, response) {
+            request.urlParsed = local.url.parse(request.url);
+            if (local.assetsDict[request.urlParsed.pathname] !== undefined) {
+                response.end(local.assetsDict[request.urlParsed.pathname]);
+                return;
+            }
+            response.statusCode = 404;
+            response.end();
+        }).listen(process.env.PORT);
         break;
     }
 }());
@@ -404,41 +449,51 @@ utility2-comment -->\n\
 # package.json
 ```json
 {
-    "package.json": true,
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "{{packageJson.description}}",
+    "bin": {
+        "sandbox2": "lib.jslint.js"
+    },
+    "description": "sandbox",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "engines": { "node": ">=4.2" },
+    "engines": {
+        "node": ">=4.0"
+    },
     "homepage": "https://github.com/kaizhu256/node-sandbox2",
     "keywords": [
         "browser",
-        "db",
-        "indexeddb",
-        "localstorage",
-        "mongo", "mongodb",
-        "nedb", "no-sql", "nosql",
-        "persistence", "persistent",
-        "web", "web-sql", "websql"
+        "csslint",
+        "eshint",
+        "eslint",
+        "jshint",
+        "jslint",
+        "lint"
     ],
     "license": "MIT",
+    "main": "lib.jslint.js",
     "name": "sandbox2",
-    "os": ["darwin", "linux"],
+    "nameAlias": "jslint",
+    "nameOriginal": "sandbox2",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/kaizhu256/node-sandbox2.git"
     },
     "scripts": {
         "build-ci": "utility2 shRun shReadmeBuild",
-        "start": "\
-export PORT=${PORT:-8080} && \
-export npm_config_mode_auto_restart=1 && \
-utility2 shRun shIstanbulCover test.js",
+        "env": "env",
+        "heroku-postbuild": "npm install 'kaizhu256/node-utility2#alpha' && utility2 shRun shDeployHeroku",
+        "postinstall": "if [ -f lib.jslint.npm-scripts.sh ]; then ./lib.jslint.npm-scripts.sh postinstall; fi",
+        "publish-alias": "VERSION=$(npm info $npm_package_name version); for ALIAS in sandbox3; do utility2 shRun shNpmPublishAs . $ALIAS $VERSION; utility2 shRun shNpmTestPublished $ALIAS || exit $?; done",
+        "start": "export PORT=${PORT:-8080} && export npm_config_mode_auto_restart=1 && utility2 shRun shIstanbulCover test.js",
         "test": "export PORT=$(utility2 shServerPortRandom) && utility2 test test.js"
     },
-    "version": "0.0.2"
+    "version": "0.0.10"
 }
 ```
 
@@ -456,48 +511,6 @@ utility2 shRun shIstanbulCover test.js",
 
 # this shell script will run the build for this package
 
-shBuildCiTestPre() {(set -e
-# this function will run the pre-test build
-    # test example.js
-    (export MODE_BUILD=testExampleJs &&
-        shRunScreenCapture shReadmeTestJs example.js) || return $?
-    # test published-package
-    (export MODE_BUILD=npmTestPublished &&
-        shRunScreenCapture shNpmTestPublished) || return $?
-)}
-
-shBuildCiTestPost() {(set -e
-# this function will run the post-test build
-    # if running legacy-node, then return
-    [ "$(node --version)" \< "v5.0" ] && return || true
-    export NODE_ENV=production
-    # deploy app to gh-pages
-    export TEST_URL="https://$(printf "$GITHUB_REPO" | \
-        sed 's/\//.github.io\//')/build..$CI_BRANCH..travis-ci.org/app/index.html"
-    (export MODE_BUILD=githubDeploy &&
-        shGithubDeploy) || return $?
-    # test deployed app to gh-pages
-    (export MODE_BUILD=githubTest &&
-        export modeBrowserTest=test &&
-        export url="$TEST_URL?modeTest=1&timeExit={{timeExit}}" &&
-        shBrowserTest) || return $?
-    # deploy app to heroku
-    export HEROKU_REPO="hrku01-$npm_package_name-$CI_BRANCH"
-    export TEST_URL="https://$HEROKU_REPO.herokuapp.com"
-    shGitRepoBranchUpdateLocal() {(set -e
-    # this function will local-update git-repo-branch
-        cp "$npm_config_dir_build/app/assets.app.js" .
-        printf "web: npm_config_mode_backend=1 node assets.app.js" > Procfile
-    )}
-    (export MODE_BUILD=herokuDeploy &&
-        shHerokuDeploy) || return $?
-    # test deployed app to heroku
-    (export MODE_BUILD=herokuTest &&
-        export modeBrowserTest=test &&
-        export url="$TEST_URL?modeTest=1&timeExit={{timeExit}}" &&
-        shBrowserTest) || return $?
-)}
-
 shBuild() {(set -e
 # this function will run the main build
     # init env
@@ -505,14 +518,52 @@ shBuild() {(set -e
     # cleanup github-gh-pages dir
     # export BUILD_GITHUB_UPLOAD_PRE_SH="rm -fr build"
     # init github-gh-pages commit-limit
-    export COMMIT_LIMIT=16
-    # if branch is alpha, beta, or master, then run default build
-    if [ "$CI_BRANCH" = alpha ] ||
-        [ "$CI_BRANCH" = beta ] ||
-        [ "$CI_BRANCH" = master ]
-    then
+    export COMMIT_LIMIT=20
+    case "$CI_BRANCH" in
+    alpha)
         shBuildCiDefault
-    fi
+        ;;
+    beta)
+        shBuildCiDefault
+        ;;
+    master)
+        shBuildCiDefault
+        git tag "$npm_package_version"
+        git push "git@github.com:$GITHUB_REPO.git" "$npm_package_version" || true
+        ;;
+    publish)
+        export CI_BRANCH=alpha
+        shNpmPublishAs
+        shBuildCiDefault
+        npm run publish-alias
+        git push "git@github.com:$GITHUB_REPO.git" publish:beta
+        ;;
+    esac
 )}
+
+shBuildCiTestPost() {(set -e
+# this function will run the post-test build
+    # if running legacy-node, then return
+    [ "$(node --version)" \< "v7.0" ] && return || true
+    export NODE_ENV=production
+    # deploy app to gh-pages
+    (export MODE_BUILD=deployGithub && shDeployGithub) || return $?
+    #!! # deploy app to heroku
+    #!! (export MODE_BUILD=deployHeroku && shDeployHeroku) || return $?
+)}
+
+shBuildCiTestPre() {(set -e
+# this function will run the pre-test build
+    #!! # test example.js
+    #!! (export MODE_BUILD=testExampleJs && shRunScreenCapture shReadmeTestExampleJs) || return $?
+    # test published-package
+    (export MODE_BUILD=npmTestPublished && shRunScreenCapture shNpmTestPublished) || return $?
+)}
+
 shBuild
 ```
+
+
+
+# misc
+- this README.md was auto-generated by [utility2](https://github.com/kaizhu256/node-utility2)
