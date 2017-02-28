@@ -532,6 +532,7 @@ shBuild() {(set -e
         git push "git@github.com:$GITHUB_REPO.git" "$npm_package_version" || true
         ;;
     publish)
+        printf "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > "$HOME/.npmrc"
         export CI_BRANCH=alpha
         shNpmPublishAs
         shBuildCiDefault
