@@ -1,5 +1,6 @@
-/* istanbul instrument in package nedb-lite */
+/* istanbul instrument in package npmdoc_mysql */
 /*jslint
+    bitwise: true,
     browser: true,
     maxerr: 8,
     maxlen: 96,
@@ -16,8 +17,6 @@
 
     // run shared js-env code - pre-init
     (function () {
-        // init Error.stackTraceLimit
-        Error.stackTraceLimit = Infinity;
         // init local
         local = {};
         // init modeJs
@@ -34,405 +33,55 @@
                     'node';
             }
         }());
+        // init global
+        local.global = local.modeJs === 'browser'
+            ? window
+            : global;
         switch (local.modeJs) {
         // re-init local from window.local
         case 'browser':
-            local = window.local;
-            local.utility2 = window.utility2;
+            local = local.global.utility2.objectSetDefault(
+                local.global.utility2_rollup || local.global.local,
+                local.global.utility2
+            );
             break;
         // re-init local from example.js
         case 'node':
-            local = (module.utility2 || require('utility2')).requireExampleJsFromReadme({
-                __dirname: __dirname,
-                module: module,
-                moduleExports: __dirname + '/index.js',
-                moduleName: 'nedb-lite'
-            });
-            /* istanbul ignore next */
-            if (module.isRollup) {
-                local = module;
-                return;
-            }
+            local = (local.global.utility2_rollup || require('utility2'))
+                .requireExampleJsFromReadme();
             break;
         }
-        // require modules
-        local.utility2.Nedb = local;
-        local.utility2.assert = local.assert;
-        local.utility2.dbExport = local.dbExport;
-        local.utility2.dbImport = local.dbImport;
-        local.utility2.dbTableCreate = local.dbTableCreate;
-        local.utility2.dbTableDrop = local.dbTableDrop;
-        local.utility2.jsonStringifyOrdered = local.jsonStringifyOrdered;
+        // export local
+        local.global.local = local;
     }());
 
 
 
     // run shared js-env code - function
     (function () {
-        local.testCase_assertXxx_default = function (options, onError) {
-        /*
-         * this function will test assertXxx's default handling-behavior
-         */
-            options = {};
-            // test assertion passed
-            local.utility2.assert(true, true);
-            // test assertion failed with undefined message
-            local.utility2.tryCatchOnError(function () {
-                local.utility2.assert(false);
-            }, function (error) {
-                // validate error occurred
-                local.utility2.assert(error, error);
-                // validate error-message
-                local.utility2.assertJsonEqual(error.message, '');
-            });
-            // test assertion failed with string message
-            local.utility2.tryCatchOnError(function () {
-                local.utility2.assert(false, 'hello');
-            }, function (error) {
-                // validate error occurred
-                local.utility2.assert(error, error);
-                // validate error-message
-                local.utility2.assertJsonEqual(error.message, 'hello');
-            });
-            // test assertion failed with error object
-            local.utility2.tryCatchOnError(function () {
-                local.utility2.assert(false, local.utility2.errorDefault);
-            }, function (error) {
-                // validate error occurred
-                local.utility2.assert(error, error);
-            });
-            // test assertion failed with json object
-            local.utility2.tryCatchOnError(function () {
-                local.utility2.assert(false, { aa: 1 });
-            }, function (error) {
-                // validate error occurred
-                local.utility2.assert(error, error);
-                // validate error-message
-                local.utility2.assertJsonEqual(error.message, '{"aa":1}');
-            });
-            options.list = ['', 0, false, null, undefined];
-            options.list.forEach(function (aa, ii) {
-                options.list.forEach(function (bb, jj) {
-                    if (ii === jj) {
-                        // test assertJsonEqual's handling-behavior
-                        local.utility2.assertJsonEqual(aa, bb);
-                    } else {
-                        // test assertJsonNotEqual's handling-behavior
-                        local.utility2.assertJsonNotEqual(aa, bb);
-                    }
-                });
-            });
-            onError();
-        };
-
-        local.testCase_dbExport_default = function (options, onError) {
-        /*
-         * this function will test dbExport's default handling-behavior
-         */
-            options = {};
-            options.name = 'testCase_dbExport_default';
-            options.table = local.dbTableCreate(options);
-            options.data = local.dbExport();
-            // validate data
-            local.utility2.assertJsonEqual(options.data, '"testCase_dbExport_default"');
-            onError();
-        };
-
-        local.testCase_dbImport_default = function (options, onError) {
-        /*
-         * this function will test dbImport's default handling-behavior
-         */
-            // jslint-hack
-            local.utility2.nop(options);
-            local.dbImport('"undefined"\n{"id":0}', onError);
-        };
-
-        local.testCase_dbTableCreate_default = function (options, onError) {
-        /*
-         * this function will test dbTableCreate's default handling-behavior
-         */
-            options = {};
-            options.name = 'testCase_dbTableCreate_default';
-            options.table = local.dbTableCreate(options);
-            // test re-create handling-behavior
-            options.table = local.dbTableCreate(options);
-            // test reset handling-behavior
-            options.reset = true;
-            options.table = local.dbTableCreate(options);
-            onError();
-        };
-
-        local.testCase_dbTableCreate_error = function (options, onError) {
-        /*
-         * this function will test dbTableCreate's error handling-behavior
-         */
-            options = {};
-            options.error = local.utility2.errorDefault;
-            options.name = 'testCase_dbTableCreate_error';
-            options.table = local.dbTableCreate(options, function (error) {
-                local.utility2.tryCatchOnError(function () {
-                    // validate error occurred
-                    local.utility2.assert(error, error);
-                    onError();
-                }, onError);
-            });
-        };
-
-        local.testCase_dbTableDrop_default = function (options, onError) {
-        /*
-         * this function will test dbTableDrop's default handling-behavior
-         */
-            options = {};
-            options.name = 'testCase_dbTableDrop_default';
-            options.table = local.dbTableCreate(options);
-            local.dbTableDrop(options.table, onError);
-            // test undefined-table handling-behavior
-            local.dbTableDrop(options.table, local.utility2.nop);
-        };
-
-        local.testCase_jsonStringifyOrdered_default = function (options, onError) {
-        /*
-         * this function will test jsonStringifyOrdered's default handling-behavior
-         */
-            options = {};
-            // test data-type handling-behavior
-            [undefined, null, false, true, 0, 1, 1.5, 'a', {}, []].forEach(function (data) {
-                options.aa = local.utility2.jsonStringifyOrdered(data);
-                options.bb = JSON.stringify(data);
-                local.utility2.assertJsonEqual(options.aa, options.bb);
-            });
-            // test data-ordering handling-behavior
-            options = {
-                // test nested dict handling-behavior
-                ff: { hh: 2, gg: 1},
-                // test nested array handling-behavior
-                ee: [1, null, undefined],
-                dd: local.utility2.nop,
-                cc: undefined,
-                bb: null,
-                aa: 1
-            };
-            // test circular-reference handling-behavior
-            options.zz = options;
-            local.utility2.assertJsonEqual(
-                options,
-                { aa: 1, bb: null, ee: [ 1, null, null ], ff: { gg: 1, hh: 2 } }
-            );
-            onError();
-        };
+        return;
     }());
     switch (local.modeJs) {
 
 
 
+    // run browser js-env code - function
+    case 'browser':
+        break;
+
+
+
     // run node js-env code - function
     case 'node':
-        local.testCase_build_app = function (options, onError) {
-        /*
-         * this function will test build's app handling-behavior
-         */
-            var onParallel;
-            onParallel = local.utility2.onParallel(onError);
-            onParallel.counter += 1;
-            options = {};
-            options = [{
-                file: '/assets.app.js',
-                url: '/assets.app.js'
-            }, {
-                file: '/assets.app.min.js',
-                url: '/assets.app.min.js'
-            }, {
-                file: '/assets.example.js',
-                url: '/assets.example.js'
-            }, {
-                file: '/assets.' + local.utility2.envDict.npm_package_name + '.css',
-                url: '/assets.' + local.utility2.envDict.npm_package_name + '.css'
-            }, {
-                file: '/assets.' + local.utility2.envDict.npm_package_name + '.js',
-                url: '/assets.' + local.utility2.envDict.npm_package_name + '.js'
-            }, {
-                file: '/assets.' + local.utility2.envDict.npm_package_name + '.min.js',
-                transform: function (data) {
-                    return local.utility2.uglify(local.utility2.bufferToString(data));
-                },
-                url: '/assets.' + local.utility2.envDict.npm_package_name + '.js'
-            }, {
-                file: '/assets.test.js',
-                url: '/assets.test.js'
-            }, {
-                file: '/assets.utility2.rollup.js',
-                url: '/assets.utility2.rollup.js'
-            }, {
-                file: '/index.html',
-                url: '/index.html'
-            }, {
-                file: '/jsonp.utility2.stateInit',
-                url: '/jsonp.utility2.stateInit?callback=window.utility2.stateInit'
-            }];
-            options.forEach(function (options) {
-                onParallel.counter += 1;
-                local.utility2.ajax(options, function (error, xhr) {
-                    onParallel.counter += 1;
-                    // validate no error occurred
-                    onParallel(error);
-                    switch (local.path.extname(options.file)) {
-                    case '.css':
-                    case '.js':
-                    case '.json':
-                        local.utility2.jslintAndPrintConditional(
-                            xhr.responseText,
-                            options.file
-                        );
-                        // validate no error occurred
-                        local.utility2.tryCatchOnError(function () {
-                            local.utility2.assert(
-                                !local.utility2.jslint.errorText,
-                                local.utility2.jslint.errorText
-                            );
-                        }, onError);
-                        break;
-                    }
-                    local.utility2.fsWriteFileWithMkdirp(
-                        local.utility2.envDict.npm_config_dir_build + '/app' + options.file,
-                        (options.transform || local.utility2.echo)(xhr.response),
-                        onParallel
-                    );
-                });
-            });
-            onParallel();
-        };
-
-        local.testCase_build_doc = function (options, onError) {
-        /*
-         * this function will test build's doc handling-behavior
-         */
-            var modeNext, onNext;
-            modeNext = 0;
-            onNext = function (error) {
-                local.utility2.tryCatchOnError(function () {
-                    // validate no error occurred
-                    local.utility2.assert(!error, error);
-                    modeNext += 1;
-                    switch (modeNext) {
-                    case 1:
-                        options = {};
-                        options.moduleDict = {
-                            Nedb: {
-                                exampleList: [],
-                                exports: local.Nedb
-                            },
-                            'Nedb.customUtils': {
-                                exampleList: [],
-                                exports: local.Nedb.customUtils
-                            },
-                            'Nedb.model': {
-                                exampleList: [],
-                                exports: local.Nedb.model
-                            },
-                            'Nedb.persistence': {
-                                exampleList: [],
-                                exports: local.Nedb.persistence
-                            },
-                            'Nedb.persistence.prototype': {
-                                exampleList: [],
-                                exports: local.Nedb.persistence.prototype
-                            },
-                            'Nedb.prototype': {
-                                exampleList: [],
-                                exports: local.Nedb.prototype
-                            },
-                            'Nedb.storage': {
-                                exampleList: [],
-                                exports: local.Nedb.storage
-                            }
-                        };
-                        Object.keys(options.moduleDict).forEach(function (key) {
-                            options.moduleDict[key].example = [
-                                'README.md',
-                                'test.js',
-                                'index.js'
-                            ]
-                                .concat(options.moduleDict[key].exampleList)
-                                .map(function (file) {
-                                    return '\n\n\n\n\n\n\n\n' +
-                                        local.fs.readFileSync(file, 'utf8') +
-                                        '\n\n\n\n\n\n\n\n';
-                                }).join('');
-                        });
-                        // create doc.api.html
-                        local.utility2.fsWriteFileWithMkdirp(
-                            local.utility2.envDict.npm_config_dir_build + '/doc.api.html',
-                            local.utility2.docApiCreate(options),
-                            onNext
-                        );
-                        break;
-                    case 2:
-                        local.utility2.browserTest({
-                            modeBrowserTest: 'screenCapture',
-                            url: 'file://' + local.utility2.envDict.npm_config_dir_build +
-                                '/doc.api.html'
-                        }, onNext);
-                        break;
-                    default:
-                        onError(error);
-                    }
-                }, onError);
-            };
-            onNext();
-        };
-
-        local.testCase_mkdirp_default = function (options, onError) {
-        /*
-         * this function will test mkdirp's default handling-behavior
-         */
-            var onParallel;
-            onParallel = local.utility2.onParallel(onError);
-            onParallel.counter += 1;
-            options = ['-r', 'tmp/aa/bb'];
-            local.child_process.spawnSync('rm', options, {
-                stdio: ['ignore', 1, 2]
-            });
-            // test no-dir-exists handling-behavior
-            onParallel.counter += 1;
-            local.storage.mkdirp('tmp/aa/bb', onParallel);
-            // test dir-exists handling-behavior
-            onParallel.counter += 1;
-            local.storage.mkdirp('tmp/aa/bb', onParallel);
-            onParallel();
-        };
-
-        local.testCase_mkdirp_error = function (options, onError) {
-        /*
-         * this function will test mkdirp's error handling-behavior
-         */
-            options = [
-                [local.fs, { existsSync: function () {
-                    throw local.utility2.errorDefault;
-                } }]
-            ];
-            local.utility2.testMock(options, function (onError) {
-                local.storage.mkdirp('', function (error) {
-                    local.utility2.tryCatchOnError(function () {
-                        // validate error occurred
-                        local.utility2.assert(error, error);
-                        onError();
-                    }, onError);
-                });
-            }, onError);
-        };
-
-        local.testCase_webpage_default = function (options, onError) {
-        /*
-         * this function will test the webpage's default handling-behavior
-         */
-            options = {
-                modeCoverageMerge: true,
-                url: local.utility2.serverLocalHost + '?modeTest=1'
-            };
-            local.utility2.browserTest(options, onError);
-        };
         break;
     }
+
+
+
+    // run shared js-env code - post-init
+    (function () {
+        return;
+    }());
     switch (local.modeJs) {
 
 
@@ -440,63 +89,97 @@
     // run browser js-env code - post-init
     case 'browser':
         // run tests
-        local.utility2.testRun(local);
+        local.nop(local.modeTest && document.querySelector('#testRunButton1').click());
         break;
 
 
 
-    /* istanbul ignore next */
     // run node js-env code - post-init
+    /* istanbul ignore next */
     case 'node':
+        local.testCase_buildApidoc_default = local.testCase_buildApidoc_default || function (
+            options,
+            onError
+        ) {
+        /*
+         * this function will test buildApidoc's default handling-behavior-behavior
+         */
+            options = {};
+            local.buildApidoc(options, onError);
+        };
+
+        local.testCase_buildApp_default = local.testCase_buildApp_default || function (
+            options,
+            onError
+        ) {
+        /*
+         * this function will test buildApp's default handling-behavior-behavior
+         */
+            local.testCase_buildReadme_default(options, local.onErrorThrow);
+            local.testCase_buildLib_default(options, local.onErrorThrow);
+            local.testCase_buildTest_default(options, local.onErrorThrow);
+            local.testCase_buildNpmdoc_default(options, local.onErrorThrow);
+            options = [];
+            local.buildApp(options, onError);
+        };
+
+        local.testCase_buildLib_default = local.testCase_buildLib_default || function (
+            options,
+            onError
+        ) {
+        /*
+         * this function will test buildLib's default handling-behavior
+         */
+            options = {};
+            local.buildLib(options, onError);
+        };
+
+        local.testCase_buildNpmdoc_default = local.testCase_buildNpmdoc_default || function (
+            options,
+            onError
+        ) {
+        /*
+         * this function will test buildNpmdoc's default handling-behavior
+         */
+            options = {};
+            local.buildNpmdoc(options, onError);
+        };
+
+        local.testCase_buildReadme_default = local.testCase_buildReadme_default || function (
+            options,
+            onError
+        ) {
+        /*
+         * this function will test buildReadme's default handling-behavior-behavior
+         */
+            options = {};
+            local.buildReadme(options, onError);
+        };
+
+        local.testCase_buildTest_default = local.testCase_buildTest_default || function (
+            options,
+            onError
+        ) {
+        /*
+         * this function will test buildTest's default handling-behavior
+         */
+            options = {};
+            local.buildTest(options, onError);
+        };
+
+        local.testCase_webpage_default = local.testCase_webpage_default || function (
+            options,
+            onError
+        ) {
+        /*
+         * this function will test the webpage's default handling-behavior
+         */
+            options = { modeCoverageMerge: true, url: local.serverLocalHost + '?modeTest=1' };
+            local.browserTest(options, onError);
+        };
+
         // run test-server
-        local.utility2.testRunServer(local);
-        // init repl debugger
-        local.utility2.replStart();
-        /* istanbul ignore next */
-        if (module !== require.main || module.isRollup) {
-            break;
-        }
-        // init assets
-        local.utility2.assetsDict['/assets.app.js'] = [
-            'header',
-            '/assets.utility2.rollup.js',
-            'local.utility2.stateInit',
-            '/assets.nedb-lite.js',
-            '/assets.example.js',
-            '/assets.test.js'
-        ].map(function (key) {
-            switch (key) {
-/* jslint-ignore-begin */
-case 'header':
-return '\
-/*\n\
-assets.app.js\n\
-\n' + local.utility2.envDict.npm_package_description + '\n\
-\n\
-instruction\n\
-    1. save this script as assets.app.js\n\
-    2. run the shell command:\n\
-        $ PORT=8081 node assets.app.js\n\
-    3. open a browser to http://localhost:8081\n\
-    4. edit or paste script in browser to eval\n\
-*/\n\
-';
-/* jslint-ignore-end */
-            case 'local.utility2.stateInit':
-                return '// ' + key + '\n' +
-                    local.utility2.assetsDict['/assets.utility2.rollup.content.js']
-                    .replace(
-                        '/* utility2.rollup.js content */',
-                        key + '(' + JSON.stringify(
-                            local.utility2.middlewareJsonpStateInit({ stateInit: true })
-                        ) + ');'
-                    );
-            default:
-                return '// ' + key + '\n' + local.utility2.assetsDict[key];
-            }
-        }).join('\n\n\n\n');
-        local.utility2.assetsDict['/assets.app.min.js'] =
-            local.utility2.uglifyIfProduction(local.utility2.assetsDict['/assets.app.js']);
+        local.testRunServer(local);
         break;
     }
 }());

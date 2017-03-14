@@ -1,37 +1,42 @@
 {
-    "package.json": true,
     "author": "kai zhu <kaizhu256@gmail.com>",
-    "description": "this package will run a standalone, browser-compatible version of the nedb v1.8.0 database with zero npm-dependencies",
+    "buildNpmdoc": "mysql",
+    "description": "api-documentation for [mysql (v2.13.0)](https://github.com/mysqljs/mysql#readme)",
     "devDependencies": {
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "mysql": "*",
         "utility2": "kaizhu256/node-utility2#alpha"
     },
-    "engines": { "node": ">=4.2" },
-    "homepage": "https://github.com/kaizhu256/node-nedb-lite",
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-mysql/blob/alpha/README.md",
     "keywords": [
-        "browser",
-        "db",
-        "indexeddb",
-        "localstorage",
-        "mongo", "mongodb",
-        "nedb", "no-sql", "nosql",
-        "persistence", "persistent",
-        "web", "web-sql", "websql"
+        "documentation",
+        "mysql"
     ],
     "license": "MIT",
-    "name": "nedb-lite",
-    "os": ["darwin", "linux"],
+    "main": "lib.npmdoc_mysql.js",
+    "name": "sandbox2",
+    "nameAlias": "npmdoc_mysql",
+    "nameOriginal": "sandbox2",
+    "os": [
+        "darwin",
+        "linux"
+    ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/kaizhu256/node-nedb-lite.git"
+        "url": "https://github.com/kaizhu256/node-sandbox2.git"
     },
     "scripts": {
-        "build-ci": "utility2 shRun shReadmeBuild",
-        "start": "export PORT=${PORT:-8080} && export npm_config_mode_auto_restart=1 && utility2 shRun shIstanbulCover test.js",
-
-
-
-        "test": "export PORT=$(utility2 shServerPortRandom) && utility2 test test.js"
+        "build-ci": "utility2 shBuildCi",
+        "env": "env",
+        "heroku-postbuild": "npm install 'kaizhu256/node-utility2#alpha' && utility2 shDeployHeroku",
+        "postinstall": "if [ -f lib.jslint.npm_scripts.sh ]; then ./lib.jslint.npm_scripts.sh postinstall; fi",
+        "publish-alias": "VERSION=$(npm info $npm_package_name version); for ALIAS in mysql-doc; do utility2 shNpmPublishAs . $ALIAS $VERSION; utility2 shNpmTestPublished $ALIAS || exit $?; done",
+        "start": "export PORT=${PORT:-8080} && utility2 start test.js",
+        "test": "export PORT=$(utility2 shServerPortRandom) && utility2 test test.js",
+        "test.old": "./lib.npmdoc_mysql.npm_scripts.sh test"
     },
-    "version": "2016.8.2"
+    "version": "0.0.17"
 }
