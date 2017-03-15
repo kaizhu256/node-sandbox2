@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 /* istanbul instrument in package npmdoc_mysql */
 /*jslint
     bitwise: true,

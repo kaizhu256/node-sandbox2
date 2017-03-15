@@ -141,6 +141,10 @@
         /*
          * this function will test buildNpmdoc's default handling-behavior
          */
+            if (!local.env.npm_package_buildNpmdoc) {
+                onError();
+                return;
+            }
             options = {};
             local.buildNpmdoc(options, onError);
         };
@@ -152,6 +156,10 @@
         /*
          * this function will test buildReadme's default handling-behavior-behavior
          */
+            if (local.env.npm_package_buildNpmdoc) {
+                onError();
+                return;
+            }
             options = {};
             local.buildReadme(options, onError);
         };
@@ -174,6 +182,10 @@
         /*
          * this function will test the webpage's default handling-behavior
          */
+            if (local.env.npm_package_buildNpmdoc) {
+                onError();
+                return;
+            }
             options = { modeCoverageMerge: true, url: local.serverLocalHost + '?modeTest=1' };
             local.browserTest(options, onError);
         };
