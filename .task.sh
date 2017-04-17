@@ -108,7 +108,7 @@ shTaskCron() {(set -e
             LIST=""
             LIST="$LIST
 $(utility2 dbTableTravisOrgCrudGetManyByQuery \
-                '{"query":{"active":{"$ne":true}},"limit":200,"shuffle":true}')"
+                '{"query":{"active":{"$ne":true}},"limit":2,"shuffle":true}')"
             printf "$LIST\n"
             LIST2=""
             for NAME in $LIST
@@ -134,10 +134,10 @@ $(utility2 dbTableTravisOrgCrudGetManyByQuery \
             LIST=""
             LIST="$LIST
 $(utility2 dbTableTravisOrgCrudGetManyByQuery \
-                '{"query":{"active":true,"buildState":{"$ne":"passed"}},"limit":200,"shuffle":true}')"
+                '{"query":{"active":true,"buildState":{"$ne":"passed"}},"limit":2,"shuffle":true}')"
             LIST="$LIST
 $(utility2 dbTableTravisOrgCrudGetManyByQuery \
-                '{"query":{"active":true,"buildState":"passed"},"limit":200,"shuffle":true}')"
+                '{"query":{"active":true,"buildState":"passed"},"limit":2,"shuffle":true}')"
             printf "$LIST\n"
             LIST2=""
             for NAME in $LIST
