@@ -54,8 +54,8 @@ shTask() {(set -e
 # this function will run the task
     #!! for GITHUB_ORG in npmdoc
     #!! for GITHUB_ORG in npmtest
-    for GITHUB_ORG in npmdoc npmtest
-    #!! for GITHUB_ORG in npmtest npmdoc
+    #!! for GITHUB_ORG in npmdoc npmtest
+    for GITHUB_ORG in npmtest npmdoc
     do
         shInitCustomOrg
         export GITHUB_TOKEN_TOKEN="$GITHUB_TOKEN_TOKEN_API"
@@ -173,6 +173,26 @@ shTaskCron() {(set -e
 
 
 
+        LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
+        LIST="$(shCustomOrgNameNormalize "$LIST")"
+        shBuildPrint "shGithubCrudRepoListCreate $LIST"
+        shListUnflattenAndApplyFunction() {(set -e
+            LIST="$1"
+            shGithubCrudRepoListCreate "$LIST"
+        )}
+        shListUnflattenAndApply "$LIST" 36
+        shSleep 30
+        shTravisSync
+        #!! shBuildPrint "rebuild unpublished starred packages $LIST"
+        #!! shListUnflattenAndApplyFunction() {(set -e
+            #!! LIST="$1"
+            #!! export TRAVIS_REPO_CREATE_FORCE=1
+            #!! shCustomOrgRepoListCreate "$LIST"
+        #!! )}
+        shListUnflattenAndApply "$LIST" 36
+
+
+
         shBuildPrint "re-build old builds"
         LIST=""
         LIST="$LIST
@@ -188,47 +208,22 @@ $(utility2 dbTableCustomOrgCrudGetManyByQuery \
 
 
 
-        shBuildPrint "re-build non-passed builds"
-        LIST=""
-        LIST="$LIST
-$(utility2 dbTableCustomOrgCrudGetManyByQuery \
-    '{"query":{"buildState":{"$nin":["passed","started"]}},"limit":500,"shuffle":true}')"
-        LIST="$(shCustomOrgNameNormalize "$LIST")"
-        printf "$LIST\n"
-        shListUnflattenAndApplyFunction() {(set -e
-            LIST="$1"
-            export TRAVIS_REPO_CREATE_FORCE=1
-            shCustomOrgRepoListCreate "$LIST"
-        )}
-        shListUnflattenAndApply "$LIST" 10
+        #!! shBuildPrint "re-build non-passed builds"
+        #!! LIST=""
+        #!! LIST="$LIST
+#!! $(utility2 dbTableCustomOrgCrudGetManyByQuery \
+    #!! '{"query":{"buildState":{"$nin":["passed","started"]}},"limit":500,"shuffle":true}')"
+        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
+        #!! printf "$LIST\n"
+        #!! shListUnflattenAndApplyFunction() {(set -e
+            #!! LIST="$1"
+            #!! export TRAVIS_REPO_CREATE_FORCE=1
+            #!! shCustomOrgRepoListCreate "$LIST"
+        #!! )}
+        #!! shListUnflattenAndApply "$LIST" 10
 
 
 
-        II=5000
-        shBuildPrint "shGithubCrudRepoListCreate $II"
-        while [ "$II" -gt 0 ]
-        do
-            II="$((II-36))"
-            if [ "$II" -lt 0 ]
-            then
-                II=0
-            fi
-            LIST="https://www.npmjs.com/browse/star?offset=$II"
-            printf "$LIST\n"
-            LIST="$(shNpmNameListFetch $LIST)"
-            LIST="$(shCustomOrgNameNormalize "$LIST")"
-            printf "$LIST\n"
-            shListUnflattenAndApplyFunction() {(set -e
-                LIST="$1"
-                shGithubCrudRepoListCreate "$LIST"
-            )}
-            shListUnflattenAndApply "$LIST" 36
-        done
-
-
-
-        shSleep 30
-        shTravisSync
     done
 )}
 
