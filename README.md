@@ -27,7 +27,7 @@ the greatest app in the world!
 #### apidoc
 - [https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/apidoc.html](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/apidoc.html)
 
-[![apidoc](https://kaizhu256.github.io/node-sandbox2/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fkaizhu256%252Fnode-sandbox2%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/apidoc.html)
+[![apidoc](https://kaizhu256.github.io/node-sandbox2/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://kaizhu256.github.io/node-sandbox2/build..beta..travis-ci.org/apidoc.html)
 
 #### todo
 - none
@@ -189,7 +189,7 @@ instruction
                     /*jslint evil: true*/
                     eval(document.querySelector('#inputTextareaEval1').value);
                 } catch (errorCaught) {
-                    console.error(errorCaught.stack);
+                    console.error(errorCaught);
                 }
             }
         };
@@ -365,14 +365,15 @@ utility2-comment -->\n\
         local.assetsDict['/assets.example.js'] =
             local.assetsDict['/assets.example.js'] ||
             local.fs.readFileSync(__filename, 'utf8');
+        // bug-workaround - long $npm_package_buildCustomOrg
+        /* jslint-ignore-begin */
         local.assetsDict['/assets.sandbox2.rollup.js'] =
             local.assetsDict['/assets.sandbox2.rollup.js'] ||
             local.fs.readFileSync(
-                // npmdoc-hack
-                local.sandbox2.__dirname +
-                    '/lib.sandbox2.js',
+                local.sandbox2.__dirname + '/lib.sandbox2.js',
                 'utf8'
             ).replace((/^#!/), '//');
+        /* jslint-ignore-end */
         local.assetsDict['/favicon.ico'] = local.assetsDict['/favicon.ico'] || '';
         // if $npm_config_timeout_exit exists,
         // then exit this process after $npm_config_timeout_exit ms
