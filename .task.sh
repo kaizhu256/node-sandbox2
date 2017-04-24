@@ -34,6 +34,7 @@ shInitCustomOrg() {
     eval "$(shTravisCryptoAesDecryptYml "" $GITHUB_ORG)"
     export GITHUB_TOKEN_TOKEN="$GITHUB_TOKEN_TOKEN_API"
     if [ ! "$GITHUB_TOKEN" ]
+    then
         shBuildPrint "no GITHUB_TOKEN"
         return 1
     fi
