@@ -31,8 +31,8 @@ shInitCustomOrg() {
         ln -fs "$HOME/node_modules"
     fi
         . ./node_modules/utility2/lib.utility2.sh
-    eval "$(shTravisCryptoAesDecryptYml "" $GITHUB_ORG)"
     shBuildInit
+    eval "$(shTravisCryptoAesDecryptYml "" $GITHUB_ORG)"
     utility2 dbTableCustomOrgUpdate "{}"
 }
 
@@ -130,10 +130,10 @@ shTask() {(set -e
 
 
 
-        shBuildPrint "rebuild unpublished starred packages"
         LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
+        shBuildPrint "rebuild unpublished starred packages $LIST"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
-        printf "$LIST\n"
+        shBuildPrint "rebuild unpublished starred packages $LIST"
         shListUnflattenAndApplyFunction() {(set -e
             LIST="$1"
             export TRAVIS_REPO_CREATE_FORCE=1
