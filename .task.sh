@@ -67,16 +67,16 @@ shTask() {(set -e
 
 
 
-        shBuildPrint "test custom list"
-        LIST="sandbox2"
-        LIST="$(shCustomOrgNameNormalize "$LIST")"
-        printf "$LIST\n"
-        shListUnflattenAndApplyFunction() {(set -e
-            LIST="$1"
-            export TRAVIS_REPO_CREATE_FORCE=1
-            shCustomOrgRepoListCreate "$LIST"
-        )}
-        shListUnflattenAndApply "$LIST" 10
+        #!! shBuildPrint "test custom list"
+        #!! LIST="sandbox2"
+        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
+        #!! printf "$LIST\n"
+        #!! shListUnflattenAndApplyFunction() {(set -e
+            #!! LIST="$1"
+            #!! export TRAVIS_REPO_CREATE_FORCE=1
+            #!! shCustomOrgRepoListCreate "$LIST"
+        #!! )}
+        #!! shListUnflattenAndApply "$LIST" 10
 
 
 
@@ -130,42 +130,19 @@ shTask() {(set -e
 
 
 
-        #!! II=5000
-        #!! shBuildPrint "rebuild unpublished packages $II"
-        #!! while [ "$II" -gt 0 ]
-        #!! do
-            #!! II="$((II-36))"
-            #!! if [ "$II" -lt 0 ]
-            #!! then
-                #!! II=0
-            #!! fi
-            #!! LIST="https://www.npmjs.com/browse/star?offset=$II"
-            #!! printf "$LIST\n"
-            #!! LIST="$(shNpmNameListFetch $LIST)"
-            #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
+        shBuildPrint "rebuild unpublished packages"
+        LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
+        LIST="$(shCustomOrgNameNormalize "$LIST")"
+        printf "$LIST\n"
+        #!! shListUnflattenAndApplyFunction() {(set -e
+            #!! LIST="$1"
+            #!! export TRAVIS_REPO_CREATE_FORCE=1
+            #!! shCustomOrgRepoListCreate "$LIST"
+        #!! )}
+        #!! shListUnflattenAndApply "$LIST" 36
 
-            #!! shBuildPrint "filtering unpublished customOrg from $LIST ..."
-            #!! LIST2=""
-            #!! for GITHUB_REPO in $LIST
-            #!! do
-                #!! LIST2="$LIST2
-#!! if (! curl -ILfs -o /dev/null https://raw.githubusercontent.com\
-#!! /$GITHUB_REPO/gh-pages/build..alpha..travis-ci.org/screenCapture.npmPackageListing.svg); \
-#!! then \
-    #!! printf \"$GITHUB_REPO\n\"; \
-#!! fi
-#!! "
-            #!! done
-            #!! LIST="$(shOnParallelListExec "$LIST2")" > /dev/null
-            #!! LIST2=""
-            #!! shBuildPrint "... filtered unpulished customOrg from $LIST"
-            #!! shListUnflattenAndApplyFunction() {(set -e
-                #!! LIST="$1"
-                #!! export TRAVIS_REPO_CREATE_FORCE=1
-                #!! shCustomOrgRepoListCreate "$LIST"
-            #!! )}
-            #!! shListUnflattenAndApply "$LIST" 36
-        #!! done
+
+
     done
 )}
 
