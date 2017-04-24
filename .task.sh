@@ -32,12 +32,6 @@ shInitCustomOrg() {
     fi
         . ./node_modules/utility2/lib.utility2.sh
     eval "$(shTravisCryptoAesDecryptYml "" $GITHUB_ORG)"
-    export GITHUB_TOKEN_TOKEN="$GITHUB_TOKEN_TOKEN_API"
-    if [ ! "$GITHUB_TOKEN" ]
-    then
-        shBuildPrint "no GITHUB_TOKEN"
-        return 1
-    fi
     shBuildInit
     utility2 dbTableCustomOrgUpdate "{}"
 }
@@ -64,6 +58,12 @@ shTask() {(set -e
     #!! for GITHUB_ORG in npmtest npmdoc
     do
         shInitCustomOrg
+        export GITHUB_TOKEN_TOKEN="$GITHUB_TOKEN_TOKEN_API"
+        if [ ! "$GITHUB_TOKEN" ]
+        then
+            shBuildPrint "no GITHUB_TOKEN"
+            return 1
+        fi
 
 
 
@@ -130,16 +130,16 @@ shTask() {(set -e
 
 
 
-        shBuildPrint "rebuild unpublished packages"
+        shBuildPrint "rebuild unpublished starred packages"
         LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         printf "$LIST\n"
-        #!! shListUnflattenAndApplyFunction() {(set -e
-            #!! LIST="$1"
-            #!! export TRAVIS_REPO_CREATE_FORCE=1
-            #!! shCustomOrgRepoListCreate "$LIST"
-        #!! )}
-        #!! shListUnflattenAndApply "$LIST" 36
+        shListUnflattenAndApplyFunction() {(set -e
+            LIST="$1"
+            export TRAVIS_REPO_CREATE_FORCE=1
+            shCustomOrgRepoListCreate "$LIST"
+        )}
+        shListUnflattenAndApply "$LIST" 36
 
 
 
