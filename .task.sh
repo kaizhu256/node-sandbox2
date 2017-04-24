@@ -208,19 +208,19 @@ $(utility2 dbTableCustomOrgCrudGetManyByQuery \
 
 
 
-        #!! shBuildPrint "re-build non-passed builds"
-        #!! LIST=""
-        #!! LIST="$LIST
-#!! $(utility2 dbTableCustomOrgCrudGetManyByQuery \
-    #!! '{"query":{"buildState":{"$nin":["passed","started"]}},"limit":500,"shuffle":true}')"
-        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
-        #!! printf "$LIST\n"
-        #!! shListUnflattenAndApplyFunction() {(set -e
-            #!! LIST="$1"
-            #!! export TRAVIS_REPO_CREATE_FORCE=1
-            #!! shCustomOrgRepoListCreate "$LIST"
-        #!! )}
-        #!! shListUnflattenAndApply "$LIST" 10
+        shBuildPrint "re-build non-passed builds"
+        LIST=""
+        LIST="$LIST
+$(utility2 dbTableCustomOrgCrudGetManyByQuery \
+    '{"query":{"buildState":{"$nin":["passed","started"]}},"limit":500,"shuffle":true}')"
+        LIST="$(shCustomOrgNameNormalize "$LIST")"
+        printf "$LIST\n"
+        shListUnflattenAndApplyFunction() {(set -e
+            LIST="$1"
+            export TRAVIS_REPO_CREATE_FORCE=1
+            shCustomOrgRepoListCreate "$LIST"
+        )}
+        shListUnflattenAndApply "$LIST" 10
 
 
 
