@@ -32,8 +32,7 @@ shInitCustomOrg() {
     fi
         . ./node_modules/utility2/lib.utility2.sh
     eval "$(shTravisCryptoAesDecryptYml "" $GITHUB_ORG)"
-    export PATH="/tmp/node_modules/.bin:$PATH"
-    export npm_config_dir_utility2="/tmp/node_modules/utility2"
+    export TRAVIS_ACCESS_TOKEN=TRAVIS_ACCESS_TOKEN_API
     shBuildInit
     utility2 dbTableCustomOrgUpdate "{}"
 }
