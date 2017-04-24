@@ -130,10 +130,9 @@ shTask() {(set -e
 
 
 
-        shBuildPrint "rebuild unpublished starred packages"
         LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
-        printf "$LIST\n"
+        shBuildPrint "rebuild unpublished starred packages $LIST"
         shListUnflattenAndApplyFunction() {(set -e
             LIST="$1"
             export TRAVIS_REPO_CREATE_FORCE=1
