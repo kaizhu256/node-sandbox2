@@ -103,7 +103,7 @@ instruction
 
 
 
-    // run shared js-env code - pre-init
+    // run shared js-env code - init-before
     (function () {
         // init local
         local = {};
@@ -136,8 +136,8 @@ instruction
 
 
 
-    // post-init
-    // run browser js-env code - post-init
+    // init-after
+    // run browser js-env code - init-after
     /* istanbul ignore next */
     case 'browser':
         local.testRunBrowser = function (event) {
@@ -225,7 +225,7 @@ instruction
 
 
 
-    // run node js-env code - post-init
+    // run node js-env code - init-after
     /* istanbul ignore next */
     case 'node':
         // export local
@@ -461,13 +461,13 @@ utility2-comment -->\n\
 
 # this shell script will run the build for this package
 
-shBuildCiPost() {(set -e
+shBuildCiAfter() {(set -e
     shDeployGithub
     # shDeployHeroku
     shReadmeBuildLinkVerify
 )}
 
-shBuildCiPre() {(set -e
+shBuildCiBefore() {(set -e
     shReadmeTest example.js
     shReadmeTest example.sh
     shNpmTestPublished

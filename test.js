@@ -15,7 +15,7 @@
 
 
 
-    // run shared js-env code - pre-init
+    // run shared js-env code - init-before
     (function () {
         // init local
         local = {};
@@ -48,7 +48,7 @@
         // re-init local from example.js
         case 'node':
             local = (local.global.utility2_rollup || require('utility2'))
-                .requireExampleJsFromReadme();
+                .requireReadme();
             break;
         }
         // export local
@@ -78,7 +78,7 @@
 
 
 
-    // run shared js-env code - post-init
+    // run shared js-env code - init-after
     (function () {
         return;
     }());
@@ -86,7 +86,7 @@
 
 
 
-    // run browser js-env code - post-init
+    // run browser js-env code - init-after
     case 'browser':
         local.testCase_browser_nullCase = local.testCase_browser_nullCase || function (
             options,
@@ -106,7 +106,7 @@
 
 
 
-    // run node js-env code - post-init
+    // run node js-env code - init-after
     /* istanbul ignore next */
     case 'node':
         local.testCase_buildApidoc_default = local.testCase_buildApidoc_default || function (
