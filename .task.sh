@@ -33,7 +33,7 @@ shInitCustomOrg() {
     fi
         . ./node_modules/utility2/lib.utility2.sh
     shBuildInit
-    eval "$(shTravisCryptoAesDecryptYml "" $GITHUB_ORG)"
+    eval "$(shCryptoAesDecryptTravis "" $GITHUB_ORG)"
     utility2 cli.dbTableCustomOrgUpdate "{}"
 }
 
