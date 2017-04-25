@@ -1,11 +1,12 @@
-# shCryptoAesWithGithubOrg kaizhu256 /bin/sh "$HOME/src/sandbox2/.task.sh"
-# shCryptoAesWithGithubOrg kaizhu256 shTravisTaskPush "$HOME/src/sandbox2/.task.sh"
-# TRAVIS_REPO_CREATE_FORCE=1 shCryptoAesWithGithubOrg npmtest shCustomOrgRepoListCreate npmtest/node-npmtest-sandbox2
-# shCryptoAesWithGithubOrg npmtest shGithubRepoListTouch npmtest/node-npmtest-sandbox2 '[npm publishAfterCommitAfterBuild]'
-# shCryptoAesWithGithubOrg npmtest utility2 clis.dbTableCustomOrgUpdate '{}'
+# shCryptoWithGithubOrg kaizhu256 /bin/sh "$HOME/src/sandbox2/.task.sh"
+# shCryptoWithGithubOrg kaizhu256 shTravisTaskPush "$HOME/src/sandbox2/.task.sh"
+# TRAVIS_REPO_CREATE_FORCE=1 shCryptoWithGithubOrg npmtest shCustomOrgRepoListCreate npmtest/node-npmtest-sandbox2
+# shCryptoWithGithubOrg npmtest shGithubRepoListTouch npmtest/node-npmtest-sandbox2 '[npm publishAfterCommitAfterBuild]'
+# shCryptoWithGithubOrg npmtest utility2 clis.dbTableCustomOrgUpdate '{}'
 # GITHUB_ORG=npmtest utility2 cli.dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":{"$ne":"passed"}},"shuffle":true}'
 # GITHUB_ORG=npmtest utility2 cli.dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":"passed"},"limit":1,"shuffle":true}'
 # [$ /bin/sh .task.sh]
+# shCryptoTravisEncrypt scrapeitall
 #!! [
     #!! '2017.03.19 swagger-ui-lite',
     #!! '2017.03.28 uglifyjs-lite',
@@ -32,7 +33,7 @@ shInitCustomOrg() {
     fi
         . ./node_modules/utility2/lib.utility2.sh
     shBuildInit
-    eval "$(shTravisCryptoAesDecryptYml "" $GITHUB_ORG)"
+    eval "$(shCryptoTravisDecrypt)"
     utility2 cli.dbTableCustomOrgUpdate "{}"
 }
 
@@ -54,8 +55,9 @@ shTask() {(set -e
 # this function will run the task
     #!! for GITHUB_ORG in npmdoc
     #!! for GITHUB_ORG in npmtest
-    #!! for GITHUB_ORG in npmdoc npmtest
-    for GITHUB_ORG in npmtest npmdoc
+    #!! for GITHUB_ORG in scrapeitall
+    for GITHUB_ORG in npmdoc npmtest
+    #!! for GITHUB_ORG in npmtest npmdoc
     do
         shInitCustomOrg
         #!! export GITHUB_TOKEN_TOKEN="$GITHUB_TOKEN_TOKEN_API"
@@ -67,16 +69,17 @@ shTask() {(set -e
 
 
 
-        #!! shBuildPrint "test custom list"
-        #!! LIST="sandbox2"
-        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
-        #!! printf "$LIST\n"
-        #!! shListUnflattenAndApplyFunction() {(set -e
-            #!! LIST="$1"
-            #!! export TRAVIS_REPO_CREATE_FORCE=1
-            #!! shCustomOrgRepoListCreate "$LIST"
-        #!! )}
-        #!! shListUnflattenAndApply "$LIST" 10
+        shBuildPrint "test custom list"
+        LIST="sandbox2"
+        #!! LIST="xinhuanet.com"
+        LIST="$(shCustomOrgNameNormalize "$LIST")"
+        printf "$LIST\n"
+        shListUnflattenAndApplyFunction() {(set -e
+            LIST="$1"
+            export TRAVIS_REPO_CREATE_FORCE=1
+            shCustomOrgRepoListCreate "$LIST"
+        )}
+        shListUnflattenAndApply "$LIST" 10
 
 
 
@@ -130,15 +133,15 @@ shTask() {(set -e
 
 
 
-        LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
-        LIST="$(shCustomOrgNameNormalize "$LIST")"
-        shBuildPrint "rebuild unpublished starred packages $LIST"
-        shListUnflattenAndApplyFunction() {(set -e
-            LIST="$1"
-            export TRAVIS_REPO_CREATE_FORCE=1
-            shCustomOrgRepoListCreate "$LIST"
-        )}
-        shListUnflattenAndApply "$LIST" 36
+        #!! LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
+        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
+        #!! shBuildPrint "rebuild unpublished starred packages $LIST"
+        #!! shListUnflattenAndApplyFunction() {(set -e
+            #!! LIST="$1"
+            #!! export TRAVIS_REPO_CREATE_FORCE=1
+            #!! shCustomOrgRepoListCreate "$LIST"
+        #!! )}
+        #!! shListUnflattenAndApply "$LIST" 36
 
 
 
@@ -188,7 +191,7 @@ $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
             LIST="$1"
             shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
         )}
-        shListUnflattenAndApply "$LIST" 10
+        shListUnflattenAndApply "$LIST" 8
 
 
 
