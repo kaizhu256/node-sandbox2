@@ -131,7 +131,6 @@ shTask() {(set -e
 
 
         LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
-        shBuildPrint "rebuild unpublished starred packages $LIST"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "rebuild unpublished starred packages $LIST"
         shListUnflattenAndApplyFunction() {(set -e
@@ -173,6 +172,21 @@ shTaskCron() {(set -e
 
 
 
+        shBuildPrint "re-build old builds"
+        LIST=""
+        LIST="$LIST
+$(utility2 dbTableCustomOrgCrudGetManyByQuery \
+    '{"limit":500,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
+        LIST="$(shCustomOrgNameNormalize "$LIST")"
+        printf "$LIST\n"
+        shListUnflattenAndApplyFunction() {(set -e
+            LIST="$1"
+            shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
+        )}
+        shListUnflattenAndApply "$LIST" 10
+
+
+
         LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "shGithubCrudRepoListCreate $LIST"
@@ -190,21 +204,6 @@ shTaskCron() {(set -e
             #!! shCustomOrgRepoListCreate "$LIST"
         #!! )}
         shListUnflattenAndApply "$LIST" 36
-
-
-
-        shBuildPrint "re-build old builds"
-        LIST=""
-        LIST="$LIST
-$(utility2 dbTableCustomOrgCrudGetManyByQuery \
-    '{"limit":500,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
-        LIST="$(shCustomOrgNameNormalize "$LIST")"
-        printf "$LIST\n"
-        shListUnflattenAndApplyFunction() {(set -e
-            LIST="$1"
-            shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
-        )}
-        shListUnflattenAndApply "$LIST" 10
 
 
 
