@@ -55,8 +55,8 @@ shTask() {(set -e
 # this function will run the task
     #!! for GITHUB_ORG in npmdoc
     #!! for GITHUB_ORG in npmtest
-    for GITHUB_ORG in scrapeitall
-    #!! for GITHUB_ORG in npmdoc npmtest
+    #!! for GITHUB_ORG in scrapeitall
+    for GITHUB_ORG in npmdoc npmtest
     #!! for GITHUB_ORG in npmtest npmdoc
     do
         shInitCustomOrg
@@ -71,7 +71,7 @@ shTask() {(set -e
 
         shBuildPrint "test custom list"
         LIST="sandbox2"
-        LIST="xinhuanet.com"
+        #!! LIST="xinhuanet.com"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         printf "$LIST\n"
         shListUnflattenAndApplyFunction() {(set -e
