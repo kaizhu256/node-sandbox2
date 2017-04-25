@@ -470,7 +470,7 @@ shBuildCiAfter() {(set -e
 shBuildCiBefore() {(set -e
     shReadmeTest example.js
     shReadmeTest example.sh
-    shNpmTestPublished
+    #!! shNpmTestPublished
 )}
 
 # run shBuildCi

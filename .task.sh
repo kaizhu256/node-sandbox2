@@ -1,10 +1,10 @@
 # shCryptoAesWithGithubOrg kaizhu256 /bin/sh "$HOME/src/sandbox2/.task.sh"
 # shCryptoAesWithGithubOrg kaizhu256 shTravisTaskPush "$HOME/src/sandbox2/.task.sh"
-# TRAVIS_REPO_CREATE_FORCE=1 shCryptoAesWithGithubOrg npmdoc shCustomOrgRepoListCreate npmdoc/node-npmdoc-sandbox2
-# shCryptoAesWithGithubOrg npmdoc shGithubRepoListTouch npmdoc/node-npmdoc-sandbox2 '[npm publishAfterCommitAfterBuild]'
-# shCryptoAesWithGithubOrg npmdoc utility2 dbTableCustomOrgUpdate '{}'
-# GITHUB_ORG=npmdoc utility2 dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":{"$ne":"passed"}},"shuffle":true}'
-# GITHUB_ORG=npmdoc utility2 dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":"passed"},"limit":1,"shuffle":true}'
+# TRAVIS_REPO_CREATE_FORCE=1 shCryptoAesWithGithubOrg npmtest shCustomOrgRepoListCreate npmtest/node-npmtest-sandbox2
+# shCryptoAesWithGithubOrg npmtest shGithubRepoListTouch npmtest/node-npmtest-sandbox2 '[npm publishAfterCommitAfterBuild]'
+# shCryptoAesWithGithubOrg npmtest utility2 dbTableCustomOrgUpdate '{}'
+# GITHUB_ORG=npmtest utility2 dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":{"$ne":"passed"}},"shuffle":true}'
+# GITHUB_ORG=npmtest utility2 dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":"passed"},"limit":1,"shuffle":true}'
 # [$ /bin/sh .task.sh]
 #!! [
     #!! '2017.03.19 swagger-ui-lite',
@@ -216,7 +216,7 @@ $(utility2 dbTableCustomOrgCrudGetManyByQuery \
         LIST=""
         LIST="$LIST
 $(utility2 dbTableCustomOrgCrudGetManyByQuery \
-    '{"query":{"buildState":{"$nin":["passed","started"]}},"limit":500,"shuffle":true}')"
+    '{"limit":500,"query":{"buildState":{"$nin":["passed","started"]}},"olderThanLast":86400000,"shuffle":true}')"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         printf "$LIST\n"
         shListUnflattenAndApplyFunction() {(set -e
