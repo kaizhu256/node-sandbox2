@@ -1,12 +1,12 @@
-# shCryptoAesWithCustomOrg kaizhu256 /bin/sh "$HOME/src/sandbox2/.task.sh"
-# shCryptoAesWithCustomOrg kaizhu256 shTravisTaskPush "$HOME/src/sandbox2/.task.sh"
-# TRAVIS_REPO_CREATE_FORCE=1 shCryptoAesWithCustomOrg npmtest shCustomOrgRepoListCreate npmtest/node-npmtest-sandbox2
-# shCryptoAesWithCustomOrg npmtest shGithubRepoListTouch npmtest/node-npmtest-sandbox2 '[npm publishAfterCommitAfterBuild]'
-# shCryptoAesWithCustomOrg npmtest utility2 clis.dbTableCustomOrgUpdate '{}'
+# shCryptoWithGithubOrg kaizhu256 /bin/sh "$HOME/src/sandbox2/.task.sh"
+# shCryptoWithGithubOrg kaizhu256 shTravisTaskPush "$HOME/src/sandbox2/.task.sh"
+# TRAVIS_REPO_CREATE_FORCE=1 shCryptoWithGithubOrg npmtest shCustomOrgRepoListCreate npmtest/node-npmtest-sandbox2
+# shCryptoWithGithubOrg npmtest shGithubRepoListTouch npmtest/node-npmtest-sandbox2 '[npm publishAfterCommitAfterBuild]'
+# shCryptoWithGithubOrg npmtest utility2 clis.dbTableCustomOrgUpdate '{}'
 # GITHUB_ORG=npmtest utility2 cli.dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":{"$ne":"passed"}},"shuffle":true}'
 # GITHUB_ORG=npmtest utility2 cli.dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":"passed"},"limit":1,"shuffle":true}'
 # [$ /bin/sh .task.sh]
-# shCryptoAesWithCustomOrg scrapeitall shCryptoAesEncrypt < ~/.ssh/CRYPTO_AES_DECRYPTED_SH_scrapeitall; echo
+# shCryptoTravisEncrypt scrapeitall
 #!! [
     #!! '2017.03.19 swagger-ui-lite',
     #!! '2017.03.28 uglifyjs-lite',
@@ -33,7 +33,7 @@ shInitCustomOrg() {
     fi
         . ./node_modules/utility2/lib.utility2.sh
     shBuildInit
-    eval "$(shCryptoAesDecryptTravis "" $GITHUB_ORG)"
+    eval "$(shCryptoTravisDecrypt)"
     utility2 cli.dbTableCustomOrgUpdate "{}"
 }
 
