@@ -58,7 +58,7 @@ shTask() {(set -e
     for GITHUB_ORG in npmtest npmdoc
     do
         shInitCustomOrg
-        export GITHUB_TOKEN_TOKEN="$GITHUB_TOKEN_TOKEN_API"
+        #!! export GITHUB_TOKEN_TOKEN="$GITHUB_TOKEN_TOKEN_API"
         if [ ! "$GITHUB_TOKEN" ]
         then
             shBuildPrint "no GITHUB_TOKEN"
@@ -153,6 +153,11 @@ shTaskCron() {(set -e
     for GITHUB_ORG in npmtest npmdoc
     do
         shInitCustomOrg
+        if [ ! "$GITHUB_TOKEN" ]
+        then
+            shBuildPrint "no GITHUB_TOKEN"
+            return 1
+        fi
 
 
 
