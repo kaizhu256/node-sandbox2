@@ -31,8 +31,8 @@ shInitCustomOrg() {
         ln -fs "$HOME/node_modules"
     fi
         . ./node_modules/utility2/lib.utility2.sh
-    eval "$(shTravisCryptoAesDecryptYml "" $GITHUB_ORG)"
     shBuildInit
+    eval "$(shTravisCryptoAesDecryptYml "" $GITHUB_ORG)"
     utility2 dbTableCustomOrgUpdate "{}"
 }
 
@@ -130,7 +130,7 @@ shTask() {(set -e
 
 
 
-        LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
+        LIST="$(utility2 cli.customOrgStarFilterNotBuilt 4900 5000)"
         shBuildPrint "rebuild unpublished starred packages $LIST"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "rebuild unpublished starred packages $LIST"
@@ -173,6 +173,21 @@ shTaskCron() {(set -e
 
 
 
+        shBuildPrint "re-build old builds"
+        LIST=""
+        LIST="$LIST
+$(utility2 dbTableCustomOrgCrudGetManyByQuery \
+    '{"limit":500,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
+        LIST="$(shCustomOrgNameNormalize "$LIST")"
+        printf "$LIST\n"
+        shListUnflattenAndApplyFunction() {(set -e
+            LIST="$1"
+            shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
+        )}
+        shListUnflattenAndApply "$LIST" 10
+
+
+
         LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "shGithubCrudRepoListCreate $LIST"
@@ -193,34 +208,19 @@ shTaskCron() {(set -e
 
 
 
-        shBuildPrint "re-build old builds"
+        shBuildPrint "re-build non-passed builds"
         LIST=""
         LIST="$LIST
 $(utility2 dbTableCustomOrgCrudGetManyByQuery \
-    '{"limit":500,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
+    '{"query":{"buildState":{"$nin":["passed","started"]}},"limit":500,"shuffle":true}')"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         printf "$LIST\n"
         shListUnflattenAndApplyFunction() {(set -e
             LIST="$1"
-            shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
+            export TRAVIS_REPO_CREATE_FORCE=1
+            shCustomOrgRepoListCreate "$LIST"
         )}
         shListUnflattenAndApply "$LIST" 10
-
-
-
-        #!! shBuildPrint "re-build non-passed builds"
-        #!! LIST=""
-        #!! LIST="$LIST
-#!! $(utility2 dbTableCustomOrgCrudGetManyByQuery \
-    #!! '{"query":{"buildState":{"$nin":["passed","started"]}},"limit":500,"shuffle":true}')"
-        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
-        #!! printf "$LIST\n"
-        #!! shListUnflattenAndApplyFunction() {(set -e
-            #!! LIST="$1"
-            #!! export TRAVIS_REPO_CREATE_FORCE=1
-            #!! shCustomOrgRepoListCreate "$LIST"
-        #!! )}
-        #!! shListUnflattenAndApply "$LIST" 10
 
 
 
