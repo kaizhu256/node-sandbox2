@@ -130,7 +130,7 @@ shTask() {(set -e
 
 
 
-        LIST="$(utility2 cli.customOrgStarFilterNotBuilt 4900 5000)"
+        LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
         shBuildPrint "rebuild unpublished starred packages $LIST"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "rebuild unpublished starred packages $LIST"
