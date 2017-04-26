@@ -81,7 +81,51 @@ sandbox3
             cd "$(printf "$GITHUB_REPO" | sed -e "s/.*\///")"
             shBuildCiUnset
             npm install
+            printf "$(shDateIso)\n" > touch.txt
+            git add .
+            git commit -m "[npm publishAfterCommitAfterBuild]"
             npm run build-ci
+
+            continue
+
+            shBuildInit
+            if [ "$npm_package_buildCustomOrg" ]
+            then
+                shBuildPrint "customOrg $npm_package_buildCustomOrg"
+
+    shBuildInit
+    # init travis-ci.org env
+    if [ "$TRAVIS" ]
+    then
+        export CI_BRANCH="${CI_BRANCH:-$TRAVIS_BRANCH}" || return $?
+        export CI_HOST="${CI_HOST:-travis-ci.org}" || return $?
+    fi
+    # init default env
+    export CI_BRANCH="${CI_BRANCH:-alpha}" || return $?
+    export CI_COMMIT_ID="${CI_BRANCH:-(git rev-parse --verify HEAD)}" || return $?
+    export CI_HOST="${CI_HOST:-127.0.0.1}" || return $?
+    # save $CI_BRANCH
+    export CI_BRANCH_OLD="${CI_BRANCH_OLD:-$CI_BRANCH}" || return $?
+    # init $CI_COMMIT_*
+    export CI_COMMIT_MESSAGE="$(git log -1 --pretty=%s)" || return $?
+    export CI_COMMIT_INFO="$CI_COMMIT_ID - $CI_COMMIT_MESSAGE" || return $?
+    export CI_COMMIT_MESSAGE_META="$(printf "#$CI_COMMIT_MESSAGE" \
+        | sed -e "s/.*\(\[.*\]\).*/\1/")" || return $?
+    # decrypt and exec encrypted data
+    if [ "$CRYPTO_AES_KEY" ]
+    then
+        eval "$(shCryptoTravisDecrypt)"
+    fi
+    # init git config
+    if (! git config user.email > /dev/null 2>&1)
+    then
+        git config --global user.email nobody
+        git config --global user.name nobody
+    fi
+    shBuildPrint "$CI_COMMIT_MESSAGE_META"
+
+
+            fi
             )
         done
         #!! shListUnflattenAndApplyFunction() {(set -e
