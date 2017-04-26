@@ -70,142 +70,14 @@ shTask() {(set -e
 
         LIST=""
         LIST="$LIST
+sandbox2
 sandbox3
 "
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "re-build custom list $LIST"
         for GITHUB_REPO in $LIST
         do
-            (
-            git clone --depth=50 --branch=alpha https://github.com/$GITHUB_REPO
-            cd "$(printf "$GITHUB_REPO" | sed -e "s/.*\///")"
-            shBuildCiUnset
-            npm install
-            printf "$(shDateIso)\n" > touch.txt
-            git add .
-            git commit -m "[npm publishAfterCommitAfterBuild]"
-            export CI_BRANCH=alpha
-            npm run build-ci
-
-            continue
-
-            shBuildInit
-            if [ "$npm_package_buildCustomOrg" ]
-            then
-                shBuildPrint "customOrg $npm_package_buildCustomOrg"
-
-    shBuildInit
-    # init travis-ci.org env
-    if [ "$TRAVIS" ]
-    then
-        export CI_BRANCH="${CI_BRANCH:-$TRAVIS_BRANCH}" || return $?
-        export CI_HOST="${CI_HOST:-travis-ci.org}" || return $?
-    fi
-    # init default env
-    export CI_BRANCH="${CI_BRANCH:-alpha}" || return $?
-    export CI_COMMIT_ID="${CI_BRANCH:-(git rev-parse --verify HEAD)}" || return $?
-    export CI_HOST="${CI_HOST:-127.0.0.1}" || return $?
-    # save $CI_BRANCH
-    export CI_BRANCH_OLD="${CI_BRANCH_OLD:-$CI_BRANCH}" || return $?
-    # init $CI_COMMIT_*
-    export CI_COMMIT_MESSAGE="$(git log -1 --pretty=%s)" || return $?
-    export CI_COMMIT_INFO="$CI_COMMIT_ID - $CI_COMMIT_MESSAGE" || return $?
-    export CI_COMMIT_MESSAGE_META="$(printf "#$CI_COMMIT_MESSAGE" \
-        | sed -e "s/.*\(\[.*\]\).*/\1/")" || return $?
-    # decrypt and exec encrypted data
-    if [ "$CRYPTO_AES_KEY" ]
-    then
-        eval "$(shCryptoTravisDecrypt)"
-    fi
-    # init git config
-    if (! git config user.email > /dev/null 2>&1)
-    then
-        git config --global user.email nobody
-        git config --global user.name nobody
-    fi
-
-
-
-    shBuildPrint "$CI_BRANCH"
-    shBuildPrint "$CI_COMMIT_MESSAGE_META"
-
-
-    case "$CI_BRANCH" in
-    alpha)
-        case "$CI_COMMIT_MESSAGE_META" in
-        "[npm publishAfterCommit]")
-            return
-            ;;
-        "[npm publishAfterCommitAfterBuild]")
-
-
-shBuildPrint 'asldfjdslfjskljflsjfsaldksf'
-
-            if [ ! "$GITHUB_TOKEN" ]
-            then
-                shBuildPrint "no GITHUB_TOKEN"
-                return 1
-            fi
-            shBuildCiInternal
-            ;;
-        *)
-            shBuildCiInternal
-            ;;
-        esac
-        ;;
-    beta)
-        shBuildCiInternal
-        ;;
-    cron)
-        if [ -f .task.sh ]
-        then
-            /bin/sh .task.sh
-        fi
-        ;;
-    docker.base)
-        export CI_BRANCH=alpha
-        shBuildCiInternal
-        ;;
-    docker.latest)
-        export CI_BRANCH=alpha
-        shBuildCiInternal
-        ;;
-    master)
-        shBuildCiInternal
-        ;;
-    publish)
-        export CI_BRANCH=alpha
-        # init .npmrc
-        printf "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > "$HOME/.npmrc"
-        (eval shNpmPublishAlias) || true
-        # security - cleanup .npmrc
-        rm "$HOME/.npmrc"
-        case "$CI_COMMIT_MESSAGE_META" in
-        "[npm publishAfterCommit]")
-            shGitSquashPop HEAD~1 "[ci skip] npm published"
-            shGithubPush -f "https://github.com/$GITHUB_REPO" HEAD:alpha
-            return
-            ;;
-        *)
-            sleep 5
-            shBuildCiInternal
-            ;;
-        esac
-        ;;
-    task)
-        case "$CI_COMMIT_MESSAGE_META" in
-        \[\$\ *\])
-            eval "$(printf "$CI_COMMIT_MESSAGE_META" | sed -e s/^...// -e s/.\$//)"
-            ;;
-        esac
-        return
-        ;;
-    esac
-
-
-
-            fi
-            )
+            shCustomOrgBuildCi "$GITHUB_REPO"
         done
         #!! shListUnflattenAndApplyFunction() {(set -e
             #!! LIST="$1"
