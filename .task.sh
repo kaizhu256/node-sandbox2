@@ -79,7 +79,7 @@ shTask() {(set -e
             export TRAVIS_REPO_CREATE_FORCE=1
             shCustomOrgRepoListCreate "$LIST"
         )}
-        shListUnflattenAndApply "$LIST" 10
+        shListUnflattenAndApply "$LIST"
 
 
 
@@ -95,7 +95,7 @@ shTask() {(set -e
             #!! export TRAVIS_REPO_CREATE_FORCE=1
             #!! shCustomOrgRepoListCreate "$LIST"
         #!! )}
-        #!! shListUnflattenAndApply "$LIST" 10
+        #!! shListUnflattenAndApply "$LIST"
 
 
 
@@ -110,7 +110,7 @@ shTask() {(set -e
             #!! LIST="$1"
             #!! shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
         #!! )}
-        #!! shListUnflattenAndApply "$LIST" 10
+        #!! shListUnflattenAndApply "$LIST"
 
 
 
@@ -129,7 +129,7 @@ shTask() {(set -e
             #!! export TRAVIS_REPO_CREATE_FORCE=1
             #!! shCustomOrgRepoListCreate "$LIST"
         #!! )}
-        #!! shListUnflattenAndApply "$LIST" 10
+        #!! shListUnflattenAndApply "$LIST"
 
 
 
@@ -141,7 +141,7 @@ shTask() {(set -e
             #!! export TRAVIS_REPO_CREATE_FORCE=1
             #!! shCustomOrgRepoListCreate "$LIST"
         #!! )}
-        #!! shListUnflattenAndApply "$LIST" 36
+        #!! shListUnflattenAndApply "$LIST"
 
 
 
@@ -176,7 +176,7 @@ shTaskCron() {(set -e
             #!! export TRAVIS_REPO_CREATE_FORCE=1
             #!! shCustomOrgRepoListCreate "$LIST"
         #!! )}
-        #!! shListUnflattenAndApply "$LIST" 10
+        #!! shListUnflattenAndApply "$LIST"
 
 
 
@@ -187,11 +187,10 @@ $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "re-build old builds $LIST"
         shListUnflattenAndApplyFunction() {(set -e
-            sleep 1
             LIST="$1"
             shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
         )}
-        shListUnflattenAndApply "$LIST" 8
+        shListUnflattenAndApply "$LIST"
 
 
 
@@ -199,20 +198,22 @@ $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "shGithubCrudRepoListCreate $LIST"
         shListUnflattenAndApplyFunction() {(set -e
-            sleep 1
             LIST="$1"
             shGithubCrudRepoListCreate "$LIST"
         )}
-        shListUnflattenAndApply "$LIST" 8
+        shListUnflattenAndApply "$LIST"
         shTravisSync
         shSleep 30
+
+
+
         shBuildPrint "rebuild unpublished starred packages $LIST"
         shListUnflattenAndApplyFunction() {(set -e
             LIST="$1"
             export TRAVIS_REPO_CREATE_FORCE=1
             shCustomOrgRepoListCreate "$LIST"
         )}
-        shListUnflattenAndApply "$LIST" 36
+        shListUnflattenAndApply "$LIST"
 
 
 
