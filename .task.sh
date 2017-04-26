@@ -68,25 +68,6 @@ shTask() {(set -e
 
 
 
-        #!! LIST=""
-        #!! LIST="$LIST
-#!! sandbox2
-#!! sandbox3
-#!! "
-        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
-        #!! shBuildPrint "re-build custom list $LIST"
-        #!! for GITHUB_REPO in $LIST
-        #!! do
-            #!! (eval shCustomOrgBuildCi "$GITHUB_REPO") || true
-        #!! done
-        #!! shListUnflattenAndApplyFunction() {(set -e
-            #!! LIST="$1"
-            #!! shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
-        #!! )}
-        #!! shListUnflattenAndApply "$LIST"
-
-
-
         #!! shBuildPrint "test custom list"
         #!! LIST="sandbox2"
         #!! #!! LIST="xinhuanet.com"
@@ -120,8 +101,7 @@ shTask() {(set -e
         LIST=""
         LIST="$LIST
 $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
-    '{"limit":2,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
-        LIST="mysql"
+    '{"limit":10,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "re-build old passed builds $LIST"
         for GITHUB_REPO in $LIST
