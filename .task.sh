@@ -70,18 +70,20 @@ shTask() {(set -e
 
         LIST=""
         LIST="$LIST
-sandbox2
+#!! sandbox2
 sandbox3
 "
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "re-build custom list $LIST"
         for GITHUB_REPO in $LIST
         do
+            (
             git clone --depth=50 --branch=alpha https://github.com/$GITHUB_REPO
             cd "$(printf "$GITHUB_REPO" | sed -e "s/.*\///")"
             shBuildCiUnset
             npm install
             npm run build-ci
+            )
         done
         #!! shListUnflattenAndApplyFunction() {(set -e
             #!! LIST="$1"
