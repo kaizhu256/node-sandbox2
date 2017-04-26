@@ -52,10 +52,10 @@ shMain() {(set -e
 
 shTask() {(set -e
 # this function will run the task
-    #!! for GITHUB_ORG in npmdoc
+    for GITHUB_ORG in npmdoc
     #!! for GITHUB_ORG in npmtest
     #!! for GITHUB_ORG in scrapeitall
-    for GITHUB_ORG in npmdoc npmtest
+    #!! for GITHUB_ORG in npmdoc npmtest
     #!! for GITHUB_ORG in npmtest npmdoc
     do
         shInitCustomOrg
@@ -74,11 +74,11 @@ sandbox2
 sandbox3
 "
         LIST="$(shCustomOrgNameNormalize "$LIST")"
-        shBuildPrint "re-build old builds $LIST"
+        shBuildPrint "re-build custom list $LIST"
         for GITHUB_REPO in $LIST
         do
             git clone --depth=50 --branch=alpha https://github.com/$GITHUB_REPO
-            cd "$GITHUB_REPO"
+            cd "$(printf "$GITHUB_REPO" | sed -e "s/.*\///")"
             shBuildCiUnset
             npm install
             npm run build-ci
