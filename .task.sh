@@ -84,9 +84,9 @@ sandbox3
             printf "$(shDateIso)\n" > touch.txt
             git add .
             git commit -m "[npm publishAfterCommitAfterBuild]"
-            npm run build-ci
+            #!! npm run build-ci
 
-            continue
+            #!! continue
 
             shBuildInit
             if [ "$npm_package_buildCustomOrg" ]
@@ -122,7 +122,52 @@ sandbox3
         git config --global user.email nobody
         git config --global user.name nobody
     fi
+
+
+
     shBuildPrint "$CI_COMMIT_MESSAGE_META"
+
+
+    case "$CI_BRANCH" in
+    alpha)
+        case "$CI_COMMIT_MESSAGE_META" in
+        "[npm publish]")
+            shGithubPush "https://github.com/$GITHUB_REPO" HEAD:publish
+            ;;
+        "[npm publishAfterCommitAfterBuild]")
+            # use date-semver
+            shFilePackageJsonVersionIncrement "$(shDateIso | sed -e "s/-0*/./g" -e "s/T.*//")"
+            printf "$(shDateIso)\n" > touch.txt
+            git add .
+            git commit -am "[npm publishAfterCommit]"
+            export CI_BRANCH=publish
+            export CI_BRANCH_OLD=publish
+            export CI_COMMIT_ID="$(git rev-parse --verify HEAD)"
+            find node_modules -name .git -print0 | xargs -0 rm -fr
+            npm run build-ci
+            ;;
+        esac
+        ;;
+    beta)
+        ;;
+    master)
+        git tag "$npm_package_version" || true
+        shGithubPush "https://github.com/$GITHUB_REPO" "$npm_package_version" || true
+        ;;
+    publish)
+        # init .npmrc
+        printf "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > "$HOME/.npmrc"
+        shNpmPublishAliasList . "$npm_package_nameAliasPublish"
+        sleep 5
+        shNpmTestPublishedList "$npm_package_nameAliasPublish"
+        sleep 5
+        shNpmDeprecateAliasList "$npm_package_nameAliasDeprecate"
+        # security - cleanup .npmrc
+        rm "$HOME/.npmrc"
+        shGithubPush "https://github.com/$GITHUB_REPO" HEAD:beta
+        ;;
+    esac
+
 
 
             fi
