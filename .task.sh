@@ -125,6 +125,7 @@ sandbox3
 
 
 
+    shBuildPrint "$CI_BRANCH"
     shBuildPrint "$CI_COMMIT_MESSAGE_META"
 
 
