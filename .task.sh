@@ -33,7 +33,7 @@ shInitCustomOrg() {
     . "$HOME/node_modules/utility2/lib.utility2.sh"
     shBuildInit
     eval "$(shCryptoTravisDecrypt)"
-    #!! utility2 cli.dbTableCustomOrgUpdate
+    utility2 cli.dbTableCustomOrgUpdate
 }
 
 shMain() {(set -e
@@ -68,17 +68,17 @@ shTask() {(set -e
 
 
 
-        LIST=""
-        LIST="$LIST
-sandbox2
-sandbox3
-"
-        LIST="$(shCustomOrgNameNormalize "$LIST")"
-        shBuildPrint "re-build custom list $LIST"
-        for GITHUB_REPO in $LIST
-        do
-            shCustomOrgBuildCi "$GITHUB_REPO"
-        done
+        #!! LIST=""
+        #!! LIST="$LIST
+#!! sandbox2
+#!! sandbox3
+#!! "
+        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
+        #!! shBuildPrint "re-build custom list $LIST"
+        #!! for GITHUB_REPO in $LIST
+        #!! do
+            #!! (eval shCustomOrgBuildCi "$GITHUB_REPO") || true
+        #!! done
         #!! shListUnflattenAndApplyFunction() {(set -e
             #!! LIST="$1"
             #!! shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
@@ -117,18 +117,16 @@ sandbox3
 
 
 
-        #!! shBuildPrint "re-build old builds"
-        #!! LIST=""
-        #!! LIST="$LIST
-#!! $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
-    #!! '{"limit":500,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
-        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
-        #!! printf "$LIST\n"
-        #!! shListUnflattenAndApplyFunction() {(set -e
-            #!! LIST="$1"
-            #!! shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
-        #!! )}
-        #!! shListUnflattenAndApply "$LIST"
+        LIST=""
+        LIST="$LIST
+$(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
+    '{"limit":2,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
+        LIST="$(shCustomOrgNameNormalize "$LIST")"
+        shBuildPrint "re-build old passed builds $LIST"
+        for GITHUB_REPO in $LIST
+        do
+            shCustomOrgBuildCi "$GITHUB_REPO"
+        done
 
 
 
