@@ -84,9 +84,10 @@ sandbox3
             printf "$(shDateIso)\n" > touch.txt
             git add .
             git commit -m "[npm publishAfterCommitAfterBuild]"
-            #!! npm run build-ci
+            export CI_BRANCH=alpha
+            npm run build-ci
 
-            #!! continue
+            continue
 
             shBuildInit
             if [ "$npm_package_buildCustomOrg" ]
