@@ -180,14 +180,14 @@ shTaskCron() {(set -e
 
 
 
-        shBuildPrint "re-build old builds"
         LIST=""
         LIST="$LIST
 $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
     '{"limit":500,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
-        printf "$LIST\n"
+        shBuildPrint "re-build old builds $LIST"
         shListUnflattenAndApplyFunction() {(set -e
+            sleep 1
             LIST="$1"
             shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
         )}
@@ -199,10 +199,13 @@ $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "shGithubCrudRepoListCreate $LIST"
         shListUnflattenAndApplyFunction() {(set -e
+            sleep 1
             LIST="$1"
             shGithubCrudRepoListCreate "$LIST"
         )}
-        shListUnflattenAndApply "$LIST" 36
+        shListUnflattenAndApply "$LIST" 8
+        shTravisSync
+        shSleep 30
         shBuildPrint "rebuild unpublished starred packages $LIST"
         shListUnflattenAndApplyFunction() {(set -e
             LIST="$1"
@@ -210,18 +213,15 @@ $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
             shCustomOrgRepoListCreate "$LIST"
         )}
         shListUnflattenAndApply "$LIST" 36
-        shSleep 30
-        shTravisSync
 
 
 
-        shBuildPrint "re-build non-passed builds"
         LIST=""
         LIST="$LIST
 $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
     '{"limit":500,"query":{"buildState":{"$nin":["passed","started"]}},"olderThanLast":86400000,"shuffle":true}')"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
-        printf "$LIST\n"
+        shBuildPrint "re-build non-passed builds $LIST"
         shListUnflattenAndApplyFunction() {(set -e
             LIST="$1"
             export TRAVIS_REPO_CREATE_FORCE=1
