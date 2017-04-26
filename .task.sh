@@ -83,7 +83,7 @@ sandbox3
             npm install
             printf "$(shDateIso)\n" > touch.txt
             git add .
-            commit -m "[npm publishAfterCommitAfterBuild]"
+            git commit -m "[npm publishAfterCommitAfterBuild]"
             npm run build-ci
 
             continue
