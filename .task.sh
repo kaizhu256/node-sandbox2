@@ -132,40 +132,72 @@ sandbox3
     case "$CI_BRANCH" in
     alpha)
         case "$CI_COMMIT_MESSAGE_META" in
-        "[npm publish]")
-            shGithubPush "https://github.com/$GITHUB_REPO" HEAD:publish
+        "[npm publishAfterCommit]")
+            return
             ;;
         "[npm publishAfterCommitAfterBuild]")
-            # use date-semver
-            shFilePackageJsonVersionIncrement "$(shDateIso | sed -e "s/-0*/./g" -e "s/T.*//")"
-            printf "$(shDateIso)\n" > touch.txt
-            git add .
-            git commit -am "[npm publishAfterCommit]"
-            export CI_BRANCH=publish
-            export CI_BRANCH_OLD=publish
-            export CI_COMMIT_ID="$(git rev-parse --verify HEAD)"
-            find node_modules -name .git -print0 | xargs -0 rm -fr
-            npm run build-ci
+
+
+shBuildPrint 'asldfjdslfjskljflsjfsaldksf'
+
+            if [ ! "$GITHUB_TOKEN" ]
+            then
+                shBuildPrint "no GITHUB_TOKEN"
+                return 1
+            fi
+            shBuildCiInternal
+            ;;
+        *)
+            shBuildCiInternal
             ;;
         esac
         ;;
     beta)
+        shBuildCiInternal
+        ;;
+    cron)
+        if [ -f .task.sh ]
+        then
+            /bin/sh .task.sh
+        fi
+        ;;
+    docker.base)
+        export CI_BRANCH=alpha
+        shBuildCiInternal
+        ;;
+    docker.latest)
+        export CI_BRANCH=alpha
+        shBuildCiInternal
         ;;
     master)
-        git tag "$npm_package_version" || true
-        shGithubPush "https://github.com/$GITHUB_REPO" "$npm_package_version" || true
+        shBuildCiInternal
         ;;
     publish)
+        export CI_BRANCH=alpha
         # init .npmrc
         printf "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > "$HOME/.npmrc"
-        shNpmPublishAliasList . "$npm_package_nameAliasPublish"
-        sleep 5
-        shNpmTestPublishedList "$npm_package_nameAliasPublish"
-        sleep 5
-        shNpmDeprecateAliasList "$npm_package_nameAliasDeprecate"
+        (eval shNpmPublishAlias) || true
         # security - cleanup .npmrc
         rm "$HOME/.npmrc"
-        shGithubPush "https://github.com/$GITHUB_REPO" HEAD:beta
+        case "$CI_COMMIT_MESSAGE_META" in
+        "[npm publishAfterCommit]")
+            shGitSquashPop HEAD~1 "[ci skip] npm published"
+            shGithubPush -f "https://github.com/$GITHUB_REPO" HEAD:alpha
+            return
+            ;;
+        *)
+            sleep 5
+            shBuildCiInternal
+            ;;
+        esac
+        ;;
+    task)
+        case "$CI_COMMIT_MESSAGE_META" in
+        \[\$\ *\])
+            eval "$(printf "$CI_COMMIT_MESSAGE_META" | sed -e s/^...// -e s/.\$//)"
+            ;;
+        esac
+        return
         ;;
     esac
 
