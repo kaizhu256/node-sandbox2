@@ -81,7 +81,13 @@ sandbox3
             cd "$(printf "$GITHUB_REPO" | sed -e "s/.*\///")"
             shBuildCiUnset
             npm install
-            npm run build-ci
+            #!! npm run build-ci
+            shBuildInit
+            if [ "$npm_package_buildCustomOrg" ]
+            then
+                shBuildPrint "$npm_package_buildCustomOrg"
+                shBuildCi
+            fi
             )
         done
         #!! shListUnflattenAndApplyFunction() {(set -e
