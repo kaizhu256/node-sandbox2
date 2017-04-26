@@ -81,7 +81,13 @@ sandbox3
             cd "$(printf "$GITHUB_REPO" | sed -e "s/.*\///")"
             shBuildCiUnset
             npm install
-            #!! npm run build-ci
+            printf "$(shDateIso)\n" > touch.txt
+            git add .
+            commit -m "[npm publishAfterCommitAfterBuild]"
+            npm run build-ci
+
+            continue
+
             shBuildInit
             if [ "$npm_package_buildCustomOrg" ]
             then
