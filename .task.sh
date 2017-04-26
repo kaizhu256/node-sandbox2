@@ -52,10 +52,10 @@ shMain() {(set -e
 
 shTask() {(set -e
 # this function will run the task
-    for GITHUB_ORG in npmdoc
+    #!! for GITHUB_ORG in npmdoc
     #!! for GITHUB_ORG in npmtest
     #!! for GITHUB_ORG in scrapeitall
-    #!! for GITHUB_ORG in npmdoc npmtest
+    for GITHUB_ORG in npmdoc npmtest
     #!! for GITHUB_ORG in npmtest npmdoc
     do
         shInitCustomOrg
@@ -121,6 +121,7 @@ shTask() {(set -e
         LIST="$LIST
 $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
     '{"limit":2,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
+        LIST="mysql"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "re-build old passed builds $LIST"
         for GITHUB_REPO in $LIST
