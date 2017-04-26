@@ -33,7 +33,7 @@ shInitCustomOrg() {
     . "$HOME/node_modules/utility2/lib.utility2.sh"
     shBuildInit
     eval "$(shCryptoTravisDecrypt)"
-    utility2 cli.dbTableCustomOrgUpdate
+    #!! utility2 cli.dbTableCustomOrgUpdate
 }
 
 shMain() {(set -e
@@ -70,7 +70,6 @@ shTask() {(set -e
 
         LIST=""
         LIST="$LIST
-#!! sandbox2
 sandbox3
 "
         LIST="$(shCustomOrgNameNormalize "$LIST")"
