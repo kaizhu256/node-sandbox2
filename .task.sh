@@ -98,16 +98,30 @@ shTask() {(set -e
 
 
 
+        #!! LIST=""
+        #!! LIST="$LIST
+#!! $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
+    #!! '{"limit":10,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
+        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
+        #!! shBuildPrint "re-build old passed builds $LIST"
+        #!! for GITHUB_REPO in $LIST
+        #!! do
+            #!! shCustomOrgBuildCi "$GITHUB_REPO"
+        #!! done
+
+
+
         LIST=""
         LIST="$LIST
 $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
-    '{"limit":10,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
+    '{"limit":1,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
-        shBuildPrint "re-build old passed builds $LIST"
-        for GITHUB_REPO in $LIST
-        do
-            shCustomOrgBuildCi "$GITHUB_REPO"
-        done
+        shBuildPrint "re-build old, passed-builds $LIST"
+        shListUnflattenAndApplyFunction() {(set -e
+            LIST="$1"
+            shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
+        )}
+        shListUnflattenAndApply "$LIST"
 
 
 
@@ -182,7 +196,7 @@ shTaskCron() {(set -e
 $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
     '{"limit":500,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
-        shBuildPrint "re-build old builds $LIST"
+        shBuildPrint "re-build old, passed-builds $LIST"
         shListUnflattenAndApplyFunction() {(set -e
             LIST="$1"
             shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
@@ -192,6 +206,9 @@ $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
 
 
         LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
+
+
+
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "shGithubCrudRepoListCreate $LIST"
         shListUnflattenAndApplyFunction() {(set -e
