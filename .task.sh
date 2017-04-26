@@ -33,7 +33,7 @@ shInitCustomOrg() {
     . "$HOME/node_modules/utility2/lib.utility2.sh"
     shBuildInit
     eval "$(shCryptoTravisDecrypt)"
-    #!! utility2 cli.dbTableCustomOrgUpdate
+    utility2 cli.dbTableCustomOrgUpdate
 }
 
 shMain() {(set -e
@@ -68,66 +68,17 @@ shTask() {(set -e
 
 
 
-        LIST=""
-        LIST="$LIST
-sandbox3
-"
-        LIST="$(shCustomOrgNameNormalize "$LIST")"
-        shBuildPrint "re-build custom list $LIST"
-        for GITHUB_REPO in $LIST
-        do
-            (
-            git clone --depth=50 --branch=alpha https://github.com/$GITHUB_REPO
-            cd "$(printf "$GITHUB_REPO" | sed -e "s/.*\///")"
-            shBuildCiUnset
-            npm install
-            printf "$(shDateIso)\n" > touch.txt
-            git add .
-            git commit -m "[npm publishAfterCommitAfterBuild]"
-            npm run build-ci
-
-            continue
-
-            shBuildInit
-            if [ "$npm_package_buildCustomOrg" ]
-            then
-                shBuildPrint "customOrg $npm_package_buildCustomOrg"
-
-    shBuildInit
-    # init travis-ci.org env
-    if [ "$TRAVIS" ]
-    then
-        export CI_BRANCH="${CI_BRANCH:-$TRAVIS_BRANCH}" || return $?
-        export CI_HOST="${CI_HOST:-travis-ci.org}" || return $?
-    fi
-    # init default env
-    export CI_BRANCH="${CI_BRANCH:-alpha}" || return $?
-    export CI_COMMIT_ID="${CI_BRANCH:-(git rev-parse --verify HEAD)}" || return $?
-    export CI_HOST="${CI_HOST:-127.0.0.1}" || return $?
-    # save $CI_BRANCH
-    export CI_BRANCH_OLD="${CI_BRANCH_OLD:-$CI_BRANCH}" || return $?
-    # init $CI_COMMIT_*
-    export CI_COMMIT_MESSAGE="$(git log -1 --pretty=%s)" || return $?
-    export CI_COMMIT_INFO="$CI_COMMIT_ID - $CI_COMMIT_MESSAGE" || return $?
-    export CI_COMMIT_MESSAGE_META="$(printf "#$CI_COMMIT_MESSAGE" \
-        | sed -e "s/.*\(\[.*\]\).*/\1/")" || return $?
-    # decrypt and exec encrypted data
-    if [ "$CRYPTO_AES_KEY" ]
-    then
-        eval "$(shCryptoTravisDecrypt)"
-    fi
-    # init git config
-    if (! git config user.email > /dev/null 2>&1)
-    then
-        git config --global user.email nobody
-        git config --global user.name nobody
-    fi
-    shBuildPrint "$CI_COMMIT_MESSAGE_META"
-
-
-            fi
-            )
-        done
+        #!! LIST=""
+        #!! LIST="$LIST
+#!! sandbox2
+#!! sandbox3
+#!! "
+        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
+        #!! shBuildPrint "re-build custom list $LIST"
+        #!! for GITHUB_REPO in $LIST
+        #!! do
+            #!! (eval shCustomOrgBuildCi "$GITHUB_REPO") || true
+        #!! done
         #!! shListUnflattenAndApplyFunction() {(set -e
             #!! LIST="$1"
             #!! shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
@@ -166,18 +117,16 @@ sandbox3
 
 
 
-        #!! shBuildPrint "re-build old builds"
-        #!! LIST=""
-        #!! LIST="$LIST
-#!! $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
-    #!! '{"limit":500,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
-        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
-        #!! printf "$LIST\n"
-        #!! shListUnflattenAndApplyFunction() {(set -e
-            #!! LIST="$1"
-            #!! shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
-        #!! )}
-        #!! shListUnflattenAndApply "$LIST"
+        LIST=""
+        LIST="$LIST
+$(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
+    '{"limit":2,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
+        LIST="$(shCustomOrgNameNormalize "$LIST")"
+        shBuildPrint "re-build old passed builds $LIST"
+        for GITHUB_REPO in $LIST
+        do
+            shCustomOrgBuildCi "$GITHUB_REPO"
+        done
 
 
 
