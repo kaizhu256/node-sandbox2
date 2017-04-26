@@ -2,7 +2,7 @@
 # shCryptoWithGithubOrg kaizhu256 shTravisTaskPush "$HOME/src/sandbox2/.task.sh"
 # TRAVIS_REPO_CREATE_FORCE=1 shCryptoWithGithubOrg npmtest shCustomOrgRepoListCreate npmtest/node-npmtest-sandbox2
 # shCryptoWithGithubOrg npmtest shGithubRepoListTouch npmtest/node-npmtest-sandbox2 '[npm publishAfterCommitAfterBuild]'
-# shCryptoWithGithubOrg npmtest utility2 clis.dbTableCustomOrgUpdate '{}'
+# shCryptoWithGithubOrg npmtest utility2 clis.dbTableCustomOrgUpdate
 # GITHUB_ORG=npmtest utility2 cli.dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":{"$ne":"passed"}},"shuffle":true}'
 # GITHUB_ORG=npmtest utility2 cli.dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":"passed"},"limit":1,"shuffle":true}'
 # [$ /bin/sh .task.sh]
@@ -24,17 +24,16 @@ shInitCustomOrg() {
     export GITHUB_ORG="$GITHUB_ORG"
     unset GITHUB_REPO
     unset npm_package_buildCustomOrg
-    cd /tmp
     if [ "$TRAVIS" ]
     then
-        npm install "kaizhu256/node-utility2#alpha"
-    else
-        ln -fs "$HOME/node_modules"
+        (cd "$HOME" && npm install "kaizhu256/node-utility2#alpha")
     fi
-        . ./node_modules/utility2/lib.utility2.sh
+    DIR=/tmp/.task
+    rm -fr "$DIR" && mkdir -p "$DIR" && cd "$DIR"
+    . "$HOME/node_modules/utility2/lib.utility2.sh"
     shBuildInit
     eval "$(shCryptoTravisDecrypt)"
-    utility2 cli.dbTableCustomOrgUpdate "{}"
+    #!! utility2 cli.dbTableCustomOrgUpdate
 }
 
 shMain() {(set -e
@@ -53,10 +52,10 @@ shMain() {(set -e
 
 shTask() {(set -e
 # this function will run the task
-    #!! for GITHUB_ORG in npmdoc
+    for GITHUB_ORG in npmdoc
     #!! for GITHUB_ORG in npmtest
     #!! for GITHUB_ORG in scrapeitall
-    for GITHUB_ORG in npmdoc npmtest
+    #!! for GITHUB_ORG in npmdoc npmtest
     #!! for GITHUB_ORG in npmtest npmdoc
     do
         shInitCustomOrg
@@ -69,17 +68,41 @@ shTask() {(set -e
 
 
 
-        shBuildPrint "test custom list"
-        LIST="sandbox2"
-        #!! LIST="xinhuanet.com"
+        LIST=""
+        LIST="$LIST
+sandbox3
+"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
-        printf "$LIST\n"
-        shListUnflattenAndApplyFunction() {(set -e
-            LIST="$1"
-            export TRAVIS_REPO_CREATE_FORCE=1
-            shCustomOrgRepoListCreate "$LIST"
-        )}
-        shListUnflattenAndApply "$LIST"
+        shBuildPrint "re-build custom list $LIST"
+        for GITHUB_REPO in $LIST
+        do
+            (
+            git clone --depth=50 --branch=alpha https://github.com/$GITHUB_REPO
+            cd "$(printf "$GITHUB_REPO" | sed -e "s/.*\///")"
+            shBuildCiUnset
+            npm install
+            npm run build-ci
+            )
+        done
+        #!! shListUnflattenAndApplyFunction() {(set -e
+            #!! LIST="$1"
+            #!! shGithubRepoListTouch "$LIST" '[npm publishAfterCommitAfterBuild]'
+        #!! )}
+        #!! shListUnflattenAndApply "$LIST"
+
+
+
+        #!! shBuildPrint "test custom list"
+        #!! LIST="sandbox2"
+        #!! #!! LIST="xinhuanet.com"
+        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
+        #!! printf "$LIST\n"
+        #!! shListUnflattenAndApplyFunction() {(set -e
+            #!! LIST="$1"
+            #!! export TRAVIS_REPO_CREATE_FORCE=1
+            #!! shCustomOrgRepoListCreate "$LIST"
+        #!! )}
+        #!! shListUnflattenAndApply "$LIST"
 
 
 
@@ -217,6 +240,7 @@ $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
 
 
 
+        utility2 cli.dbTableCustomOrgUpdate
         LIST=""
         LIST="$LIST
 $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
