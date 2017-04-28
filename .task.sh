@@ -68,6 +68,22 @@ shTask() {(set -e
 
 
 
+        #!! utility2 cli.dbTableCustomOrgUpdate
+        #!! LIST=""
+        #!! LIST="$LIST
+#!! $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
+    #!! '{"limit":500,"query":{"buildState":{"$nin":["passed","started"]}},"olderThanLast":86400000,"shuffle":true}')"
+        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
+        #!! shBuildPrint "re-build non-passed builds $LIST"
+        #!! shListUnflattenAndApplyFunction() {(set -e
+            #!! LIST="$1"
+            #!! export TRAVIS_REPO_CREATE_FORCE=1
+            #!! shCustomOrgRepoListCreate "$LIST"
+        #!! )}
+        #!! shListUnflattenAndApply "$LIST"
+
+
+
         #!! shBuildPrint "test custom list"
         #!! LIST="sandbox2"
         #!! #!! LIST="xinhuanet.com"
@@ -114,7 +130,7 @@ shTask() {(set -e
         LIST=""
         LIST="$LIST
 $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
-    '{"limit":1,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":86400000,"shuffle":true}')"
+    '{"limit":1,"query":{"buildState":{"$in":["passed"]}},"olderThanLast":0,"shuffle":true}')"
         LIST="$(shCustomOrgNameNormalize "$LIST")"
         shBuildPrint "re-build old, passed-builds $LIST"
         shListUnflattenAndApplyFunction() {(set -e
@@ -161,10 +177,10 @@ $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
 
 shTaskCron() {(set -e
 # this function will run the cron-task
-    #!! for GITHUB_ORG in npmdoc
+    for GITHUB_ORG in npmdoc
     #!! for GITHUB_ORG in npmtest
     #!! for GITHUB_ORG in npmdoc npmtest
-    for GITHUB_ORG in npmtest npmdoc
+    #!! for GITHUB_ORG in npmtest npmdoc
     do
         shInitCustomOrg
         if [ ! "$GITHUB_TOKEN" ]
@@ -205,29 +221,29 @@ $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
 
 
 
-        LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
+        #!! LIST="$(utility2 cli.customOrgStarFilterNotBuilt 0 5000)"
 
 
 
-        LIST="$(shCustomOrgNameNormalize "$LIST")"
-        shBuildPrint "shGithubCrudRepoListCreate $LIST"
-        shListUnflattenAndApplyFunction() {(set -e
-            LIST="$1"
-            shGithubCrudRepoListCreate "$LIST"
-        )}
-        shListUnflattenAndApply "$LIST"
-        shTravisSync
-        shSleep 30
+        #!! LIST="$(shCustomOrgNameNormalize "$LIST")"
+        #!! shBuildPrint "shGithubCrudRepoListCreate $LIST"
+        #!! shListUnflattenAndApplyFunction() {(set -e
+            #!! LIST="$1"
+            #!! shGithubCrudRepoListCreate "$LIST"
+        #!! )}
+        #!! shListUnflattenAndApply "$LIST"
+        #!! shTravisSync
+        #!! shSleep 30
 
 
 
-        shBuildPrint "rebuild unpublished starred packages $LIST"
-        shListUnflattenAndApplyFunction() {(set -e
-            LIST="$1"
-            export TRAVIS_REPO_CREATE_FORCE=1
-            shCustomOrgRepoListCreate "$LIST"
-        )}
-        shListUnflattenAndApply "$LIST"
+        #!! shBuildPrint "rebuild unpublished starred packages $LIST"
+        #!! shListUnflattenAndApplyFunction() {(set -e
+            #!! LIST="$1"
+            #!! export TRAVIS_REPO_CREATE_FORCE=1
+            #!! shCustomOrgRepoListCreate "$LIST"
+        #!! )}
+        #!! shListUnflattenAndApply "$LIST"
 
 
 
@@ -243,7 +259,7 @@ $(utility2 cli.dbTableCustomOrgCrudGetManyByQuery \
             export TRAVIS_REPO_CREATE_FORCE=1
             shCustomOrgRepoListCreate "$LIST"
         )}
-        shListUnflattenAndApply "$LIST" 10
+        shListUnflattenAndApply "$LIST"
 
 
 
