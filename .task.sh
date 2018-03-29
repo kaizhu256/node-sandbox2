@@ -1,23 +1,42 @@
+# shCryptoWithGithubOrg kaizhu256 shGithubRepoListTouch kaizhu256/node-sandbox2 '[$ TRAVIS_REPO_CREATE_FORCE=1 TRAVIS_REPO_UPDATE=1 shBuildAppSwgg0 github-misc]'
+# shCryptoWithGithubOrg kaizhu256 shCustomOrgRepoListCreate kaizhu256/sandbox3
 # shCryptoWithGithubOrg kaizhu256 /bin/sh "$HOME/src/sandbox2/.task.sh"
 # shCryptoWithGithubOrg kaizhu256 shTravisTaskPush "$HOME/src/sandbox2/.task.sh"
 # TRAVIS_REPO_CREATE_FORCE=1 shCryptoWithGithubOrg npmtest shCustomOrgRepoListCreate npmtest/node-npmtest-sandbox2
 # shCryptoWithGithubOrg npmtest shGithubRepoListTouch npmtest/node-npmtest-sandbox2 '[npm publishAfterCommitAfterBuild]'
 # shCryptoWithGithubOrg npmtest utility2 clis.dbTableCustomOrgUpdate
 # GITHUB_ORG=npmtest utility2 cli.dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":{"$ne":"passed"}},"shuffle":true}'
-# GITHUB_ORG=npmtest utility2 cli.dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":"passed"},"limit":1,"shuffle":true}'
+# GITHUB_OR=npmtest utility2 cli.dbTableCustomOrgCrudGetManyByQuery '{"query":{"buildState":"passed"},"limit":1,"shuffle":true}'
 # [$ /bin/sh .task.sh]
 # shCryptoTravisEncrypt scrapeitall
 #!! [
-    #!! '2017.03.19 swagger-ui-lite',
-    #!! '2017.03.28 uglifyjs-lite',
-    #!! '2017.03.29 db-lite',
-    #!! '2017.03.29 swgg',
-    #!! '2017.04.06 jslint-lite',
-    #!! '2017.04.14 istanbul-lite',
-    #!! '2017.04.16 electron-lite',
-    #!! '2017.04.22 apidoc-lite',
-    #!! '2017.04.22 utility2'
+  #!! '00.00.01 swgg-github',
+  #!! '00.00.01 swgg-npm',
+  #!! '2017.09.31 itunes-search-lite', // 52 - master
+  #!! '2017.10.01 elasticsearch-lite', // 58
+
+  #!! '2017.11.07 db-lite', // 148 - master
+  #!! '2017.11.15 electron-lite', // 305 - master
+  #!! '2017.11.15 github-crud', // 107 - master
+  #!! '2017.11.21 istanbul-lite', // 530 - master
+  #!! '2018.01.12 jslint-lite', // 686 - master
+  #!! '2018.01.13 apidoc-lite', // 142 - master
+  #!! '2018.01.14 swagger-ui-lite', // 293 - master
+  #!! '2018.01.15 uglifyjs-lite', // 44 - master
+
+  #!! '2017.11.06 swgg-facebook-all', // 15
+  #!! '2017.11.22 swgg-google-translate', // 26
+  #!! '2018.01.12 swgg' // 42,208 - master,
+  #!! '2018.01.12 swgg-google-all, // 45 - master'
+  #!! '2018.01.15 swgg-google-maps', // 38 - master
+  #!! '2018.01.18 swgg-wechat-pay', // 21 - master
+  #!! '2018.01.19 swgg-github-gist', // 0 - master
+  #!! '2018.01.19 swgg-github-all', // 0 - master
+  #!! '2018.01.19 swgg-wechat-all', // 21
+
+  #!! '2018.01.13 utility2' // 3,419 - master
 #!! ]
+
 
 shInitCustomOrg() {
     # init env
@@ -52,6 +71,9 @@ shMain() {(set -e
 
 shTask() {(set -e
 # this function will run the task
+    APIDOC_RAW_CREATE=1 SWGG_ALL=github-all shBuildAppSwggUpdate github-misc
+    return
+
     #!! for GITHUB_ORG in npmdoc
     #!! for GITHUB_ORG in npmtest
     #!! for GITHUB_ORG in scrapeitall
