@@ -71,6 +71,7 @@ shMain() {(set -e
 
 shTask() {(set -e
 # this function will run the task
+    shBuildInit
     APIDOC_RAW_CREATE=1 SWGG_ALL=github-all shBuildAppSwggUpdate github-misc
     return
 
