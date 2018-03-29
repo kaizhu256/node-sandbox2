@@ -52,7 +52,7 @@ shInitCustomOrg() {
     . "$HOME/node_modules/utility2/lib.utility2.sh"
     shBuildInit
     eval "$(shCryptoTravisDecrypt)"
-    utility2 cli.dbTableCustomOrgUpdate
+    #!! utility2 utility2.dbTableCustomOrgUpdate
 }
 
 shMain() {(set -e
