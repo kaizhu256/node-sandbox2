@@ -71,23 +71,25 @@ shMain() {(set -e
 
 shTask() {(set -e
 # this function will run the task
-    shBuildInit
-    APIDOC_RAW_CREATE=1 SWGG_ALL=github-all shBuildAppSwggUpdate github-misc
-    return
-
+    for GITHUB_ORG in kaizhu256
     #!! for GITHUB_ORG in npmdoc
     #!! for GITHUB_ORG in npmtest
     #!! for GITHUB_ORG in scrapeitall
-    for GITHUB_ORG in npmdoc npmtest
+    #!! for GITHUB_ORG in npmdoc npmtest
     #!! for GITHUB_ORG in npmtest npmdoc
     do
         shInitCustomOrg
-        #!! export GITHUB_TOKEN_TOKEN="$GITHUB_TOKEN_TOKEN_API"
+        #!! export GITHUB_TOKEN="$GITHUB_TOKEN_TOKEN_API"
         if [ ! "$GITHUB_TOKEN" ]
         then
             shBuildPrint "no GITHUB_TOKEN"
             return 1
         fi
+
+
+
+        APIDOC_RAW_CREATE=1 SWGG_ALL=github-all shBuildAppSwggUpdate github-misc
+        return
 
 
 
