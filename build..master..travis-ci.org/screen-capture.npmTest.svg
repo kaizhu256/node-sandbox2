@@ -1,0 +1,140 @@
+<svg height="2190" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="2190" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26"></tspan>
+<tspan x="10" y="42">&gt; sandbox2@0.0.19 test /home/travis/build/kaizhu256/node-sandbox2</tspan>
+<tspan x="10" y="58">&gt; export PORT=$(utility2 shServerPortRandom) &amp;&amp; utility2 test test.js</tspan>
+<tspan x="10" y="74"></tspan>
+<tspan x="10" y="90"></tspan>
+<tspan x="10" y="106">[MODE_BUILD=npmTest] - 2017-03-15T14:36:37Z - npm-testing /home/travis/build/kaizhu256/node-sand\</tspan>
+<tspan x="10" y="122">box2</tspan>
+<tspan x="10" y="138"></tspan>
+<tspan x="10" y="154"></tspan>
+<tspan x="10" y="170">covering $ /home/travis/.nvm/versions/node/v7.7.3/bin/node /home/travis/build/kaizhu256/node-san\</tspan>
+<tspan x="10" y="186">dbox2/test.js</tspan>
+<tspan x="10" y="202">merging file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/test-report.json to test-rep\</tspan>
+<tspan x="10" y="218">ort</tspan>
+<tspan x="10" y="234">&gt; server listening on http-port 47345</tspan>
+<tspan x="10" y="250">created apidoc file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/apidoc.html</tspan>
+<tspan x="10" y="266"></tspan>
+<tspan x="10" y="282"></tspan>
+<tspan x="10" y="298">browserTest - created electron entry-page /home/travis/build/kaizhu256/node-sandbox2/tmp/electro\</tspan>
+<tspan x="10" y="314">n.15ad26635750.af07801146044.html</tspan>
+<tspan x="10" y="330"></tspan>
+<tspan x="10" y="346">created apidoc file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/apidoc.html</tspan>
+<tspan x="10" y="362"></tspan>
+<tspan x="10" y="378"></tspan>
+<tspan x="10" y="394">browserTest - created electron entry-page /home/travis/build/kaizhu256/node-sandbox2/tmp/electro\</tspan>
+<tspan x="10" y="410">n.15ad266366c0.31d290df9125a.html</tspan>
+<tspan x="10" y="426"></tspan>
+<tspan x="10" y="442">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="458">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="474">[node test-case 1 of 7 passed] - testCase_buildLib_default</tspan>
+<tspan x="10" y="490">created apidoc file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/apidoc.html</tspan>
+<tspan x="10" y="506"></tspan>
+<tspan x="10" y="522"></tspan>
+<tspan x="10" y="538">browserTest - created electron entry-page /home/travis/build/kaizhu256/node-sandbox2/tmp/electro\</tspan>
+<tspan x="10" y="554">n.15ad26639740.9d9beee6dfbd3.html</tspan>
+<tspan x="10" y="570"></tspan>
+<tspan x="10" y="586">merging file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/test-report.json to test-rep\</tspan>
+<tspan x="10" y="602">ort</tspan>
+<tspan x="10" y="618">&gt; server listening on http-port 50227</tspan>
+<tspan x="10" y="634">merging file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/test-report.json to test-rep\</tspan>
+<tspan x="10" y="650">ort</tspan>
+<tspan x="10" y="666">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="682">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="698">[node test-case 2 of 7 passed] - testCase_buildReadme_default</tspan>
+<tspan x="10" y="714">[node test-case 3 of 7 passed] - testCase_buildTest_default</tspan>
+<tspan x="10" y="730">[node test-case 4 of 7 passed] - testCase_webpage_default</tspan>
+<tspan x="10" y="746">(node:2157) DeprecationWarning: node --debug is deprecated. Please use node --inspect instead.</tspan>
+<tspan x="10" y="762">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="778">[2171:0315/143639:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="794">[2171:0315/143639:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="810">[2180:0315/143639:ERROR:bus.cc(434)] Failed to connect to the bus: Failed to connect to socket /\</tspan>
+<tspan x="10" y="826">var/run/dbus/system_bus_socket: Connection refused</tspan>
+<tspan x="10" y="842">[2180:0315/143639:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="858">[2180:0315/143639:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="874">[2171:0315/143639:ERROR:bus.cc(434)] Failed to connect to the bus: Failed to connect to socket /\</tspan>
+<tspan x="10" y="890">var/run/dbus/system_bus_socket: Connection refused</tspan>
+<tspan x="10" y="906">[2239:0315/143639:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="922">in process gpu-process. </tspan>
+<tspan x="10" y="938">[2246:0315/143639:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="954">in process gpu-process. </tspan>
+<tspan x="10" y="970">[2171:0315/143639:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
+<tspan x="10" y="986"></tspan>
+<tspan x="10" y="1002">browserTest - opened url file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/apidoc.html</tspan>
+<tspan x="10" y="1018"></tspan>
+<tspan x="10" y="1034">merging file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/test-report.json to test-rep\</tspan>
+<tspan x="10" y="1050">ort</tspan>
+<tspan x="10" y="1066">[2210:0315/143640:WARNING:host_discardable_shared_memory_manager.cc(132)] Less than 64MB of free\</tspan>
+<tspan x="10" y="1082"> space in temporary directory for shared memory files: 53</tspan>
+<tspan x="10" y="1098">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="1114">[2210:0315/143640:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="1130">[2210:0315/143640:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="1146">[2210:0315/143640:ERROR:bus.cc(434)] Failed to connect to the bus: Failed to connect to socket /\</tspan>
+<tspan x="10" y="1162">var/run/dbus/system_bus_socket: Connection refused</tspan>
+<tspan x="10" y="1178">[2324:0315/143640:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="1194">in process gpu-process. </tspan>
+<tspan x="10" y="1210">[2210:0315/143640:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
+<tspan x="10" y="1226"></tspan>
+<tspan x="10" y="1242">browserTest - opened url file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/apidoc.html</tspan>
+<tspan x="10" y="1258"></tspan>
+<tspan x="10" y="1274"></tspan>
+<tspan x="10" y="1290">browserTest - opened url file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/apidoc.html</tspan>
+<tspan x="10" y="1306"></tspan>
+<tspan x="10" y="1322">[node test-case 5 of 7 passed] - testCase_buildApp_default</tspan>
+<tspan x="10" y="1338"></tspan>
+<tspan x="10" y="1354">browserTest - created screen-capture file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build\</tspan>
+<tspan x="10" y="1370">/screen-capture.npmTest.browser._2Fhome_2Ftravis_2Fbuild_2Fkaizhu256_2Fnode-sandbox2_2Ftmp_2Fbui\</tspan>
+<tspan x="10" y="1386">ld_2Fapidoc.html.png</tspan>
+<tspan x="10" y="1402"></tspan>
+<tspan x="10" y="1418"></tspan>
+<tspan x="10" y="1434">browserTest - exit-code 0 - file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/apidoc.h\</tspan>
+<tspan x="10" y="1450">tml</tspan>
+<tspan x="10" y="1466"></tspan>
+<tspan x="10" y="1482">[node test-case 6 of 7 passed] - testCase_buildApidoc_default</tspan>
+<tspan x="10" y="1498"></tspan>
+<tspan x="10" y="1514">browserTest - created screen-capture file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build\</tspan>
+<tspan x="10" y="1530">/screen-capture.npmTest.browser._2Fhome_2Ftravis_2Fbuild_2Fkaizhu256_2Fnode-sandbox2_2Ftmp_2Fbui\</tspan>
+<tspan x="10" y="1546">ld_2Fapidoc.html.png</tspan>
+<tspan x="10" y="1562"></tspan>
+<tspan x="10" y="1578"></tspan>
+<tspan x="10" y="1594">browserTest - exit-code 0 - file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/apidoc.h\</tspan>
+<tspan x="10" y="1610">tml</tspan>
+<tspan x="10" y="1626"></tspan>
+<tspan x="10" y="1642">[node test-case 7 of 7 passed] - testCase_buildNpmdoc_default</tspan>
+<tspan x="10" y="1658">--------------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="1674">File                      |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
+<tspan x="10" y="1690">--------------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="1706">   node-sandbox2/         |     96.23 |     83.72 |       100 |     96.23 |</tspan>
+<tspan x="10" y="1722">      example.js          |       100 |     93.15 |       100 |       100 |</tspan>
+<tspan x="10" y="1738">      lib.npmdoc_mysql.js |     93.33 |     64.29 |       100 |     93.33 |</tspan>
+<tspan x="10" y="1754">      test.js             |      91.8 |     73.81 |       100 |      91.8 |</tspan>
+<tspan x="10" y="1770">--------------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="1786">All files                 |     96.23 |     83.72 |       100 |     96.23 |</tspan>
+<tspan x="10" y="1802">--------------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="1818"></tspan>
+<tspan x="10" y="1834">created coverage file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/coverage.html/index\</tspan>
+<tspan x="10" y="1850">.html</tspan>
+<tspan x="10" y="1866">merging file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/test-report.json to test-rep\</tspan>
+<tspan x="10" y="1882">ort</tspan>
+<tspan x="10" y="1898"></tspan>
+<tspan x="10" y="1914">-------------------------------------------------------</tspan>
+<tspan x="10" y="1930">| test-report - npmTest - node - linux v7.7.3 - 2017-03-15T14:36:37.711Z</tspan>
+<tspan x="10" y="1946">|    8261 ms            0 failed        7 passed      |</tspan>
+<tspan x="10" y="1962">-------------------------------------------------------</tspan>
+<tspan x="10" y="1978"></tspan>
+<tspan x="10" y="1994">created test-report file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/test-report.html</tspan>
+<tspan x="10" y="2010"></tspan>
+<tspan x="10" y="2026"></tspan>
+<tspan x="10" y="2042">npmTest - 0 failed tests</tspan>
+<tspan x="10" y="2058"></tspan>
+<tspan x="10" y="2074"></tspan>
+<tspan x="10" y="2090">[MODE_BUILD=npmTest] - 2017-03-15T14:36:47Z - EXIT_CODE - 0</tspan>
+<tspan x="10" y="2106"></tspan>
+<tspan x="10" y="2122">[2180:0315/143647:ERROR:zygote_communication_linux.cc(215)] Failed to send Reap message to zygot\</tspan>
+<tspan x="10" y="2138">e</tspan>
+<tspan x="10" y="2154">[2180:0315/143647:ERROR:zygote_communication_linux.cc(215)] Failed to send Reap message to zygot\</tspan>
+<tspan x="10" y="2170">e</tspan>
+</text>
+</svg>

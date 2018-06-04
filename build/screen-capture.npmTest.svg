@@ -1,0 +1,204 @@
+<svg height="3214" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="3214" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26"></tspan>
+<tspan x="10" y="42">[MODE_BUILD=npmTest] - 2017-05-21T14:32:13.027Z - npm-testing /home/travis/build/kaizhu256/node-\</tspan>
+<tspan x="10" y="58">sandbox2</tspan>
+<tspan x="10" y="74"></tspan>
+<tspan x="10" y="90"></tspan>
+<tspan x="10" y="106">covering $ /home/travis/.nvm/versions/node/v6.10.3/bin/node /home/travis/build/kaizhu256/node-sa\</tspan>
+<tspan x="10" y="122">ndbox2/test.js</tspan>
+<tspan x="10" y="138"></tspan>
+<tspan x="10" y="154">npmTest - merged test-report from file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/te\</tspan>
+<tspan x="10" y="170">st-report.json</tspan>
+<tspan x="10" y="186">&gt; server listening on http-port 47436</tspan>
+<tspan x="10" y="202">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/package.json</tspan>
+<tspan x="10" y="218">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/.gitignore</tspan>
+<tspan x="10" y="234">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/lib.sandbox2.js</tspan>
+<tspan x="10" y="250">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/LICENSE</tspan>
+<tspan x="10" y="266">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/package.json</tspan>
+<tspan x="10" y="282">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/README.md</tspan>
+<tspan x="10" y="298">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/.task.sh</tspan>
+<tspan x="10" y="314">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/test.js</tspan>
+<tspan x="10" y="330">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/.travis.yml</tspan>
+<tspan x="10" y="346">apidocCreate - requiring /home/travis/build/kaizhu256/node-sandbox2 ...</tspan>
+<tspan x="10" y="362">apidocCreate - ... required /home/travis/build/kaizhu256/node-sandbox2</tspan>
+<tspan x="10" y="378">created apidoc file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/apidoc.html</tspan>
+<tspan x="10" y="394"></tspan>
+<tspan x="10" y="410">[node test-case 1 of 7 passed] - testCase_buildApidoc_default</tspan>
+<tspan x="10" y="426">[node test-case 2 of 7 passed] - testCase_buildCustomOrg_default</tspan>
+<tspan x="10" y="442">[node test-case 3 of 7 passed] - testCase_buildLib_default</tspan>
+<tspan x="10" y="458">[node test-case 4 of 7 passed] - testCase_buildReadme_default</tspan>
+<tspan x="10" y="474">[node test-case 5 of 7 passed] - testCase_buildTest_default</tspan>
+<tspan x="10" y="490"></tspan>
+<tspan x="10" y="506">browserTest - created electron entry-page /home/travis/build/kaizhu256/node-sandbox2/tmp/electro\</tspan>
+<tspan x="10" y="522">n.15c2b6c40d00.1a19a09103ee2.html</tspan>
+<tspan x="10" y="538"></tspan>
+<tspan x="10" y="554">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="570"></tspan>
+<tspan x="10" y="586">npmTest - merged test-report from file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/te\</tspan>
+<tspan x="10" y="602">st-report.json</tspan>
+<tspan x="10" y="618">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="634">[6629:0521/143214:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="650">[6629:0521/143214:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="666">&gt; server listening on http-port 62476</tspan>
+<tspan x="10" y="682">[6654:0521/143214:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="698">in process gpu-process. </tspan>
+<tspan x="10" y="714">[6629:0521/143214:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
+<tspan x="10" y="730"></tspan>
+<tspan x="10" y="746">browserTest - opened url http://127.0.0.1:47436?modeTest=1</tspan>
+<tspan x="10" y="762"></tspan>
+<tspan x="10" y="778">[6629:0521/143215:INFO:CONSOLE(259)] "Uncaught TypeError: Cannot read property 'global' of undef\</tspan>
+<tspan x="10" y="794">ined", source: file:///home/travis/build/kaizhu256/node-sandbox2/tmp/electron.15c2b6c40d00.1a19a\</tspan>
+<tspan x="10" y="810">09103ee2.html (259)</tspan>
+<tspan x="10" y="826">[node test-case 6 of 7 passed] - testCase_buildApp_default</tspan>
+<tspan x="10" y="842"></tspan>
+<tspan x="10" y="858">browserTest - created screen-capture file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build\</tspan>
+<tspan x="10" y="874">/screen-capture.npmTest.browser.%2F.png</tspan>
+<tspan x="10" y="890"></tspan>
+<tspan x="10" y="906"></tspan>
+<tspan x="10" y="922">testCase testCase_webpage_default failed</tspan>
+<tspan x="10" y="938">onTimeout - timeout-error - 30000 ms - testCase_webpage_default</tspan>
+<tspan x="10" y="954">Error: onTimeout - timeout-error - 30000 ms - testCase_webpage_default</tspan>
+<tspan x="10" y="970">    at Timeout._onTimeout (/home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/lib.\</tspan>
+<tspan x="10" y="986">utility2.js:4321:25)</tspan>
+<tspan x="10" y="1002">    at ontimeout (timers.js:386:14)</tspan>
+<tspan x="10" y="1018">    at tryOnTimeout (timers.js:250:5)</tspan>
+<tspan x="10" y="1034">    at Timer.listOnTimeout (timers.js:214:5)</tspan>
+<tspan x="10" y="1050">Error</tspan>
+<tspan x="10" y="1066">    at Object.local.onTimeout (/home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/\</tspan>
+<tspan x="10" y="1082">lib.utility2.js:4318:29)</tspan>
+<tspan x="10" y="1098">    at /home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/lib.utility2.js:5653:38</tspan>
+<tspan x="10" y="1114">    at onEach2 (/home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/lib.utility2.js\</tspan>
+<tspan x="10" y="1130">:4233:21)</tspan>
+<tspan x="10" y="1146">    at onParallel (/home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/lib.utility2\</tspan>
+<tspan x="10" y="1162">.js:4212:17)</tspan>
+<tspan x="10" y="1178">    at onError (/home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/lib.utility2.js\</tspan>
+<tspan x="10" y="1194">:5649:21)</tspan>
+<tspan x="10" y="1210">    at Object.local.buildTest (/home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/\</tspan>
+<tspan x="10" y="1226">lib.utility2.js:2951:13)</tspan>
+<tspan x="10" y="1242">    at Object.local.testCase_buildTest_default [as onTestCase] (/home/travis/build/kaizhu256/nod\</tspan>
+<tspan x="10" y="1258">e-sandbox2/test.js:8:5294)</tspan>
+<tspan x="10" y="1274">    at /home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/lib.utility2.js:5660:30</tspan>
+<tspan x="10" y="1290">    at Object.local.tryCatchOnError (/home/travis/build/kaizhu256/node-sandbox2/node_modules/uti\</tspan>
+<tspan x="10" y="1306">lity2/lib.utility2.js:5799:24)</tspan>
+<tspan x="10" y="1322">[node test-case 7 of 7 failed] - testCase_webpage_default</tspan>
+<tspan x="10" y="1338"></tspan>
+<tspan x="10" y="1354">testCase testCase_webpage_default failed</tspan>
+<tspan x="10" y="1370">onTimeout - timeout-error - 30000 ms - npmTest.browser.%2F</tspan>
+<tspan x="10" y="1386">Error: onTimeout - timeout-error - 30000 ms - npmTest.browser.%2F</tspan>
+<tspan x="10" y="1402">    at Timeout._onTimeout (/home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/lib.\</tspan>
+<tspan x="10" y="1418">utility2.js:4321:25)</tspan>
+<tspan x="10" y="1434">    at ontimeout (timers.js:386:14)</tspan>
+<tspan x="10" y="1450">    at tryOnTimeout (timers.js:250:5)</tspan>
+<tspan x="10" y="1466">    at Timer.listOnTimeout (timers.js:214:5)</tspan>
+<tspan x="10" y="1482">Error</tspan>
+<tspan x="10" y="1498">    at Object.local.onTimeout (/home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/\</tspan>
+<tspan x="10" y="1514">lib.utility2.js:4318:29)</tspan>
+<tspan x="10" y="1530">    at onNext (/home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/lib.utility2.js:\</tspan>
+<tspan x="10" y="1546">2207:42)</tspan>
+<tspan x="10" y="1562">    at Object.local.browserTest (/home/travis/build/kaizhu256/node-sandbox2/node_modules/utility\</tspan>
+<tspan x="10" y="1578">2/lib.utility2.js:2440:13)</tspan>
+<tspan x="10" y="1594">    at Object.local.testCase_webpage_default [as onTestCase] (/home/travis/build/kaizhu256/node-\</tspan>
+<tspan x="10" y="1610">sandbox2/test.js:8:5681)</tspan>
+<tspan x="10" y="1626">    at /home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/lib.utility2.js:5660:30</tspan>
+<tspan x="10" y="1642">    at Object.local.tryCatchOnError (/home/travis/build/kaizhu256/node-sandbox2/node_modules/uti\</tspan>
+<tspan x="10" y="1658">lity2/lib.utility2.js:5799:24)</tspan>
+<tspan x="10" y="1674">    at /home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/lib.utility2.js:5657:23</tspan>
+<tspan x="10" y="1690">    at onEach2 (/home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/lib.utility2.js\</tspan>
+<tspan x="10" y="1706">:4233:21)</tspan>
+<tspan x="10" y="1722">    at onParallel (/home/travis/build/kaizhu256/node-sandbox2/node_modules/utility2/lib.utility2\</tspan>
+<tspan x="10" y="1738">.js:4212:17)</tspan>
+<tspan x="10" y="1754">----------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="1770">File                  |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
+<tspan x="10" y="1786">----------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="1802">   node-sandbox2/     |     94.77 |     80.95 |     96.43 |     94.77 |</tspan>
+<tspan x="10" y="1818">      example.js      |       100 |     93.15 |       100 |       100 |</tspan>
+<tspan x="10" y="1834">      lib.sandbox2.js |     93.75 |     64.29 |       100 |     93.75 |</tspan>
+<tspan x="10" y="1850">      test.js         |     87.04 |      64.1 |     92.31 |     87.04 |</tspan>
+<tspan x="10" y="1866">----------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="1882">All files             |     94.77 |     80.95 |     96.43 |     94.77 |</tspan>
+<tspan x="10" y="1898">----------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="1914"></tspan>
+<tspan x="10" y="1930">created coverage file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/coverage.html/index\</tspan>
+<tspan x="10" y="1946">.html</tspan>
+<tspan x="10" y="1962"></tspan>
+<tspan x="10" y="1978">npmTest - merged test-report from file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/te\</tspan>
+<tspan x="10" y="1994">st-report.json</tspan>
+<tspan x="10" y="2010">&gt; server listening on http-port 47436</tspan>
+<tspan x="10" y="2026">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/package.json</tspan>
+<tspan x="10" y="2042">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/.gitignore</tspan>
+<tspan x="10" y="2058">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/lib.sandbox2.js</tspan>
+<tspan x="10" y="2074">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/LICENSE</tspan>
+<tspan x="10" y="2090">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/package.json</tspan>
+<tspan x="10" y="2106">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/README.md</tspan>
+<tspan x="10" y="2122">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/.task.sh</tspan>
+<tspan x="10" y="2138">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/test.js</tspan>
+<tspan x="10" y="2154">apidocCreate - readExample /home/travis/build/kaizhu256/node-sandbox2/.travis.yml</tspan>
+<tspan x="10" y="2170">apidocCreate - requiring /home/travis/build/kaizhu256/node-sandbox2 ...</tspan>
+<tspan x="10" y="2186">apidocCreate - ... required /home/travis/build/kaizhu256/node-sandbox2</tspan>
+<tspan x="10" y="2202">created apidoc file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/apidoc.html</tspan>
+<tspan x="10" y="2218"></tspan>
+<tspan x="10" y="2234">[node test-case 1 of 7 passed] - testCase_buildApidoc_default</tspan>
+<tspan x="10" y="2250">[node test-case 2 of 7 passed] - testCase_buildCustomOrg_default</tspan>
+<tspan x="10" y="2266">[node test-case 3 of 7 passed] - testCase_buildLib_default</tspan>
+<tspan x="10" y="2282">[node test-case 4 of 7 passed] - testCase_buildReadme_default</tspan>
+<tspan x="10" y="2298">[node test-case 5 of 7 passed] - testCase_buildTest_default</tspan>
+<tspan x="10" y="2314"></tspan>
+<tspan x="10" y="2330">browserTest - created electron entry-page /home/travis/build/kaizhu256/node-sandbox2/tmp/electro\</tspan>
+<tspan x="10" y="2346">n.15c2b6cc1720.1c545196a7062.html</tspan>
+<tspan x="10" y="2362"></tspan>
+<tspan x="10" y="2378">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="2394"></tspan>
+<tspan x="10" y="2410">npmTest - merged test-report from file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/te\</tspan>
+<tspan x="10" y="2426">st-report.json</tspan>
+<tspan x="10" y="2442">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="2458">[6780:0521/143247:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="2474">[6780:0521/143247:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="2490">[6797:0521/143247:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="2506">in process gpu-process. </tspan>
+<tspan x="10" y="2522">[6780:0521/143247:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
+<tspan x="10" y="2538"></tspan>
+<tspan x="10" y="2554">browserTest - opened url http://127.0.0.1:47436?modeTest=1</tspan>
+<tspan x="10" y="2570"></tspan>
+<tspan x="10" y="2586">&gt; [6780:0521/143248:INFO:CONSOLE(259)] "[browser test-case 1 of 1 passed] - testCase_browser_nul\</tspan>
+<tspan x="10" y="2602">lCase", source: file:///home/travis/build/kaizhu256/node-sandbox2/tmp/electron.15c2b6cc1720.1c54\</tspan>
+<tspan x="10" y="2618">5196a7062.html (259)</tspan>
+<tspan x="10" y="2634">server listening on http-port 47313</tspan>
+<tspan x="10" y="2650">[node test-case 6 of 7 passed] - testCase_buildApp_default</tspan>
+<tspan x="10" y="2666"></tspan>
+<tspan x="10" y="2682">browserTest - created screen-capture file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build\</tspan>
+<tspan x="10" y="2698">/screen-capture.npmTest.browser.%2F.png</tspan>
+<tspan x="10" y="2714"></tspan>
+<tspan x="10" y="2730">browserTest - created screen-capture file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build\</tspan>
+<tspan x="10" y="2746">/screen-capture.npmTest.browser.%2F.html</tspan>
+<tspan x="10" y="2762"></tspan>
+<tspan x="10" y="2778">browserTest - exit-code 0 - http://127.0.0.1:47436?modeTest=1</tspan>
+<tspan x="10" y="2794"></tspan>
+<tspan x="10" y="2810"></tspan>
+<tspan x="10" y="2826">browserTest - merged test-report from file:///home/travis/build/kaizhu256/node-sandbox2/tmp/test\</tspan>
+<tspan x="10" y="2842">-report.npmTest.browser.%2F.json</tspan>
+<tspan x="10" y="2858"></tspan>
+<tspan x="10" y="2874">[node test-case 7 of 7 passed] - testCase_webpage_default</tspan>
+<tspan x="10" y="2890"></tspan>
+<tspan x="10" y="2906">npmTest - merged test-report from file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/te\</tspan>
+<tspan x="10" y="2922">st-report.json</tspan>
+<tspan x="10" y="2938"></tspan>
+<tspan x="10" y="2954">-------------------------------------------------------</tspan>
+<tspan x="10" y="2970">| test-report - npmTest - browser - / - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTM\</tspan>
+<tspan x="10" y="2986">L, like Gecko) Chrome/53.0.2785.143 Electron/1.4.16 Safari/537.36 - 2017-05-21T14:32:48.554Z</tspan>
+<tspan x="10" y="3002">|      29 ms            0 failed        1 passed      |</tspan>
+<tspan x="10" y="3018">-------------------------------------------------------</tspan>
+<tspan x="10" y="3034">| test-report - npmTest - node - linux v6.10.3 - 2017-05-21T14:32:13.262Z</tspan>
+<tspan x="10" y="3050">|   44482 ms            0 failed        7 passed      |</tspan>
+<tspan x="10" y="3066">-------------------------------------------------------</tspan>
+<tspan x="10" y="3082"></tspan>
+<tspan x="10" y="3098">created test-report file:///home/travis/build/kaizhu256/node-sandbox2/tmp/build/test-report.html</tspan>
+<tspan x="10" y="3114"></tspan>
+<tspan x="10" y="3130"></tspan>
+<tspan x="10" y="3146">npmTest - 0 failed tests</tspan>
+<tspan x="10" y="3162"></tspan>
+<tspan x="10" y="3178"></tspan>
+<tspan x="10" y="3194">[MODE_BUILD=npmTest] - 2017-05-21T14:32:59.415Z - EXIT_CODE - 1</tspan>
+</text>
+</svg>
