@@ -1,21 +1,19 @@
-<svg height="158" width="720" xmlns="http://www.w3.org/2000/svg">
-<rect height="158" fill="#555" width="720"></rect>
+<svg height="142" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="142" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">2018-06-05 07:14:24 +0800u000a[debug travis@139.162.35.143 root]</tspan>
+<tspan x="10" y="26">2018-06-05 06:38:20 +0800u000a- update build</tspan>
 
-<tspan x="10" y="42">2018-06-05 06:38:20 +0800u000a- update build</tspan>
+<tspan x="10" y="42"></tspan>
 
-<tspan x="10" y="58"></tspan>
+<tspan x="10" y="58">2018-04-12 01:28:37 +0800u000a[npm publish] - npm publish v2018.4.11</tspan>
 
-<tspan x="10" y="74">2018-04-12 01:28:37 +0800u000a[npm publish] - npm publish v2018.4.11</tspan>
+<tspan x="10" y="74"></tspan>
 
-<tspan x="10" y="90"></tspan>
+<tspan x="10" y="90">2017-04-09 01:34:44 +0800u000a[npm publish] - npm publish v0.0.35</tspan>
 
-<tspan x="10" y="106">2017-04-09 01:34:44 +0800u000a[npm publish] - npm publish v0.0.35</tspan>
+<tspan x="10" y="106"></tspan>
 
-<tspan x="10" y="122"></tspan>
-
-<tspan x="10" y="138">2014-03-26 02:31:50 +0700u000aadd blank README.md</tspan>
+<tspan x="10" y="122">2014-03-26 02:31:50 +0700u000aadd blank README.md</tspan>
 
 </text>
 </svg>
