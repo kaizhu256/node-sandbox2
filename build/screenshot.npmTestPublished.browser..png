@@ -1,0 +1,13 @@
+function (arg0, arg1) {
+                // test onParallel handling-behavior
+                if (typeof arg0 === 'function') {
+                    arg0();
+                }
+                // test on handling-behavior
+                if (typeof arg1 === 'function') {
+                    arg1(options, '');
+                    arg1(options, options.fileElectronHtml);
+                    arg1(options, options.fileElectronHtml + ' opened');
+                }
+                return options;
+            }

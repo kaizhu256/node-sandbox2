@@ -1,0 +1,4817 @@
+<style>
+.docApiDiv {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.docApiDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.docApiDiv a[href]:hover {
+    text-decoration: underline;
+}
+.docApiSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.docApiCodeCommentSpan {
+    background-color: #bbf;
+    color: #000;
+    display: block;
+}
+.docApiCodeKeywordSpan {
+    color: #f00;
+    font-weight: bold;
+}
+.docApiCodePre {
+    background-color: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.docApiSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<div class="docApiDiv">
+<h1>api documentation
+    <a
+        
+        href="https://github.com/kaizhu256/node-sandbox2"
+        
+    >(sandbox2 v0.0.2)</a>
+</h1>
+<div class="docApiSectionDiv"><a href="#"><h1>table of contents</h1></a><ul>
+
+    <li><a href="#module.Nedb">module Nedb</a><ol>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.Nedb">
+            function <span class="docApiSignatureSpan"/span>Nedb
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.assert">
+            function <span class="docApiSignatureSpan">Nedb.</span>assert
+            <span class="docApiSignatureSpan">(passed, message)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.avltree">
+            function <span class="docApiSignatureSpan">Nedb.</span>avltree
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.bst">
+            function <span class="docApiSignatureSpan">Nedb.</span>bst
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.cursor">
+            function <span class="docApiSignatureSpan">Nedb.</span>cursor
+            <span class="docApiSignatureSpan">(db, query, execFn)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.dbExport">
+            function <span class="docApiSignatureSpan">Nedb.</span>dbExport
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.dbImport">
+            function <span class="docApiSignatureSpan">Nedb.</span>dbImport
+            <span class="docApiSignatureSpan">(tableList, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.dbReset">
+            function <span class="docApiSignatureSpan">Nedb.</span>dbReset
+            <span class="docApiSignatureSpan">(onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.dbTableCreate">
+            function <span class="docApiSignatureSpan">Nedb.</span>dbTableCreate
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.dbTableDrop">
+            function <span class="docApiSignatureSpan">Nedb.</span>dbTableDrop
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.executor">
+            function <span class="docApiSignatureSpan">Nedb.</span>executor
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.fsDir">
+            function <span class="docApiSignatureSpan">Nedb.</span>fsDir
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.indexes">
+            function <span class="docApiSignatureSpan">Nedb.</span>indexes
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.jsonStringifyOrdered">
+            function <span class="docApiSignatureSpan">Nedb.</span>jsonStringifyOrdered
+            <span class="docApiSignatureSpan">(element, replacer, space)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.local">
+            function <span class="docApiSignatureSpan">Nedb.</span>local
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.middleware">
+            function <span class="docApiSignatureSpan">Nedb.</span>middleware
+            <span class="docApiSignatureSpan">(request, response, nextMiddleware)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.middlewareError">
+            function <span class="docApiSignatureSpan">Nedb.</span>middlewareError
+            <span class="docApiSignatureSpan">(error, request, response)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.onReadyAfter">
+            function <span class="docApiSignatureSpan">Nedb.</span>onReadyAfter
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.persistence">
+            function <span class="docApiSignatureSpan">Nedb.</span>persistence
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.require2">
+            function <span class="docApiSignatureSpan">Nedb.</span>require2
+            <span class="docApiSignatureSpan">(path)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.sandbox2">
+            function <span class="docApiSignatureSpan">Nedb.</span>sandbox2
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.super_">
+            function <span class="docApiSignatureSpan">Nedb.</span>super_
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.testCase_assertXxx_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_assertXxx_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.testCase_build_app">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_build_app
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.testCase_build_doc">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_build_doc
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.testCase_dbExport_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_dbExport_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.testCase_dbImport_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_dbImport_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.testCase_dbTableCreate_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_dbTableCreate_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.testCase_dbTableCreate_error">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_dbTableCreate_error
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.testCase_dbTableDrop_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_dbTableDrop_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.testCase_jsonStringifyOrdered_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_jsonStringifyOrdered_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.testCase_mkdirp_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_mkdirp_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.testCase_mkdirp_error">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_mkdirp_error
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.testCase_webpage_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_webpage_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.underscore">
+            function <span class="docApiSignatureSpan">Nedb.</span>underscore
+            <span class="docApiSignatureSpan">(obj)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>async</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>child_process</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>customUtils</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>dbTableDict</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>events</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>fs</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>global</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>http</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>model</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>path</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>storage</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>url</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>util</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">object <span class="docApiSignatureSpan">Nedb.</span>utility2</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">string <span class="docApiSignatureSpan">Nedb.</span>NODE_ENV</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">string <span class="docApiSignatureSpan">Nedb.</span>fsDirInitialized</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">string <span class="docApiSignatureSpan">Nedb.</span>modeJs</span>
+        
+        </li>
+        
+        <li>
+            
+            <span class="docApiSignatureSpan">string <span class="docApiSignatureSpan">Nedb.</span>templateIndexHtml</span>
+        
+        </li>
+        
+    </ol></li>
+
+    <li><a href="#module.Nedb.customUtils">module Nedb.customUtils</a><ol>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.customUtils.uid">
+            function <span class="docApiSignatureSpan">Nedb.customUtils.</span>uid
+            <span class="docApiSignatureSpan">(len)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+
+    <li><a href="#module.Nedb.model">module Nedb.model</a><ol>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.model.areThingsEqual">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>areThingsEqual
+            <span class="docApiSignatureSpan">(a, b)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.model.checkObject">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>checkObject
+            <span class="docApiSignatureSpan">(obj)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.model.compareThings">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>compareThings
+            <span class="docApiSignatureSpan">(a, b, _compareStrings)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.model.deepCopy">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>deepCopy
+            <span class="docApiSignatureSpan">(obj, strictKeys)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.model.deserialize">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>deserialize
+            <span class="docApiSignatureSpan">(rawData)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.model.getDotValue">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>getDotValue
+            <span class="docApiSignatureSpan">(obj, field)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.model.isPrimitiveType">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>isPrimitiveType
+            <span class="docApiSignatureSpan">(obj)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.model.match">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>match
+            <span class="docApiSignatureSpan">(obj, query)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.model.modify">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>modify
+            <span class="docApiSignatureSpan">(obj, updateQuery)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.model.serialize">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>serialize
+            <span class="docApiSignatureSpan">(obj)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+
+    <li><a href="#module.Nedb.persistence">module Nedb.persistence</a><ol>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.persistence.persistence">
+            function <span class="docApiSignatureSpan">Nedb.</span>persistence
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.persistence.ensureDirectoryExists">
+            function <span class="docApiSignatureSpan">Nedb.persistence.</span>ensureDirectoryExists
+            <span class="docApiSignatureSpan">(dir, cb)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.persistence.getNWAppFilename">
+            function <span class="docApiSignatureSpan">Nedb.persistence.</span>getNWAppFilename
+            <span class="docApiSignatureSpan">(appName, relativeFilename)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+
+    <li><a href="#module.Nedb.persistence.prototype">module Nedb.persistence.prototype</a><ol>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.persistence.prototype.compactDatafile">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>compactDatafile
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.persistence.prototype.loadDatabase">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>loadDatabase
+            <span class="docApiSignatureSpan">(cb)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.persistence.prototype.persistCachedDatabase">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>persistCachedDatabase
+            <span class="docApiSignatureSpan">(cb)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.persistence.prototype.persistNewState">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>persistNewState
+            <span class="docApiSignatureSpan">(newDocs, cb)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.persistence.prototype.setAutocompactionInterval">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>setAutocompactionInterval
+            <span class="docApiSignatureSpan">(interval)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.persistence.prototype.stopAutocompaction">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>stopAutocompaction
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.persistence.prototype.treatRawData">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>treatRawData
+            <span class="docApiSignatureSpan">(rawData)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+
+    <li><a href="#module.Nedb.prototype">module Nedb.prototype</a><ol>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.addToIndexes">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>addToIndexes
+            <span class="docApiSignatureSpan">(doc)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.count">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>count
+            <span class="docApiSignatureSpan">(query, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.createNewId">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>createNewId
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.ensureIndex">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>ensureIndex
+            <span class="docApiSignatureSpan">(options, cb)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.export">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>export
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.find">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>find
+            <span class="docApiSignatureSpan">(query, projection, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.findOne">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>findOne
+            <span class="docApiSignatureSpan">(query, projection, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.getAllData">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>getAllData
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.getCandidates">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>getCandidates
+            <span class="docApiSignatureSpan">(query, dontExpireStaleDocs, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.insert">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>insert
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.loadDatabase">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>loadDatabase
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.prepareDocumentForInsertion">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>prepareDocumentForInsertion
+            <span class="docApiSignatureSpan">(newDoc)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.remove">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>remove
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.removeFromIndexes">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>removeFromIndexes
+            <span class="docApiSignatureSpan">(doc)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.removeIndex">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>removeIndex
+            <span class="docApiSignatureSpan">(fieldName, cb)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.resetIndexes">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>resetIndexes
+            <span class="docApiSignatureSpan">(newData)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.update">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>update
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.prototype.updateIndexes">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>updateIndexes
+            <span class="docApiSignatureSpan">(oldDoc, newDoc)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+
+    <li><a href="#module.Nedb.storage">module Nedb.storage</a><ol>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.storage.appendFile">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>appendFile
+            <span class="docApiSignatureSpan">(path, data, options, callback_)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.storage.crashSafeWriteFile">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>crashSafeWriteFile
+            <span class="docApiSignatureSpan">(filename, data, cb)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.storage.ensureDatafileIntegrity">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>ensureDatafileIntegrity
+            <span class="docApiSignatureSpan">(filename, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.storage.ensureFileDoesntExist">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>ensureFileDoesntExist
+            <span class="docApiSignatureSpan">(file, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.storage.exists">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>exists
+            <span class="docApiSignatureSpan">(path, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.storage.flushToStorage">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>flushToStorage
+            <span class="docApiSignatureSpan">(options, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.storage.mkdirp">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>mkdirp
+            <span class="docApiSignatureSpan">(dir, onError)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.storage.readFile">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>readFile
+            <span class="docApiSignatureSpan">(path, options, callback_)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.storage.rename">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>rename
+            <span class="docApiSignatureSpan">(oldPath, newPath, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.storage.unlink">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>unlink
+            <span class="docApiSignatureSpan">(path, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="docApiElementLiA" href="#element.Nedb.storage.writeFile">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>writeFile
+            <span class="docApiSignatureSpan">(path, data, options, callback_)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+
+</ul></div>
+    
+    <div class="docApiSectionDiv">
+    <h1><a href="#module.Nedb" id="module.Nedb">module Nedb</a></h1>
+        
+        
+        <h2>
+            <a href="#element.Nedb.Nedb" id="element.Nedb.Nedb">
+            function <span class="docApiSignatureSpan"/span>Nedb
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function Datastore(options) {
+  var filename;
+
+  // Retrocompatibility with v0.6 and before
+  if (typeof options === &#x27;string&#x27;) {
+    filename = options;
+    this.inMemoryOnly = false;   // Default
+  } else {
+    options = options || {};
+    filename = options.filename;
+    this.inMemoryOnly = options.inMemoryOnly || false;
+    this.autoload = options.autoload || false;
+    this.timestampData = options.timestampData || false;
+  }
+
+  // Determine whether in memory or persistent
+  if (!filename || typeof filename !== &#x27;string&#x27; || filename.length === 0) {
+    this.filename = null;
+    this.inMemoryOnly = true;
+  } else {
+    this.filename = filename;
+  }
+
+  // String comparison function
+  this.compareStrings = options.compareStrings;
+
+  // Persistence handling
+  this.persistence = new Persistence({ db: this, nodeWebkitAppName: options.nodeWebkitAppName
+                                      , afterSerialization: options.afterSerialization
+                                      , beforeDeserialization: options.beforeDeserialization
+                                      , corruptAlertThreshold: options.corruptAlertThreshold
+                                      });
+
+  // This new executor is ready if we don&#x27;t use persistence
+  // If we do, it will only be ready once loadDatabase is called
+  this.executor = new Executor();
+  if (this.inMemoryOnly) { this.executor.ready = true; }
+
+  // Indexed by field name, dot notation can be used
+  // _id is always indexed and since _ids are generated randomly the underlying
+  // binary is always well-balanced
+  this.indexes = {};
+  this.indexes._id = new Index({ fieldName: &#x27;_id&#x27;, unique: true });
+  this.ttlIndexes = {};
+
+  // Queue a load of the database right away and call the onload handler
+  // By default (no onload handler), if there is an error there, no operation will be possible so warn the user by throwing an e\
+xception
+  if (this.autoload) { this.loadDatabase(options.onload || function (err) {
+    if (err) { throw err; }
+  }); }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+    &lt;label&gt;edit or paste script below to\n\
+        &lt;a\n\
+            href=&quot;https://kaizhu256.github.io/node-sandbox2/build/doc.api.html&quot;\n\
+            target=&quot;_blank&quot;\n\
+        &gt;eval&lt;/a&gt;\n\
+    &lt;/label&gt;\n\
+&lt;textarea class=&quot;onkeyup&quot; id=&quot;inputTextarea1&quot;&gt;\n\
+window.table = new window.<span class="docApiCodeKeywordSpan">Nedb</span>();\n\
+table.insert({ field1: &quot;hello&quot;, field2: &quot;world&quot;}, console.log.bind(console));\n\
+\n\
+window.persistentTable1 = window.Nedb.dbTableCreate({ name: &quot;persistentTable1&quot; });\n\
+persistentTable1.insert({ field1: &quot;hello&quot;, field2: &quot;world&quot;}, function () {\n\
+    console.log();\n\
+    console.log(persistentTable1.export());\n\
+});\n\
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.assert" id="element.Nedb.assert">
+            function <span class="docApiSignatureSpan">Nedb.</span>assert
+            <span class="docApiSignatureSpan">(passed, message)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">assert = function (passed, message) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will assert passed is truthy, else throw the error message
+ */
+</span>    var error;
+    if (passed) {
+        return;
+    }
+    error = message &amp;&amp; message.message
+        // if message is an error-object, then leave it as is
+        ? message
+        : new Error(typeof message === &#x27;string&#x27;
+            // if message is a string, then leave it as is
+            ? message
+            // else JSON.stringify message
+            : JSON.stringify(message));
+    throw error;
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+    (function () {
+local.testCase_assertXxx_default = function (options, onError) {
+/*
+ * this function will test assertXxx&#x27;s default handling-behavior
+ */
+    options = {};
+    // test assertion passed
+    local.utility2.<span class="docApiCodeKeywordSpan">assert</span>(true, true);
+    // test assertion failed with undefined message
+    local.utility2.tryCatchOnError(function () {
+        local.utility2.assert(false);
+    }, function (error) {
+        // validate error occurred
+        local.utility2.assert(error, error);
+        // validate error-message
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.avltree" id="element.Nedb.avltree">
+            function <span class="docApiSignatureSpan">Nedb.</span>avltree
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function AVLTree(options) {
+  this.tree = new _AVLTree(options);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.bst" id="element.Nedb.bst">
+            function <span class="docApiSignatureSpan">Nedb.</span>bst
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function BinarySearchTree(options) {
+  options = options || {};
+
+  this.left = null;
+  this.right = null;
+  this.parent = options.parent !== undefined ? options.parent : null;
+  if (options.hasOwnProperty(&#x27;key&#x27;)) { this.key = options.key; }
+  this.data = options.hasOwnProperty(&#x27;value&#x27;) ? [options.value] : [];
+  this.unique = options.unique || false;
+
+  this.compareKeys = options.compareKeys || customUtils.defaultCompareKeysFunction;
+  this.checkValueEquality = options.checkValueEquality || customUtils.defaultCheckValueEquality;
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.cursor" id="element.Nedb.cursor">
+            function <span class="docApiSignatureSpan">Nedb.</span>cursor
+            <span class="docApiSignatureSpan">(db, query, execFn)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function Cursor(db, query, execFn) {
+  this.db = db;
+  this.query = query || {};
+  if (execFn) { this.execFn = execFn; }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.dbExport" id="element.Nedb.dbExport">
+            function <span class="docApiSignatureSpan">Nedb.</span>dbExport
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">dbExport = function () {
+<span class="docApiCodeCommentSpan">/*
+ * this function will export the database as a serialized tableList
+ */
+</span>    return Object.keys(local.dbTableDict).map(function (key) {
+        return local.dbTableDict[key].export();
+    }).join(&#x27;\n\n&#x27;);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+    };
+});
+/* istanbul ignore next */
+local.testRun = function (event) {
+    var reader, tmp;
+    switch (event &amp;&amp; event.currentTarget.id) {
+    case &#x27;nedbExportButton1&#x27;:
+        tmp = window.URL.createObjectURL(new window.Blob([local.Nedb.<span class="docApiCodeKeywordSpan">dbExport</span>()]));
+        document.querySelector(&#x27;#nedbExportA1&#x27;).href = tmp;
+        document.querySelector(&#x27;#nedbExportA1&#x27;).click();
+        setTimeout(function () {
+            window.URL.revokeObjectURL(tmp);
+        }, 30000);
+        break;
+    case &#x27;nedbImportButton1&#x27;:
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.dbImport" id="element.Nedb.dbImport">
+            function <span class="docApiSignatureSpan">Nedb.</span>dbImport
+            <span class="docApiSignatureSpan">(tableList, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">dbImport = function (tableList, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will import the serialized tableList
+ */
+</span>    var onParallel;
+    onParallel = function () {
+        onParallel.counter -= 1;
+        if (onParallel.counter === 0) {
+            onError();
+        }
+    };
+    onParallel.counter = 0;
+    onParallel.counter += 1;
+    tableList.trim().split(&#x27;\n\n&#x27;).forEach(function (table) {
+        onParallel.counter += 1;
+        local.dbTableCreate({
+            persistenceData: table,
+            name: JSON.parse((/.*/).exec(table)[0])
+        }, onParallel);
+    });
+    onParallel();
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+    console.log(&#x27;importing nedb-database ...&#x27;);
+    reader = new window.FileReader();
+    tmp = document.querySelector(&#x27;#nedbImportInput1&#x27;).files[0];
+    if (!tmp) {
+        return;
+    }
+    reader.addEventListener(&#x27;load&#x27;, function () {
+        local.Nedb.<span class="docApiCodeKeywordSpan">dbImport</span>(reader.result, function () {
+            console.log(&#x27;... imported nedb-database&#x27;);
+        });
+    });
+    reader.readAsText(tmp);
+    break;
+case &#x27;nedbResetButton1&#x27;:
+    document.querySelector(&#x27;#outputTextarea1&#x27;).value = &#x27;&#x27;;
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.dbReset" id="element.Nedb.dbReset">
+            function <span class="docApiSignatureSpan">Nedb.</span>dbReset
+            <span class="docApiSignatureSpan">(onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">dbReset = function (onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will reset nedb&#x27;s persistence
+ */
+</span>    var onParallel;
+    onParallel = function () {
+        onParallel.counter -= 1;
+        if (onParallel.counter === 0) {
+            onError();
+        }
+    };
+    onParallel.counter = 0;
+    onParallel.counter += 1;
+    // drop all tables
+    Object.keys(local.dbTableDict).forEach(function (key) {
+        onParallel.counter += 1;
+        local.dbTableDrop({ name: key }, onParallel);
+    });
+    // https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/deleteDatabase
+    if (local.modeJs === &#x27;browser&#x27;) {
+        onParallel.counter += 1;
+        window.indexedDB.deleteDatabase(&#x27;NeDB&#x27;);
+        setTimeout(onParallel);
+    } else {
+        onParallel.counter += 1;
+        local.fs.readdir(local.fsDir(), function (error, fileList) {
+            // validate no error occurred
+            local.assert(!error, error);
+            fileList.forEach(function (file) {
+                onParallel.counter += 1;
+                local.fs.unlink(local.fsDir() + &#x27;/&#x27; + file, onParallel);
+            });
+            onParallel();
+        });
+    }
+    onParallel();
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+        });
+    });
+    reader.readAsText(tmp);
+    break;
+case &#x27;nedbResetButton1&#x27;:
+    document.querySelector(&#x27;#outputTextarea1&#x27;).value = &#x27;&#x27;;
+    console.log(&#x27;resetting nedb-database ...&#x27;);
+    local.Nedb.<span class="docApiCodeKeywordSpan">dbReset</span>(function () {
+        console.log(&#x27;... resetted nedb-database&#x27;);
+    });
+    break;
+case &#x27;testRunButton1&#x27;:
+    local.modeTest = true;
+    local.utility2.testRun(local);
+    break;
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.dbTableCreate" id="element.Nedb.dbTableCreate">
+            function <span class="docApiSignatureSpan">Nedb.</span>dbTableCreate
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">dbTableCreate = function (options, onError) {
+    var data, modeNext, onNext, self;
+    modeNext = 0;
+    onNext = function (error) {
+        modeNext = error
+            ? Infinity
+            : modeNext + 1;
+        switch (modeNext) {
+        case 1:
+            self = local.dbTableDict[options.name];
+            if (!self) {
+                self = local.dbTableDict[options.name] = new local.Nedb({
+                    filename: local.fsDir() + &#x27;/&#x27; + options.name,
+                    timestampData: true
+                });
+                self.name = String(options.name);
+            }
+            onError = onError || function (error) {
+                // validate no error occurred
+                local.assert(!error, error);
+            };
+            data = (options.persistenceData || &#x27;&#x27;).trim();
+            if (options.reset) {
+                data = &#x27;undefined&#x27;;
+            }
+            if (!data) {
+                onNext();
+                return;
+            }
+            self.isLoaded = null;
+            data += &#x27;\n&#x27;;
+            data = data.slice(data.indexOf(&#x27;\n&#x27;) + 1);
+            local.storage.writeFile(self.filename, data, onNext);
+            break;
+        case 2:
+            if (self.isLoaded) {
+                onNext();
+                return;
+            }
+            self.isLoaded = true;
+            self.loadDatabase(onNext);
+            break;
+        default:
+            onError(error, self);
+        }
+    };
+    onNext(options.error);
+    return self;
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+            target=&quot;_blank&quot;\n\
+        &gt;eval&lt;/a&gt;\n\
+    &lt;/label&gt;\n\
+&lt;textarea class=&quot;onkeyup&quot; id=&quot;inputTextarea1&quot;&gt;\n\
+window.table = new window.Nedb();\n\
+table.insert({ field1: &quot;hello&quot;, field2: &quot;world&quot;}, console.log.bind(console));\n\
+\n\
+window.persistentTable1 = window.Nedb.<span class="docApiCodeKeywordSpan">dbTableCreate</span>({ name: &quot;persistentTable1&qu\
+ot; });\n\
+persistentTable1.insert({ field1: &quot;hello&quot;, field2: &quot;world&quot;}, function () {\n\
+    console.log();\n\
+    console.log(persistentTable1.export());\n\
+});\n\
+\n\
+window.persistentTable2 = window.Nedb.dbTableCreate({ name: &quot;persistentTable2&quot; });\n\
+persistentTable2.insert({ field1: &quot;hello&quot;, field2: &quot;world&quot;}, function () {\n\
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.dbTableDrop" id="element.Nedb.dbTableDrop">
+            function <span class="docApiSignatureSpan">Nedb.</span>dbTableDrop
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">dbTableDrop = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will drop the table with the given options.name
+ */
+</span>    var table;
+    table = local.dbTableDict[options.name];
+    if (!table) {
+        onError();
+        return;
+    }
+    delete local.dbTableDict[options.name];
+    table.persistence = table.prototype = table;
+    table.persistCachedDatabase = table.persistNewState = function () {
+        var ii;
+        for (ii = 0; ii &lt; arguments.length; ii += 1) {
+            if (typeof arguments[ii] === &#x27;function&#x27;) {
+                arguments[ii]();
+                return;
+            }
+        }
+    };
+    local.storage.unlink(table.filename, function () {
+        onError();
+    });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+local.testCase_dbTableDrop_default = function (options, onError) {
+/*
+ * this function will test dbTableDrop&#x27;s default handling-behavior
+ */
+    options = {};
+    options.name = &#x27;testCase_dbTableDrop_default&#x27;;
+    options.table = local.dbTableCreate(options);
+    local.<span class="docApiCodeKeywordSpan">dbTableDrop</span>(options.table, onError);
+    // test undefined-table handling-behavior
+    local.dbTableDrop(options.table, local.utility2.onErrorDefault);
+};
+
+local.testCase_jsonStringifyOrdered_default = function (options, onError) {
+/*
+ * this function will test jsonStringifyOrdered&#x27;s default handling-behavior
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.executor" id="element.Nedb.executor">
+            function <span class="docApiSignatureSpan">Nedb.</span>executor
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function Executor() {
+  this.buffer = [];
+  this.ready = false;
+
+  // This queue will execute all commands, one-by-one in order
+  this.queue = async.queue(function (task, cb) {
+    var newArguments = [];
+
+    // task.arguments is an array-like object on which adding a new field doesn&#x27;t work, so we transform it into a real array
+    for (var i = 0; i &lt; task.arguments.length; i += 1) { newArguments.push(task.arguments[i]); }
+    var lastArg = task.arguments[task.arguments.length - 1];
+
+    // Always tell the queue task is complete. Execute callback if any was given.
+    if (typeof lastArg === &#x27;function&#x27;) {
+      // Callback was supplied
+      newArguments[newArguments.length - 1] = function () {
+        if (typeof setImmediate === &#x27;function&#x27;) {
+           setImmediate(cb);
+        } else {
+          process.nextTick(cb);
+        }
+        lastArg.apply(null, arguments);
+      };
+    } else if (!lastArg &amp;&amp; task.arguments.length !== 0) {
+      // false/undefined/null supplied as callbback
+      newArguments[newArguments.length - 1] = function () { cb(); };
+    } else {
+      // Nothing supplied as callback
+      newArguments.push(function () { cb(); });
+    }
+
+
+    task.fn.apply(task.this, newArguments);
+  }, 1);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.fsDir" id="element.Nedb.fsDir">
+            function <span class="docApiSignatureSpan">Nedb.</span>fsDir
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">fsDir = function () {
+<span class="docApiCodeCommentSpan">/*
+ * this function will return the persistence-dir
+ */
+</span>    var tmp;
+    tmp = &#x27;tmp/nedb.persistence.&#x27; + local.NODE_ENV;
+    // https://github.com/louischatriot/nedb/issues/134
+    // bug workaround - Error creating index when db does not exist #134
+    if (local.modeJs === &#x27;node&#x27; &amp;&amp; tmp !== local.fsDirInitialized) {
+        // init nedb-dir
+        local.storage.mkdirp(tmp, nop);
+    }
+    local.fsDirInitialized = tmp;
+    return tmp;
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+// https://developer.mozilla.org/en-US/docs/Web/API/IDBFactory/deleteDatabase
+if (local.modeJs === &#x27;browser&#x27;) {
+    onParallel.counter += 1;
+    window.indexedDB.deleteDatabase(&#x27;NeDB&#x27;);
+    setTimeout(onParallel);
+} else {
+    onParallel.counter += 1;
+    local.fs.readdir(local.<span class="docApiCodeKeywordSpan">fsDir</span>(), function (error, fileList) {
+        // validate no error occurred
+        local.assert(!error, error);
+        fileList.forEach(function (file) {
+            onParallel.counter += 1;
+            local.fs.unlink(local.fsDir() + &#x27;/&#x27; + file, onParallel);
+        });
+        onParallel();
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.indexes" id="element.Nedb.indexes">
+            function <span class="docApiSignatureSpan">Nedb.</span>indexes
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function Index(options) {
+  this.fieldName = options.fieldName;
+  this.unique = options.unique || false;
+  this.sparse = options.sparse || false;
+
+  this.treeOptions = { unique: this.unique, compareKeys: model.compareThings, checkValueEquality: checkValueEquality };
+
+  this.reset();   // No data in the beginning
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.jsonStringifyOrdered" id="element.Nedb.jsonStringifyOrdered">
+            function <span class="docApiSignatureSpan">Nedb.</span>jsonStringifyOrdered
+            <span class="docApiSignatureSpan">(element, replacer, space)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">jsonStringifyOrdered = function (element, replacer, space) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will JSON.stringify the element,
+ * with object-keys sorted and circular-references removed
+ */
+</span>    var circularList, stringify, tmp;
+    stringify = function (element) {
+    /*
+     * this function will recursively JSON.stringify the element,
+     * with object-keys sorted and circular-references removed
+     */
+        // if element is an object, then recurse its items with object-keys sorted
+        if (element &amp;&amp;
+                typeof element === &#x27;object&#x27; &amp;&amp;
+                typeof element.toJSON !== &#x27;function&#x27;) {
+            // ignore circular-reference
+            if (circularList.indexOf(element) &gt;= 0) {
+                return;
+            }
+            circularList.push(element);
+            // if element is an array, then recurse its elements
+            if (Array.isArray(element)) {
+                return &#x27;[&#x27; + element.map(function (element) {
+                    tmp = stringify(element);
+                    return typeof tmp === &#x27;string&#x27;
+                        ? tmp
+                        : &#x27;null&#x27;;
+                }).join(&#x27;,&#x27;) + &#x27;]&#x27;;
+            }
+            return &#x27;{&#x27; + Object.keys(element)
+                // sort object-keys
+                .sort()
+                .map(function (key) {
+                    tmp = stringify(element[key]);
+                    return typeof tmp === &#x27;string&#x27;
+                        ? JSON.stringify(key) + &#x27;:&#x27; + tmp
+                        : undefined;
+                })
+                .filter(function (element) {
+                    return typeof element === &#x27;string&#x27;;
+                })
+                .join(&#x27;,&#x27;) + &#x27;}&#x27;;
+        }
+        // else JSON.stringify as normal
+        return JSON.stringify(element);
+    };
+    circularList = [];
+    return JSON.stringify(element &amp;&amp; typeof element === &#x27;object&#x27;
+        ? JSON.parse(stringify(element))
+        : element, replacer, space);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+    console[&#x27;_&#x27; + key] = console[key];
+    console[key] = function () {
+        console[&#x27;_&#x27; + key].apply(console, arguments);
+        document.querySelector(&#x27;#outputTextarea1&#x27;).value +=
+            Array.prototype.slice.call(arguments).map(function (arg) {
+                return typeof arg === &#x27;string&#x27;
+                    ? arg
+                    : local.Nedb.<span class="docApiCodeKeywordSpan">jsonStringifyOrdered</span>(arg, null, 4);
+            }).join(&#x27; &#x27;) + &#x27;\n&#x27;;
+    };
+});
+/* istanbul ignore next */
+local.testRun = function (event) {
+    var reader, tmp;
+    switch (event &amp;&amp; event.currentTarget.id) {
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.local" id="element.Nedb.local">
+            function <span class="docApiSignatureSpan">Nedb.</span>local
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function Datastore(options) {
+  var filename;
+
+  // Retrocompatibility with v0.6 and before
+  if (typeof options === &#x27;string&#x27;) {
+    filename = options;
+    this.inMemoryOnly = false;   // Default
+  } else {
+    options = options || {};
+    filename = options.filename;
+    this.inMemoryOnly = options.inMemoryOnly || false;
+    this.autoload = options.autoload || false;
+    this.timestampData = options.timestampData || false;
+  }
+
+  // Determine whether in memory or persistent
+  if (!filename || typeof filename !== &#x27;string&#x27; || filename.length === 0) {
+    this.filename = null;
+    this.inMemoryOnly = true;
+  } else {
+    this.filename = filename;
+  }
+
+  // String comparison function
+  this.compareStrings = options.compareStrings;
+
+  // Persistence handling
+  this.persistence = new Persistence({ db: this, nodeWebkitAppName: options.nodeWebkitAppName
+                                      , afterSerialization: options.afterSerialization
+                                      , beforeDeserialization: options.beforeDeserialization
+                                      , corruptAlertThreshold: options.corruptAlertThreshold
+                                      });
+
+  // This new executor is ready if we don&#x27;t use persistence
+  // If we do, it will only be ready once loadDatabase is called
+  this.executor = new Executor();
+  if (this.inMemoryOnly) { this.executor.ready = true; }
+
+  // Indexed by field name, dot notation can be used
+  // _id is always indexed and since _ids are generated randomly the underlying
+  // binary is always well-balanced
+  this.indexes = {};
+  this.indexes._id = new Index({ fieldName: &#x27;_id&#x27;, unique: true });
+  this.ttlIndexes = {};
+
+  // Queue a load of the database right away and call the onload handler
+  // By default (no onload handler), if there is an error there, no operation will be possible so warn the user by throwing an e\
+xception
+  if (this.autoload) { this.loadDatabase(options.onload || function (err) {
+    if (err) { throw err; }
+  }); }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.middleware" id="element.Nedb.middleware">
+            function <span class="docApiSignatureSpan">Nedb.</span>middleware
+            <span class="docApiSignatureSpan">(request, response, nextMiddleware)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">middleware = function (request, response, nextMiddleware) {
+    var modeNext, onNext;
+    modeNext = -1;
+    onNext = function (error) {
+        modeNext = error
+            ? Infinity
+            : modeNext + 1;
+        // recurse with next middleware in middlewareList
+        if (modeNext &lt; self.middlewareList.length) {
+            // try to run the sub-middleware
+            local.utility2.tryCatchOnError(function () {
+                self.middlewareList[modeNext](request, response, onNext);
+            }, onNext);
+            return;
+        }
+        // default to nextMiddleware
+        nextMiddleware(error);
+    };
+    onNext();
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.middlewareError" id="element.Nedb.middlewareError">
+            function <span class="docApiSignatureSpan">Nedb.</span>middlewareError
+            <span class="docApiSignatureSpan">(error, request, response)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">middlewareError = function (error, request, response) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will run the middleware that will handle errors
+ */
+</span>    // if error occurred, then respond with &#x27;500 Internal Server Error&#x27;,
+    // else respond with &#x27;404 Not Found&#x27;
+    local.utility2.serverRespondDefault(request, response, error
+        ? (error.statusCode &gt;= 400 &amp;&amp; error.statusCode &lt; 600
+            ? error.statusCode
+            : 500)
+        : 404, error);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.onReadyAfter" id="element.Nedb.onReadyAfter">
+            function <span class="docApiSignatureSpan">Nedb.</span>onReadyAfter
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">onReadyAfter = function () {
+    local.utility2.testRun(options);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.persistence" id="element.Nedb.persistence">
+            function <span class="docApiSignatureSpan">Nedb.</span>persistence
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function Persistence(options) {
+  var i, j, randomString;
+
+  this.db = options.db;
+  this.inMemoryOnly = this.db.inMemoryOnly;
+  this.filename = this.db.filename;
+  this.corruptAlertThreshold = options.corruptAlertThreshold !== undefined ? options.corruptAlertThreshold : 0.1;
+
+  if (!this.inMemoryOnly &amp;&amp; this.filename &amp;&amp; this.filename.charAt(this.filename.length - 1) === &#x27;~&#x27;) {
+    throw new Error(&quot;The datafile name can&#x27;t end with a ~, which is reserved for crash safe backup files&quot;);
+  }
+
+  // After serialization and before deserialization hooks with some basic sanity checks
+  if (options.afterSerialization &amp;&amp; !options.beforeDeserialization) {
+    throw new Error(&quot;Serialization hook defined but deserialization hook undefined, cautiously refusing to start NeDB to prevent\
+ dataloss&quot;);
+  }
+  if (!options.afterSerialization &amp;&amp; options.beforeDeserialization) {
+    throw new Error(&quot;Serialization hook undefined but deserialization hook defined, cautiously refusing to start NeDB to prevent\
+ dataloss&quot;);
+  }
+  this.afterSerialization = options.afterSerialization || function (s) { return s; };
+  this.beforeDeserialization = options.beforeDeserialization || function (s) { return s; };
+  for (i = 1; i &lt; 30; i += 1) {
+    for (j = 0; j &lt; 10; j += 1) {
+      randomString = customUtils.uid(i);
+      if (this.beforeDeserialization(this.afterSerialization(randomString)) !== randomString) {
+        throw new Error(&quot;beforeDeserialization is not the reverse of afterSerialization, cautiously refusing to start NeDB to pr\
+event dataloss&quot;);
+      }
+    }
+  }
+
+  // For NW apps, store data in the same directory where NW stores application data
+  if (this.filename &amp;&amp; options.nodeWebkitAppName) {
+    console.log(&quot;==================================================================&quot;);
+    console.log(&quot;WARNING: The nodeWebkitAppName option is deprecated&quot;);
+    console.log(&quot;To get the path to the directory where Node Webkit stores the data&quot;);
+    console.log(&quot;for your app, use the internal nw.gui module like this&quot;);
+    console.log(&quot;require(&#x27;nw.gui&#x27;).App.dataPath&quot;);
+    console.log(&quot;See https://github.com/rogerwang/node-webkit/issues/500&quot;);
+    console.log(&quot;==================================================================&quot;);
+    this.filename = Persistence.getNWAppFilename(options.nodeWebkitAppName, this.filename);
+  }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.require2" id="element.Nedb.require2">
+            function <span class="docApiSignatureSpan">Nedb.</span>require2
+            <span class="docApiSignatureSpan">(path)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function require(path) {
+  try {
+    exports.requireDepth += 1;
+    return self.require(path);
+  } finally {
+    exports.requireDepth -= 1;
+  }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+                    }
+                } catch (errorCaught) {
+                    error = errorCaught;
+                }
+                onError(error);
+            };
+        default:
+            return local.<span class="docApiCodeKeywordSpan">require2</span>(key);
+        }
+    };
+}());
+
+
+
+/* istanbul ignore next */
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.sandbox2" id="element.Nedb.sandbox2">
+            function <span class="docApiSignatureSpan">Nedb.</span>sandbox2
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function Datastore(options) {
+  var filename;
+
+  // Retrocompatibility with v0.6 and before
+  if (typeof options === &#x27;string&#x27;) {
+    filename = options;
+    this.inMemoryOnly = false;   // Default
+  } else {
+    options = options || {};
+    filename = options.filename;
+    this.inMemoryOnly = options.inMemoryOnly || false;
+    this.autoload = options.autoload || false;
+    this.timestampData = options.timestampData || false;
+  }
+
+  // Determine whether in memory or persistent
+  if (!filename || typeof filename !== &#x27;string&#x27; || filename.length === 0) {
+    this.filename = null;
+    this.inMemoryOnly = true;
+  } else {
+    this.filename = filename;
+  }
+
+  // String comparison function
+  this.compareStrings = options.compareStrings;
+
+  // Persistence handling
+  this.persistence = new Persistence({ db: this, nodeWebkitAppName: options.nodeWebkitAppName
+                                      , afterSerialization: options.afterSerialization
+                                      , beforeDeserialization: options.beforeDeserialization
+                                      , corruptAlertThreshold: options.corruptAlertThreshold
+                                      });
+
+  // This new executor is ready if we don&#x27;t use persistence
+  // If we do, it will only be ready once loadDatabase is called
+  this.executor = new Executor();
+  if (this.inMemoryOnly) { this.executor.ready = true; }
+
+  // Indexed by field name, dot notation can be used
+  // _id is always indexed and since _ids are generated randomly the underlying
+  // binary is always well-balanced
+  this.indexes = {};
+  this.indexes._id = new Index({ fieldName: &#x27;_id&#x27;, unique: true });
+  this.ttlIndexes = {};
+
+  // Queue a load of the database right away and call the onload handler
+  // By default (no onload handler), if there is an error there, no operation will be possible so warn the user by throwing an e\
+xception
+  if (this.autoload) { this.loadDatabase(options.onload || function (err) {
+    if (err) { throw err; }
+  }); }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.super_" id="element.Nedb.super_">
+            function <span class="docApiSignatureSpan">Nedb.</span>super_
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">super_ = function () {}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.testCase_assertXxx_default" id="element.Nedb.testCase_assertXxx_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_assertXxx_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">testCase_assertXxx_default = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will test assertXxx&#x27;s default handling-behavior
+ */
+</span>    options = {};
+    // test assertion passed
+    local.utility2.assert(true, true);
+    // test assertion failed with undefined message
+    local.utility2.tryCatchOnError(function () {
+        local.utility2.assert(false);
+    }, function (error) {
+        // validate error occurred
+        local.utility2.assert(error, error);
+        // validate error-message
+        local.utility2.assertJsonEqual(error.message, &#x27;&#x27;);
+    });
+    // test assertion failed with string message
+    local.utility2.tryCatchOnError(function () {
+        local.utility2.assert(false, &#x27;hello&#x27;);
+    }, function (error) {
+        // validate error occurred
+        local.utility2.assert(error, error);
+        // validate error-message
+        local.utility2.assertJsonEqual(error.message, &#x27;hello&#x27;);
+    });
+    // test assertion failed with error object
+    local.utility2.tryCatchOnError(function () {
+        local.utility2.assert(false, local.utility2.errorDefault);
+    }, function (error) {
+        // validate error occurred
+        local.utility2.assert(error, error);
+    });
+    // test assertion failed with json object
+    local.utility2.tryCatchOnError(function () {
+        local.utility2.assert(false, { aa: 1 });
+    }, function (error) {
+        // validate error occurred
+        local.utility2.assert(error, error);
+        // validate error-message
+        local.utility2.assertJsonEqual(error.message, &#x27;{&quot;aa&quot;:1}&#x27;);
+    });
+    options.list = [&#x27;&#x27;, 0, false, null, undefined];
+    options.list.forEach(function (aa, ii) {
+        options.list.forEach(function (bb, jj) {
+            if (ii === jj) {
+                // test assertJsonEqual&#x27;s handling-behavior
+                local.utility2.assertJsonEqual(aa, bb);
+            } else {
+                // test assertJsonNotEqual&#x27;s handling-behavior
+                local.utility2.assertJsonNotEqual(aa, bb);
+            }
+        });
+    });
+    onError();
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.testCase_build_app" id="element.Nedb.testCase_build_app">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_build_app
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">testCase_build_app = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will test build&#x27;s app handling-behavior
+ */
+</span>    var onParallel;
+    onParallel = local.utility2.onParallel(onError);
+    onParallel.counter += 1;
+    options = {};
+    options = [{
+        file: &#x27;/assets.app.js&#x27;,
+        url: &#x27;/assets.app.js&#x27;
+    }, {
+        file: &#x27;/assets.app.min.js&#x27;,
+        url: &#x27;/assets.app.min.js&#x27;
+    }, {
+        file: &#x27;/assets.example.js&#x27;,
+        url: &#x27;/assets.example.js&#x27;
+    }, {
+        file: &#x27;/assets.&#x27; + local.utility2.envDict.npm_package_name + &#x27;.css&#x27;,
+        url: &#x27;/assets.&#x27; + local.utility2.envDict.npm_package_name + &#x27;.css&#x27;
+    }, {
+        file: &#x27;/assets.&#x27; + local.utility2.envDict.npm_package_name + &#x27;.js&#x27;,
+        url: &#x27;/assets.&#x27; + local.utility2.envDict.npm_package_name + &#x27;.js&#x27;
+    }, {
+        file: &#x27;/assets.&#x27; + local.utility2.envDict.npm_package_name + &#x27;.min.js&#x27;,
+        transform: function (data) {
+            return local.utility2.uglifyIfProduction(
+                local.utility2.bufferToString(data)
+            );
+        },
+        url: &#x27;/assets.&#x27; + local.utility2.envDict.npm_package_name + &#x27;.js&#x27;
+    }, {
+        file: &#x27;/assets.test.js&#x27;,
+        url: &#x27;/assets.test.js&#x27;
+    }, {
+        file: &#x27;/assets.utility2.rollup.js&#x27;,
+        url: &#x27;/assets.utility2.rollup.js&#x27;
+    }, {
+        file: &#x27;/index.html&#x27;,
+        url: &#x27;/index.html&#x27;
+    }, {
+        file: &#x27;/jsonp.utility2.stateInit&#x27;,
+        url: &#x27;/jsonp.utility2.stateInit?callback=window.utility2.stateInit&#x27;
+    }];
+    options.forEach(function (options) {
+        onParallel.counter += 1;
+        local.utility2.ajax(options, function (error, xhr) {
+            onParallel.counter += 1;
+            // validate no error occurred
+            onParallel(error);
+            switch (local.path.extname(options.file)) {
+            case &#x27;.css&#x27;:
+            case &#x27;.js&#x27;:
+            case &#x27;.json&#x27;:
+                local.utility2.jslintAndPrintConditional(
+                    xhr.responseText,
+                    options.file
+                );
+                // validate no error occurred
+                local.utility2.tryCatchOnError(function () {
+                    local.utility2.assert(
+                        !local.utility2.jslint.errorText,
+                        local.utility2.jslint.errorText
+                    );
+                }, onError);
+                break;
+            }
+            local.utility2.fsWriteFileWithMkdirp(
+                local.utility2.envDict.npm_config_dir_build + &#x27;/app&#x27; + options.file,
+                (options.transform || local.utility2.echo)(xhr.response),
+                onParallel
+            );
+        });
+    });
+    onParallel();
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.testCase_build_doc" id="element.Nedb.testCase_build_doc">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_build_doc
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">testCase_build_doc = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will test build&#x27;s doc handling-behavior
+ */
+</span>    var modeNext, onNext;
+    modeNext = 0;
+    onNext = function (error) {
+        local.utility2.tryCatchOnError(function () {
+            // validate no error occurred
+            local.utility2.assert(!error, error);
+            modeNext += 1;
+            switch (modeNext) {
+            case 1:
+                options = {};
+                options.moduleDict = {
+                    Nedb: {
+                        exampleList: [],
+                        exports: local.Nedb
+                    },
+                    &#x27;Nedb.customUtils&#x27;: {
+                        exampleList: [],
+                        exports: local.Nedb.customUtils
+                    },
+                    &#x27;Nedb.model&#x27;: {
+                        exampleList: [],
+                        exports: local.Nedb.model
+                    },
+                    &#x27;Nedb.persistence&#x27;: {
+                        exampleList: [],
+                        exports: local.Nedb.persistence
+                    },
+                    &#x27;Nedb.persistence.prototype&#x27;: {
+                        exampleList: [],
+                        exports: local.Nedb.persistence.prototype
+                    },
+                    &#x27;Nedb.prototype&#x27;: {
+                        exampleList: [],
+                        exports: local.Nedb.prototype
+                    },
+                    &#x27;Nedb.storage&#x27;: {
+                        exampleList: [],
+                        exports: local.Nedb.storage
+                    }
+                };
+                Object.keys(options.moduleDict).forEach(function (key) {
+                    options.moduleDict[key].example = [
+                        &#x27;README.md&#x27;,
+                        &#x27;test.js&#x27;,
+                        &#x27;index.js&#x27;
+                    ]
+                        .concat(options.moduleDict[key].exampleList)
+                        .map(function (file) {
+                            return &#x27;\n\n\n\n\n\n\n\n&#x27; +
+                                local.fs.readFileSync(file, &#x27;utf8&#x27;) +
+                                &#x27;\n\n\n\n\n\n\n\n&#x27;;
+                        }).join(&#x27;&#x27;);
+                });
+                // create doc.api.html
+                local.utility2.fsWriteFileWithMkdirp(
+                    local.utility2.envDict.npm_config_dir_build + &#x27;/doc.api.html&#x27;,
+                    local.utility2.docApiCreate(options),
+                    onNext
+                );
+                break;
+            case 2:
+                local.utility2.browserTest({
+                    modeBrowserTest: &#x27;screenCapture&#x27;,
+                    url: &#x27;file://&#x27; + local.utility2.envDict.npm_config_dir_build +
+                        &#x27;/doc.api.html&#x27;
+                }, onNext);
+                break;
+            default:
+                onError(error);
+            }
+        }, onError);
+    };
+    onNext();
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.testCase_dbExport_default" id="element.Nedb.testCase_dbExport_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_dbExport_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">testCase_dbExport_default = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will test dbExport&#x27;s default handling-behavior
+ */
+</span>    options = {};
+    options.name = &#x27;testCase_dbExport_default&#x27;;
+    options.table = local.dbTableCreate(options);
+    options.table.ensureIndex({
+        fieldName: &#x27;id&#x27;,
+        unique: true
+    }, local.utility2.onErrorDefault);
+    options.data = local.dbExport();
+    // validate data
+    local.utility2.assertJsonEqual(options.data, &#x27;&quot;testCase_dbExport_default&quot;\n&#x27; +
+        &#x27;{&quot;$$indexCreated&quot;:{&quot;fieldName&quot;:&quot;id&quot;,&quot;unique&quot;:true,&quot;sparse&quot;:false}}&#x27;);
+    onError();
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.testCase_dbImport_default" id="element.Nedb.testCase_dbImport_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_dbImport_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">testCase_dbImport_default = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will test dbImport&#x27;s default handling-behavior
+ */
+</span>    // jslint-hack
+    local.utility2.nop(options);
+    local.dbImport(&#x27;&quot;undefined&quot;\n{&quot;id&quot;:0}&#x27;, onError);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.testCase_dbTableCreate_default" id="element.Nedb.testCase_dbTableCreate_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_dbTableCreate_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">testCase_dbTableCreate_default = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will test dbTableCreate&#x27;s default handling-behavior
+ */
+</span>    options = {};
+    options.name = &#x27;testCase_dbTableCreate_default&#x27;;
+    options.table = local.dbTableCreate(options);
+    // test re-create handling-behavior
+    options.table = local.dbTableCreate(options);
+    // test reset handling-behavior
+    options.reset = true;
+    options.table = local.dbTableCreate(options);
+    onError();
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.testCase_dbTableCreate_error" id="element.Nedb.testCase_dbTableCreate_error">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_dbTableCreate_error
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">testCase_dbTableCreate_error = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will test dbTableCreate&#x27;s error handling-behavior
+ */
+</span>    options = {};
+    options.error = local.utility2.errorDefault;
+    options.name = &#x27;testCase_dbTableCreate_error&#x27;;
+    options.table = local.dbTableCreate(options, function (error) {
+        local.utility2.tryCatchOnError(function () {
+            // validate error occurred
+            local.utility2.assert(error, error);
+            onError();
+        }, onError);
+    });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.testCase_dbTableDrop_default" id="element.Nedb.testCase_dbTableDrop_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_dbTableDrop_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">testCase_dbTableDrop_default = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will test dbTableDrop&#x27;s default handling-behavior
+ */
+</span>    options = {};
+    options.name = &#x27;testCase_dbTableDrop_default&#x27;;
+    options.table = local.dbTableCreate(options);
+    local.dbTableDrop(options.table, onError);
+    // test undefined-table handling-behavior
+    local.dbTableDrop(options.table, local.utility2.onErrorDefault);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.testCase_jsonStringifyOrdered_default" id="element.Nedb.testCase_jsonStringifyOrdered_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_jsonStringifyOrdered_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">testCase_jsonStringifyOrdered_default = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will test jsonStringifyOrdered&#x27;s default handling-behavior
+ */
+</span>    options = {};
+    // test data-type handling-behavior
+    [undefined, null, false, true, 0, 1, 1.5, &#x27;a&#x27;, {}, []].forEach(function (data) {
+        options.aa = local.utility2.jsonStringifyOrdered(data);
+        options.bb = JSON.stringify(data);
+        local.utility2.assertJsonEqual(options.aa, options.bb);
+    });
+    // test data-ordering handling-behavior
+    options = {
+        // test nested dict handling-behavior
+        ff: { hh: 2, gg: 1},
+        // test nested array handling-behavior
+        ee: [1, null, undefined],
+        dd: local.utility2.nop,
+        cc: undefined,
+        bb: null,
+        aa: 1
+    };
+    // test circular-reference handling-behavior
+    options.zz = options;
+    local.utility2.assertJsonEqual(
+        options,
+        { aa: 1, bb: null, ee: [ 1, null, null ], ff: { gg: 1, hh: 2 } }
+    );
+    onError();
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.testCase_mkdirp_default" id="element.Nedb.testCase_mkdirp_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_mkdirp_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">testCase_mkdirp_default = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will test mkdirp&#x27;s default handling-behavior
+ */
+</span>    var onParallel;
+    onParallel = local.utility2.onParallel(onError);
+    onParallel.counter += 1;
+    options = [&#x27;-r&#x27;, &#x27;tmp/aa/bb&#x27;];
+    local.child_process.spawnSync(&#x27;rm&#x27;, options, {
+        stdio: [&#x27;ignore&#x27;, 1, 2]
+    });
+    // test no-dir-exists handling-behavior
+    onParallel.counter += 1;
+    local.storage.mkdirp(&#x27;tmp/aa/bb&#x27;, onParallel);
+    // test dir-exists handling-behavior
+    onParallel.counter += 1;
+    local.storage.mkdirp(&#x27;tmp/aa/bb&#x27;, onParallel);
+    onParallel();
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.testCase_mkdirp_error" id="element.Nedb.testCase_mkdirp_error">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_mkdirp_error
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">testCase_mkdirp_error = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will test mkdirp&#x27;s error handling-behavior
+ */
+</span>    options = [
+        [local.fs, { existsSync: function () {
+            throw local.utility2.errorDefault;
+        } }]
+    ];
+    local.utility2.testMock(options, function (onError) {
+        local.storage.mkdirp(&#x27;&#x27;, function (error) {
+            local.utility2.tryCatchOnError(function () {
+                // validate error occurred
+                local.utility2.assert(error, error);
+                onError();
+            }, onError);
+        });
+    }, onError);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.testCase_webpage_default" id="element.Nedb.testCase_webpage_default">
+            function <span class="docApiSignatureSpan">Nedb.</span>testCase_webpage_default
+            <span class="docApiSignatureSpan">(options, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">testCase_webpage_default = function (options, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will test the webpage&#x27;s default handling-behavior
+ */
+</span>    options = {
+        modeCoverageMerge: true,
+        url: local.utility2.serverLocalHost + &#x27;?modeTest=1&#x27;
+    };
+    local.utility2.browserTest(options, onError);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.underscore" id="element.Nedb.underscore">
+            function <span class="docApiSignatureSpan">Nedb.</span>underscore
+            <span class="docApiSignatureSpan">(obj)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">underscore = function (obj) {
+  if (obj instanceof _) return obj;
+  if (!(this instanceof _)) return new _(obj);
+  this._wrapped = obj;
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </div>
+    
+    <div class="docApiSectionDiv">
+    <h1><a href="#module.Nedb.customUtils" id="module.Nedb.customUtils">module Nedb.customUtils</a></h1>
+        
+        
+        <h2>
+            <a href="#element.Nedb.customUtils.uid" id="element.Nedb.customUtils.uid">
+            function <span class="docApiSignatureSpan">Nedb.customUtils.</span>uid
+            <span class="docApiSignatureSpan">(len)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function uid(len) {
+  return byteArrayToBase64(randomBytes(Math.ceil(Math.max(8, len * 2)))).replace(/[+\/]/g, &#x27;&#x27;).slice(0, len);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+  });
+};
+
+/**
+ * Create a new _id that&#x27;s not already in use
+ */
+Datastore.prototype.createNewId = function () {
+  var tentativeId = customUtils.<span class="docApiCodeKeywordSpan">uid</span>(16);
+  // Try as many times as needed to get an unused _id. As explained in customUtils, the probability of this ever happening is ex\
+tremely small, so this is O(1)
+  if (this.indexes._id.getMatching(tentativeId).length &gt; 0) {
+    tentativeId = this.createNewId();
+  }
+  return tentativeId;
+};
+...</pre></li>
+        </ul>
+        
+        
+    </div>
+    
+    <div class="docApiSectionDiv">
+    <h1><a href="#module.Nedb.model" id="module.Nedb.model">module Nedb.model</a></h1>
+        
+        
+        <h2>
+            <a href="#element.Nedb.model.areThingsEqual" id="element.Nedb.model.areThingsEqual">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>areThingsEqual
+            <span class="docApiSignatureSpan">(a, b)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function areThingsEqual(a, b) {
+  var aKeys , bKeys , i;
+
+  // Strings, booleans, numbers, null
+  if (a === null || typeof a === &#x27;string&#x27; || typeof a === &#x27;boolean&#x27; || typeof a === &#x27;number&#x27; ||
+      b === null || typeof b === &#x27;string&#x27; || typeof b === &#x27;boolean&#x27; || typeof b === &#x27;number&#x27;) { return a === b; }
+
+  // Dates
+  if (util.isDate(a) || util.isDate(b)) { return util.isDate(a) &amp;&amp; util.isDate(b) &amp;&amp; a.getTime() === b.getTime(); }
+
+  // Arrays (no match since arrays are used as a $in)
+  // undefined (no match since they mean field doesn&#x27;t exist and can&#x27;t be serialized)
+  if ((!(util.isArray(a) &amp;&amp; util.isArray(b)) &amp;&amp; (util.isArray(a) || util.isArray(b))) || a === undefined || b === undefined) { r\
+eturn false; }
+
+  // General objects (check for deep equality)
+  // a and b should be objects at this point
+  try {
+    aKeys = Object.keys(a);
+    bKeys = Object.keys(b);
+  } catch (e) {
+    return false;
+  }
+
+  if (aKeys.length !== bKeys.length) { return false; }
+  for (i = 0; i &lt; aKeys.length; i += 1) {
+    if (bKeys.indexOf(aKeys[i]) === -1) { return false; }
+    if (!areThingsEqual(a[aKeys[i]], b[aKeys[i]])) { return false; }
+  }
+  return true;
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+ } catch (e) {
+   return false;
+ }
+
+ if (aKeys.length !== bKeys.length) { return false; }
+ for (i = 0; i &lt; aKeys.length; i += 1) {
+   if (bKeys.indexOf(aKeys[i]) === -1) { return false; }
+   if (!<span class="docApiCodeKeywordSpan">areThingsEqual</span>(a[aKeys[i]], b[aKeys[i]])) { return false; }
+ }
+ return true;
+}
+
+
+/**
+* Check that two values are comparable
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.model.checkObject" id="element.Nedb.model.checkObject">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>checkObject
+            <span class="docApiSignatureSpan">(obj)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function checkObject(obj) {
+  if (util.isArray(obj)) {
+    obj.forEach(function (o) {
+      checkObject(o);
+    });
+  }
+
+  if (typeof obj === &#x27;object&#x27; &amp;&amp; obj !== null) {
+    Object.keys(obj).forEach(function (k) {
+      checkKey(k, obj[k]);
+      checkObject(obj[k]);
+    });
+  }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+   newDoc.forEach(function (doc) { preparedDoc.push(self.prepareDocumentForInsertion(doc)); });
+ } else {
+   preparedDoc = model.deepCopy(newDoc);
+   if (preparedDoc._id === undefined) { preparedDoc._id = this.createNewId(); }
+   var now = new Date();
+   if (this.timestampData &amp;&amp; preparedDoc.createdAt === undefined) { preparedDoc.createdAt = now; }
+   if (this.timestampData &amp;&amp; preparedDoc.updatedAt === undefined) { preparedDoc.updatedAt = now; }
+   model.<span class="docApiCodeKeywordSpan">checkObject</span>(preparedDoc);
+ }
+
+ return preparedDoc;
+};
+
+/**
+* If newDoc is an array of documents, this will insert all documents in the cache
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.model.compareThings" id="element.Nedb.model.compareThings">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>compareThings
+            <span class="docApiSignatureSpan">(a, b, _compareStrings)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function compareThings(a, b, _compareStrings) {
+  var aKeys, bKeys, comp, i
+    , compareStrings = _compareStrings || compareNSB;
+
+  // undefined
+  if (a === undefined) { return b === undefined ? 0 : -1; }
+  if (b === undefined) { return a === undefined ? 0 : 1; }
+
+  // null
+  if (a === null) { return b === null ? 0 : -1; }
+  if (b === null) { return a === null ? 0 : 1; }
+
+  // Numbers
+  if (typeof a === &#x27;number&#x27;) { return typeof b === &#x27;number&#x27; ? compareNSB(a, b) : -1; }
+  if (typeof b === &#x27;number&#x27;) { return typeof a === &#x27;number&#x27; ? compareNSB(a, b) : 1; }
+
+  // Strings
+  if (typeof a === &#x27;string&#x27;) { return typeof b === &#x27;string&#x27; ? compareStrings(a, b) : -1; }
+  if (typeof b === &#x27;string&#x27;) { return typeof a === &#x27;string&#x27; ? compareStrings(a, b) : 1; }
+
+  // Booleans
+  if (typeof a === &#x27;boolean&#x27;) { return typeof b === &#x27;boolean&#x27; ? compareNSB(a, b) : -1; }
+  if (typeof b === &#x27;boolean&#x27;) { return typeof a === &#x27;boolean&#x27; ? compareNSB(a, b) : 1; }
+
+  // Dates
+  if (util.isDate(a)) { return util.isDate(b) ? compareNSB(a.getTime(), b.getTime()) : -1; }
+  if (util.isDate(b)) { return util.isDate(a) ? compareNSB(a.getTime(), b.getTime()) : 1; }
+
+  // Arrays (first element is most significant and so on)
+  if (util.isArray(a)) { return util.isArray(b) ? compareArrays(a, b) : -1; }
+  if (util.isArray(b)) { return util.isArray(a) ? compareArrays(a, b) : 1; }
+
+  // Objects
+  aKeys = Object.keys(a).sort();
+  bKeys = Object.keys(b).sort();
+
+  for (i = 0; i &lt; Math.min(aKeys.length, bKeys.length); i += 1) {
+    comp = compareThings(a[aKeys[i]], b[bKeys[i]]);
+
+    if (comp !== 0) { return comp; }
+  }
+
+  return compareNSB(aKeys.length, bKeys.length);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+  key = keys[i];
+  criteria.push({ key: key, direction: self._sort[key] });
+}
+res.sort(function(a, b) {
+  var criterion, compare, i;
+  for (i = 0; i &lt; criteria.length; i++) {
+    criterion = criteria[i];
+    compare = criterion.direction * model.<span class="docApiCodeKeywordSpan">compareThings</span>(model.getDotValue(a, criterio\
+n.key), model.getDotValue(b, criterion.key), self.db.compareStrings);
+    if (compare !== 0) {
+      return compare;
+    }
+  }
+  return 0;
+});
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.model.deepCopy" id="element.Nedb.model.deepCopy">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>deepCopy
+            <span class="docApiSignatureSpan">(obj, strictKeys)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function deepCopy(obj, strictKeys) {
+  var res;
+
+  if ( typeof obj === &#x27;boolean&#x27; ||
+       typeof obj === &#x27;number&#x27; ||
+       typeof obj === &#x27;string&#x27; ||
+       obj === null ||
+       (util.isDate(obj)) ) {
+    return obj;
+  }
+
+  if (util.isArray(obj)) {
+    res = [];
+    obj.forEach(function (o) { res.push(deepCopy(o, strictKeys)); });
+    return res;
+  }
+
+  if (typeof obj === &#x27;object&#x27;) {
+    res = {};
+    Object.keys(obj).forEach(function (k) {
+      if (!strictKeys || (k[0] !== &#x27;$&#x27; &amp;&amp; k.indexOf(&#x27;.&#x27;) === -1)) {
+        res[k] = deepCopy(obj[k], strictKeys);
+      }
+    });
+    return res;
+  }
+
+  return undefined;   // For now everything else is undefined. We should probably throw an error instead
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+    this._insertInCache(preparedDoc);
+  } catch (e) {
+    return callback(e);
+  }
+
+  this.persistence.persistNewState(util.isArray(preparedDoc) ? preparedDoc : [preparedDoc], function (err) {
+    if (err) { return callback(err); }
+    return callback(null, model.<span class="docApiCodeKeywordSpan">deepCopy</span>(preparedDoc));
+  });
+};
+
+/**
+ * Create a new _id that&#x27;s not already in use
+ */
+Datastore.prototype.createNewId = function () {
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.model.deserialize" id="element.Nedb.model.deserialize">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>deserialize
+            <span class="docApiSignatureSpan">(rawData)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function deserialize(rawData) {
+  return JSON.parse(rawData, function (k, v) {
+    if (k === &#x27;$$date&#x27;) { return new Date(v); }
+    if (typeof v === &#x27;string&#x27; || typeof v === &#x27;number&#x27; || typeof v === &#x27;boolean&#x27; || v === null) { return v; }
+    if (v &amp;&amp; v.$$date) { return v.$$date; }
+
+    return v;
+  });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+, corruptItems = -1   // Last line of every data file is usually blank so not really corrupt
+;
+
+  for (i = 0; i &lt; data.length; i += 1) {
+var doc;
+
+try {
+  doc = model.<span class="docApiCodeKeywordSpan">deserialize</span>(this.beforeDeserialization(data[i]));
+  if (doc._id) {
+    if (doc.$$deleted === true) {
+      delete dataById[doc._id];
+    } else {
+      dataById[doc._id] = doc;
+    }
+  } else if (doc.$$indexCreated &amp;&amp; doc.$$indexCreated.fieldName != undefined) {
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.model.getDotValue" id="element.Nedb.model.getDotValue">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>getDotValue
+            <span class="docApiSignatureSpan">(obj, field)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function getDotValue(obj, field) {
+  var fieldParts = typeof field === &#x27;string&#x27; ? field.split(&#x27;.&#x27;) : field
+    , i, objs;
+
+  if (!obj) { return undefined; }   // field cannot be empty so that means we should return undefined so that nothing can match
+
+  if (fieldParts.length === 0) { return obj; }
+
+  if (fieldParts.length === 1) { return obj[fieldParts[0]]; }
+
+  if (util.isArray(obj[fieldParts[0]])) {
+    // If the next field is an integer, return only this item of the array
+    i = parseInt(fieldParts[1], 10);
+    if (typeof i === &#x27;number&#x27; &amp;&amp; !isNaN(i)) {
+      return getDotValue(obj[fieldParts[0]][i], fieldParts.slice(2))
+    }
+
+    // Return the array of values
+    objs = new Array();
+    for (i = 0; i &lt; obj[fieldParts[0]].length; i += 1) {
+       objs.push(getDotValue(obj[fieldParts[0]][i], fieldParts.slice(1)));
+    }
+    return objs;
+  } else {
+    return getDotValue(obj[fieldParts[0]], fieldParts.slice(1));
+  }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+
+// Do the actual projection
+candidates.forEach(function (candidate) {
+  var toPush;
+  if (action === 1) {   // pick-type projection
+    toPush = { $set: {} };
+    keys.forEach(function (k) {
+      toPush.$set[k] = model.<span class="docApiCodeKeywordSpan">getDotValue</span>(candidate, k);
+      if (toPush.$set[k] === undefined) { delete toPush.$set[k]; }
+    });
+    toPush = model.modify({}, toPush);
+  } else {   // omit-type projection
+    toPush = { $unset: {} };
+    keys.forEach(function (k) { toPush.$unset[k] = true });
+    toPush = model.modify(candidate, toPush);
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.model.isPrimitiveType" id="element.Nedb.model.isPrimitiveType">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>isPrimitiveType
+            <span class="docApiSignatureSpan">(obj)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function isPrimitiveType(obj) {
+  return ( typeof obj === &#x27;boolean&#x27; ||
+       typeof obj === &#x27;number&#x27; ||
+       typeof obj === &#x27;string&#x27; ||
+       obj === null ||
+       util.isDate(obj) ||
+       util.isArray(obj));
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+ */
+function match (obj, query) {
+var queryKeys, queryKey, queryValue, i;
+
+// Primitive query against a primitive type
+// This is a bit of a hack since we construct an object with an arbitrary key only to dereference it later
+// But I don&#x27;t have time for a cleaner implementation now
+if (<span class="docApiCodeKeywordSpan">isPrimitiveType</span>(obj) || isPrimitiveType(query)) {
+  return matchQueryPart({ needAKey: obj }, &#x27;needAKey&#x27;, query);
+}
+
+// Normal query
+queryKeys = Object.keys(query);
+for (i = 0; i &lt; queryKeys.length; i += 1) {
+  queryKey = queryKeys[i];
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.model.match" id="element.Nedb.model.match">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>match
+            <span class="docApiSignatureSpan">(obj, query)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function match(obj, query) {
+  var queryKeys, queryKey, queryValue, i;
+
+  // Primitive query against a primitive type
+  // This is a bit of a hack since we construct an object with an arbitrary key only to dereference it later
+  // But I don&#x27;t have time for a cleaner implementation now
+  if (isPrimitiveType(obj) || isPrimitiveType(query)) {
+    return matchQueryPart({ needAKey: obj }, &#x27;needAKey&#x27;, query);
+  }
+
+  // Normal query
+  queryKeys = Object.keys(query);
+  for (i = 0; i &lt; queryKeys.length; i += 1) {
+    queryKey = queryKeys[i];
+    queryValue = query[queryKey];
+
+    if (queryKey[0] === &#x27;$&#x27;) {
+      if (!logicalOperators[queryKey]) { throw new Error(&quot;Unknown logical operator &quot; + queryKey); }
+      if (!logicalOperators[queryKey](obj, queryValue)) { return false; }
+    } else {
+      if (!matchQueryPart(obj, queryKey, queryValue)) { return false; }
+    }
+  }
+
+  return true;
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+      }
+    }
+  } else {
+    str = stylize(&#x27;[Circular]&#x27;, &#x27;special&#x27;);
+  }
+}
+if (typeof name === &#x27;undefined&#x27;) {
+  if (type === &#x27;Array&#x27; &amp;&amp; key.<span class="docApiCodeKeywordSpan">match</span>(/^\d+$/)) {
+    return str;
+  }
+  name = JSON.stringify(&#x27;&#x27; + key);
+  if (name.match(/^&quot;([a-zA-Z_][a-zA-Z_0-9]*)&quot;$/)) {
+    name = name.substr(1, name.length - 2);
+    name = stylize(name, &#x27;name&#x27;);
+  } else {
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.model.modify" id="element.Nedb.model.modify">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>modify
+            <span class="docApiSignatureSpan">(obj, updateQuery)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function modify(obj, updateQuery) {
+  var keys = Object.keys(updateQuery)
+    , firstChars = _.map(keys, function (item) { return item[0]; })
+    , dollarFirstChars = _.filter(firstChars, function (c) { return c === &#x27;$&#x27;; })
+    , newDoc, modifiers
+    ;
+
+  if (keys.indexOf(&#x27;_id&#x27;) !== -1 &amp;&amp; updateQuery._id !== obj._id) { throw new Error(&quot;You cannot change a document&#x27;s _id&quot;); }
+
+  if (dollarFirstChars.length !== 0 &amp;&amp; dollarFirstChars.length !== firstChars.length) {
+    throw new Error(&quot;You cannot mix modifiers and normal fields&quot;);
+  }
+
+  if (dollarFirstChars.length === 0) {
+    // Simply replace the object with the update query contents
+    newDoc = deepCopy(updateQuery);
+    newDoc._id = obj._id;
+  } else {
+    // Apply modifiers
+    modifiers = _.uniq(keys);
+    newDoc = deepCopy(obj);
+    modifiers.forEach(function (m) {
+      var keys;
+
+      if (!modifierFunctions[m]) { throw new Error(&quot;Unknown modifier &quot; + m); }
+
+      // Can&#x27;t rely on Object.keys throwing on non objects since ES6
+      // Not 100% satisfying as non objects can be interpreted as objects but no false negatives so we can live with it
+      if (typeof updateQuery[m] !== &#x27;object&#x27;) {
+        throw new Error(&quot;Modifier &quot; + m + &quot;&#x27;s argument must be an object&quot;);
+      }
+
+      keys = Object.keys(updateQuery[m]);
+      keys.forEach(function (k) {
+        modifierFunctions[m](newDoc, k, updateQuery[m][k]);
+      });
+    });
+  }
+
+  // Check result is valid and return it
+  checkObject(newDoc);
+
+  if (obj._id !== newDoc._id) { throw new Error(&quot;You can&#x27;t change a document&#x27;s _id&quot;); }
+  return newDoc;
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+var toPush;
+if (action === 1) {   // pick-type projection
+  toPush = { $set: {} };
+  keys.forEach(function (k) {
+    toPush.$set[k] = model.getDotValue(candidate, k);
+    if (toPush.$set[k] === undefined) { delete toPush.$set[k]; }
+  });
+  toPush = model.<span class="docApiCodeKeywordSpan">modify</span>({}, toPush);
+} else {   // omit-type projection
+  toPush = { $unset: {} };
+  keys.forEach(function (k) { toPush.$unset[k] = true });
+  toPush = model.modify(candidate, toPush);
+}
+if (keepId) {
+  toPush._id = candidate._id;
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.model.serialize" id="element.Nedb.model.serialize">
+            function <span class="docApiSignatureSpan">Nedb.model.</span>serialize
+            <span class="docApiSignatureSpan">(obj)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function serialize(obj) {
+  var res;
+
+  res = JSON.stringify(obj, function (k, v) {
+    checkKey(k, v);
+
+    if (v === undefined) { return undefined; }
+    if (v === null) { return null; }
+
+    // Hackish way of checking if object is Date (this way it works between execution contexts in node-webkit).
+    // We can&#x27;t use value directly because for dates it is already string in this function (date.toJSON was already called), so \
+we use this
+    if (typeof this[k].getTime === &#x27;function&#x27;) { return { $$date: this[k].getTime() }; }
+
+    return v;
+  });
+
+  return res;
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+  , toPersist = &#x27;&#x27;
+  , self = this
+  ;
+
+if (this.inMemoryOnly) { return callback(null); }
+
+this.db.getAllData().forEach(function (doc) {
+  toPersist += self.afterSerialization(model.<span class="docApiCodeKeywordSpan">serialize</span>(doc)) + &#x27;\n&#x27;;
+});
+Object.keys(this.db.indexes).forEach(function (fieldName) {
+  if (fieldName != &quot;_id&quot;) {   // The special _id index is managed by datastore.js, the others need to be persisted
+    toPersist += self.afterSerialization(model.serialize({ $$indexCreated: { fieldName: fieldName, unique: self.db.indexes[field\
+Name].unique, sparse: self.db.indexes[fieldName].sparse }})) + &#x27;\n&#x27;;
+  }
+});
+...</pre></li>
+        </ul>
+        
+        
+    </div>
+    
+    <div class="docApiSectionDiv">
+    <h1><a href="#module.Nedb.persistence" id="module.Nedb.persistence">module Nedb.persistence</a></h1>
+        
+        
+        <h2>
+            <a href="#element.Nedb.persistence.persistence" id="element.Nedb.persistence.persistence">
+            function <span class="docApiSignatureSpan">Nedb.</span>persistence
+            <span class="docApiSignatureSpan">(options)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">function Persistence(options) {
+  var i, j, randomString;
+
+  this.db = options.db;
+  this.inMemoryOnly = this.db.inMemoryOnly;
+  this.filename = this.db.filename;
+  this.corruptAlertThreshold = options.corruptAlertThreshold !== undefined ? options.corruptAlertThreshold : 0.1;
+
+  if (!this.inMemoryOnly &amp;&amp; this.filename &amp;&amp; this.filename.charAt(this.filename.length - 1) === &#x27;~&#x27;) {
+    throw new Error(&quot;The datafile name can&#x27;t end with a ~, which is reserved for crash safe backup files&quot;);
+  }
+
+  // After serialization and before deserialization hooks with some basic sanity checks
+  if (options.afterSerialization &amp;&amp; !options.beforeDeserialization) {
+    throw new Error(&quot;Serialization hook defined but deserialization hook undefined, cautiously refusing to start NeDB to prevent\
+ dataloss&quot;);
+  }
+  if (!options.afterSerialization &amp;&amp; options.beforeDeserialization) {
+    throw new Error(&quot;Serialization hook undefined but deserialization hook defined, cautiously refusing to start NeDB to prevent\
+ dataloss&quot;);
+  }
+  this.afterSerialization = options.afterSerialization || function (s) { return s; };
+  this.beforeDeserialization = options.beforeDeserialization || function (s) { return s; };
+  for (i = 1; i &lt; 30; i += 1) {
+    for (j = 0; j &lt; 10; j += 1) {
+      randomString = customUtils.uid(i);
+      if (this.beforeDeserialization(this.afterSerialization(randomString)) !== randomString) {
+        throw new Error(&quot;beforeDeserialization is not the reverse of afterSerialization, cautiously refusing to start NeDB to pr\
+event dataloss&quot;);
+      }
+    }
+  }
+
+  // For NW apps, store data in the same directory where NW stores application data
+  if (this.filename &amp;&amp; options.nodeWebkitAppName) {
+    console.log(&quot;==================================================================&quot;);
+    console.log(&quot;WARNING: The nodeWebkitAppName option is deprecated&quot;);
+    console.log(&quot;To get the path to the directory where Node Webkit stores the data&quot;);
+    console.log(&quot;for your app, use the internal nw.gui module like this&quot;);
+    console.log(&quot;require(&#x27;nw.gui&#x27;).App.dataPath&quot;);
+    console.log(&quot;See https://github.com/rogerwang/node-webkit/issues/500&quot;);
+    console.log(&quot;==================================================================&quot;);
+    this.filename = Persistence.getNWAppFilename(options.nodeWebkitAppName, this.filename);
+  }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.persistence.ensureDirectoryExists" id="element.Nedb.persistence.ensureDirectoryExists">
+            function <span class="docApiSignatureSpan">Nedb.persistence.</span>ensureDirectoryExists
+            <span class="docApiSignatureSpan">(dir, cb)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">ensureDirectoryExists = function (dir, cb) {
+  var callback = cb || function () {}
+    ;
+
+  storage.mkdirp(dir, function (err) { return callback(err); });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+  self.db.resetIndexes();
+
+  // In-memory only datastore
+  if (self.inMemoryOnly) { return callback(null); }
+
+  async.waterfall([
+    function (cb) {
+      Persistence.<span class="docApiCodeKeywordSpan">ensureDirectoryExists</span>(path.dirname(self.filename), function (err) {
+        storage.ensureDatafileIntegrity(self.filename, function (err) {
+          storage.readFile(self.filename, &#x27;utf8&#x27;, function (err, rawData) {
+if (err) { return cb(err); }
+
+try {
+  var treatedData = self.treatRawData(rawData);
+} catch (e) {
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.persistence.getNWAppFilename" id="element.Nedb.persistence.getNWAppFilename">
+            function <span class="docApiSignatureSpan">Nedb.persistence.</span>getNWAppFilename
+            <span class="docApiSignatureSpan">(appName, relativeFilename)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">getNWAppFilename = function (appName, relativeFilename) {
+  var home;
+
+  switch (process.platform) {
+    case &#x27;win32&#x27;:
+    case &#x27;win64&#x27;:
+      home = process.env.LOCALAPPDATA || process.env.APPDATA;
+      if (!home) { throw new Error(&quot;Couldn&#x27;t find the base application data folder&quot;); }
+      home = path.join(home, appName);
+      break;
+    case &#x27;darwin&#x27;:
+      home = process.env.HOME;
+      if (!home) { throw new Error(&quot;Couldn&#x27;t find the base application data directory&quot;); }
+      home = path.join(home, &#x27;Library&#x27;, &#x27;Application Support&#x27;, appName);
+      break;
+    case &#x27;linux&#x27;:
+      home = process.env.HOME;
+      if (!home) { throw new Error(&quot;Couldn&#x27;t find the base application data directory&quot;); }
+      home = path.join(home, &#x27;.config&#x27;, appName);
+      break;
+    default:
+      throw new Error(&quot;Can&#x27;t use the Node Webkit relative path for platform &quot; + process.platform);
+      break;
+  }
+
+  return path.join(home, &#x27;nedb-data&#x27;, relativeFilename);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+   console.log(&quot;==================================================================&quot;);
+   console.log(&quot;WARNING: The nodeWebkitAppName option is deprecated&quot;);
+   console.log(&quot;To get the path to the directory where Node Webkit stores the data&quot;);
+   console.log(&quot;for your app, use the internal nw.gui module like this&quot;);
+   console.log(&quot;require(&#x27;nw.gui&#x27;).App.dataPath&quot;);
+   console.log(&quot;See https://github.com/rogerwang/node-webkit/issues/500&quot;);
+   console.log(&quot;==================================================================&quot;);
+   this.filename = Persistence.<span class="docApiCodeKeywordSpan">getNWAppFilename</span>(options.nodeWebkitAppName, this.filen\
+ame);
+ }
+};
+
+
+/**
+* Check if a directory exists and create it on the fly if it is not the case
+* cb is optional, signature: err
+...</pre></li>
+        </ul>
+        
+        
+    </div>
+    
+    <div class="docApiSectionDiv">
+    <h1><a href="#module.Nedb.persistence.prototype" id="module.Nedb.persistence.prototype">module Nedb.persistence.prototype</a></h1>
+        
+        
+        <h2>
+            <a href="#element.Nedb.persistence.prototype.compactDatafile" id="element.Nedb.persistence.prototype.compactDatafile">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>compactDatafile
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">compactDatafile = function () {
+  this.db.executor.push({ this: this, fn: this.persistCachedDatabase, arguments: [] });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+   , minInterval = 5000
+   , realInterval = Math.max(interval || 0, minInterval)
+   ;
+
+ this.stopAutocompaction();
+
+ this.autocompactionIntervalId = setInterval(function () {
+   self.<span class="docApiCodeKeywordSpan">compactDatafile</span>();
+ }, realInterval);
+};
+
+
+/**
+* Stop autocompaction (do nothing if autocompaction was not running)
+*/
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.persistence.prototype.loadDatabase" id="element.Nedb.persistence.prototype.loadDatabase">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>loadDatabase
+            <span class="docApiSignatureSpan">(cb)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">loadDatabase = function (cb) {
+  var callback = cb || function () {}
+    , self = this
+    ;
+
+  self.db.resetIndexes();
+
+  // In-memory only datastore
+  if (self.inMemoryOnly) { return callback(null); }
+
+  async.waterfall([
+    function (cb) {
+      Persistence.ensureDirectoryExists(path.dirname(self.filename), function (err) {
+        storage.ensureDatafileIntegrity(self.filename, function (err) {
+          storage.readFile(self.filename, &#x27;utf8&#x27;, function (err, rawData) {
+            if (err) { return cb(err); }
+
+            try {
+              var treatedData = self.treatRawData(rawData);
+            } catch (e) {
+              return cb(e);
+            }
+
+            // Recreate all indexes in the datafile
+            Object.keys(treatedData.indexes).forEach(function (key) {
+              self.db.indexes[key] = new Index(treatedData.indexes[key]);
+            });
+
+            // Fill cached database (i.e. all indexes) with data
+            try {
+              self.db.resetIndexes(treatedData.data);
+            } catch (e) {
+              self.db.resetIndexes();   // Rollback any index which didn&#x27;t fail
+              return cb(e);
+            }
+
+            self.db.persistence.persistCachedDatabase(cb);
+          });
+        });
+      });
+    }
+  ], function (err) {
+       if (err) { return callback(err); }
+
+       self.db.executor.processBuffer();
+       return callback(null);
+     });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+  // binary is always well-balanced
+  this.indexes = {};
+  this.indexes._id = new Index({ fieldName: &#x27;_id&#x27;, unique: true });
+  this.ttlIndexes = {};
+
+  // Queue a load of the database right away and call the onload handler
+  // By default (no onload handler), if there is an error there, no operation will be possible so warn the user by throwing an e\
+xception
+  if (this.autoload) { this.<span class="docApiCodeKeywordSpan">loadDatabase</span>(options.onload || function (err) {
+    if (err) { throw err; }
+  }); }
+}
+
+util.inherits(Datastore, require(&#x27;events&#x27;).EventEmitter);
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.persistence.prototype.persistCachedDatabase" id="element.Nedb.persistence.prototype.persistCachedDatabase">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>persistCachedDatabase
+            <span class="docApiSignatureSpan">(cb)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">persistCachedDatabase = function (cb) {
+  var callback = cb || function () {}
+    , toPersist = &#x27;&#x27;
+    , self = this
+    ;
+
+  if (this.inMemoryOnly) { return callback(null); }
+
+  this.db.getAllData().forEach(function (doc) {
+    toPersist += self.afterSerialization(model.serialize(doc)) + &#x27;\n&#x27;;
+  });
+  Object.keys(this.db.indexes).forEach(function (fieldName) {
+    if (fieldName != &quot;_id&quot;) {   // The special _id index is managed by datastore.js, the others need to be persisted
+      toPersist += self.afterSerialization(model.serialize({ $$indexCreated: { fieldName: fieldName, unique: self.db.indexes[fie\
+ldName].unique, sparse: self.db.indexes[fieldName].sparse }})) + &#x27;\n&#x27;;
+    }
+  });
+
+  storage.crashSafeWriteFile(this.filename, toPersist, function (err) {
+    if (err) { return callback(err); }
+    self.db.emit(&#x27;compaction.done&#x27;);
+    return callback(null);
+  });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+          try {
+            self.db.resetIndexes(treatedData.data);
+          } catch (e) {
+            self.db.resetIndexes();   // Rollback any index which didn&#x27;t fail
+            return cb(e);
+          }
+
+          self.db.persistence.<span class="docApiCodeKeywordSpan">persistCachedDatabase</span>(cb);
+        });
+      });
+    });
+  }
+], function (err) {
+     if (err) { return callback(err); }
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.persistence.prototype.persistNewState" id="element.Nedb.persistence.prototype.persistNewState">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>persistNewState
+            <span class="docApiSignatureSpan">(newDocs, cb)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">persistNewState = function (newDocs, cb) {
+  var self = this
+    , toPersist = &#x27;&#x27;
+    , callback = cb || function () {}
+    ;
+
+  // In-memory only datastore
+  if (self.inMemoryOnly) { return callback(null); }
+
+  newDocs.forEach(function (doc) {
+    toPersist += self.afterSerialization(model.serialize(doc)) + &#x27;\n&#x27;;
+  });
+
+  if (toPersist.length === 0) { return callback(null); }
+
+  storage.appendFile(self.filename, toPersist, &#x27;utf8&#x27;, function (err) {
+    return callback(err);
+  });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+    this.indexes[options.fieldName].insert(this.getAllData());
+  } catch (e) {
+    delete this.indexes[options.fieldName];
+    return callback(e);
+  }
+
+  // We may want to force all options to be persisted including defaults, not just the ones passed the index creation function
+  this.persistence.<span class="docApiCodeKeywordSpan">persistNewState</span>([{ $$indexCreated: options }], function (err) {
+    if (err) { return callback(err); }
+    return callback(null);
+  });
+};
+
+
+/**
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.persistence.prototype.setAutocompactionInterval" id="element.Nedb.persistence.prototype.setAutocompactionInterval">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>setAutocompactionInterval
+            <span class="docApiSignatureSpan">(interval)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">setAutocompactionInterval = function (interval) {
+  var self = this
+    , minInterval = 5000
+    , realInterval = Math.max(interval || 0, minInterval)
+    ;
+
+  this.stopAutocompaction();
+
+  this.autocompactionIntervalId = setInterval(function () {
+    self.compactDatafile();
+  }, realInterval);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.persistence.prototype.stopAutocompaction" id="element.Nedb.persistence.prototype.stopAutocompaction">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>stopAutocompaction
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">stopAutocompaction = function () {
+  if (this.autocompactionIntervalId) { clearInterval(this.autocompactionIntervalId); }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+ */
+Persistence.prototype.setAutocompactionInterval = function (interval) {
+  var self = this
+    , minInterval = 5000
+    , realInterval = Math.max(interval || 0, minInterval)
+    ;
+
+  this.<span class="docApiCodeKeywordSpan">stopAutocompaction</span>();
+
+  this.autocompactionIntervalId = setInterval(function () {
+    self.compactDatafile();
+  }, realInterval);
+};
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.persistence.prototype.treatRawData" id="element.Nedb.persistence.prototype.treatRawData">
+            function <span class="docApiSignatureSpan">Nedb.persistence.prototype.</span>treatRawData
+            <span class="docApiSignatureSpan">(rawData)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">treatRawData = function (rawData) {
+  var data = rawData.split(&#x27;\n&#x27;)
+    , dataById = {}
+    , tdata = []
+    , i
+    , indexes = {}
+    , corruptItems = -1   // Last line of every data file is usually blank so not really corrupt
+    ;
+
+  for (i = 0; i &lt; data.length; i += 1) {
+    var doc;
+
+    try {
+      doc = model.deserialize(this.beforeDeserialization(data[i]));
+      if (doc._id) {
+        if (doc.$$deleted === true) {
+          delete dataById[doc._id];
+        } else {
+          dataById[doc._id] = doc;
+        }
+      } else if (doc.$$indexCreated &amp;&amp; doc.$$indexCreated.fieldName != undefined) {
+        indexes[doc.$$indexCreated.fieldName] = doc.$$indexCreated;
+      } else if (typeof doc.$$indexRemoved === &quot;string&quot;) {
+        delete indexes[doc.$$indexRemoved];
+      }
+    } catch (e) {
+      corruptItems += 1;
+    }
+  }
+
+  // A bit lenient on corruption
+  if (data.length &gt; 0 &amp;&amp; corruptItems / data.length &gt; this.corruptAlertThreshold) {
+    throw new Error(&quot;More than &quot; + Math.floor(100 * this.corruptAlertThreshold) + &quot;% of the data file is corrupt, the wrong befo\
+reDeserialization hook may be used. Cautiously refusing to start NeDB to prevent dataloss&quot;);
+  }
+
+  Object.keys(dataById).forEach(function (k) {
+    tdata.push(dataById[k]);
+  });
+
+  return { data: tdata, indexes: indexes };
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+    function (cb) {
+      Persistence.ensureDirectoryExists(path.dirname(self.filename), function (err) {
+        storage.ensureDatafileIntegrity(self.filename, function (err) {
+          storage.readFile(self.filename, &#x27;utf8&#x27;, function (err, rawData) {
+if (err) { return cb(err); }
+
+try {
+  var treatedData = self.<span class="docApiCodeKeywordSpan">treatRawData</span>(rawData);
+} catch (e) {
+  return cb(e);
+}
+
+// Recreate all indexes in the datafile
+Object.keys(treatedData.indexes).forEach(function (key) {
+  self.db.indexes[key] = new Index(treatedData.indexes[key]);
+...</pre></li>
+        </ul>
+        
+        
+    </div>
+    
+    <div class="docApiSectionDiv">
+    <h1><a href="#module.Nedb.prototype" id="module.Nedb.prototype">module Nedb.prototype</a></h1>
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.addToIndexes" id="element.Nedb.prototype.addToIndexes">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>addToIndexes
+            <span class="docApiSignatureSpan">(doc)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">addToIndexes = function (doc) {
+  var i, failingIndex, error
+    , keys = Object.keys(this.indexes)
+    ;
+
+  for (i = 0; i &lt; keys.length; i += 1) {
+    try {
+      this.indexes[keys[i]].insert(doc);
+    } catch (e) {
+      failingIndex = i;
+      error = e;
+      break;
+    }
+  }
+
+  // If an error happened, we need to rollback the insert on all other indexes
+  if (error) {
+    for (i = 0; i &lt; failingIndex; i += 1) {
+      this.indexes[keys[i]].remove(doc);
+    }
+
+    throw error;
+  }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+* If newDoc is an array of documents, this will insert all documents in the cache
+* @api private
+*/
+Datastore.prototype._insertInCache = function (preparedDoc) {
+ if (util.isArray(preparedDoc)) {
+   this._insertMultipleDocsInCache(preparedDoc);
+ } else {
+   this.<span class="docApiCodeKeywordSpan">addToIndexes</span>(preparedDoc);
+ }
+};
+
+/**
+* If one insertion fails (e.g. because of a unique constraint), roll back all previous
+* inserts and throws the error
+* @api private
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.count" id="element.Nedb.prototype.count">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>count
+            <span class="docApiSignatureSpan">(query, callback)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">count = function (query, callback) {
+  var cursor = new Cursor(this, query, function(err, docs, callback) {
+    if (err) { return callback(err); }
+    return callback(null, docs.length);
+  });
+
+  if (typeof callback === &#x27;function&#x27;) {
+    cursor.exec(callback);
+  } else {
+    return cursor;
+  }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+	    function length(callback) {
+	        var self = this;
+
+	        var promise = new Promise(function (resolve, reject) {
+	            self.ready().then(function () {
+	                var dbInfo = self._dbInfo;
+	                var store = dbInfo.db.transaction(dbInfo.storeName, &#x27;readonly&#x27;).objectStore(dbInfo.storeName);
+	                var req = store.<span class="docApiCodeKeywordSpan">count</span>();
+
+	                req.onsuccess = function () {
+	                    resolve(req.result);
+	                };
+
+	                req.onerror = function () {
+	                    reject(req.error);
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.createNewId" id="element.Nedb.prototype.createNewId">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>createNewId
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">createNewId = function () {
+  var tentativeId = customUtils.uid(16);
+  // Try as many times as needed to get an unused _id. As explained in customUtils, the probability of this ever happening is ex\
+tremely small, so this is O(1)
+  if (this.indexes._id.getMatching(tentativeId).length &gt; 0) {
+    tentativeId = this.createNewId();
+  }
+  return tentativeId;
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+/**
+* Create a new _id that&#x27;s not already in use
+*/
+Datastore.prototype.createNewId = function () {
+ var tentativeId = customUtils.uid(16);
+ // Try as many times as needed to get an unused _id. As explained in customUtils, the probability of this ever happening is ext\
+remely small, so this is O(1)
+ if (this.indexes._id.getMatching(tentativeId).length &gt; 0) {
+   tentativeId = this.<span class="docApiCodeKeywordSpan">createNewId</span>();
+ }
+ return tentativeId;
+};
+
+/**
+* Prepare a document (or array of documents) to be inserted in a database
+* Meaning adds _id and timestamps if necessary on a copy of newDoc to avoid any side effect on user input
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.ensureIndex" id="element.Nedb.prototype.ensureIndex">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>ensureIndex
+            <span class="docApiSignatureSpan">(options, cb)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">ensureIndex = function (options, cb) {
+  var err
+    , callback = cb || function () {};
+
+  options = options || {};
+
+  if (!options.fieldName) {
+    err = new Error(&quot;Cannot create an index without a fieldName&quot;);
+    err.missingFieldName = true;
+    return callback(err);
+  }
+  if (this.indexes[options.fieldName]) { return callback(null); }
+
+  this.indexes[options.fieldName] = new Index(options);
+  if (options.expireAfterSeconds !== undefined) { this.ttlIndexes[options.fieldName] = options.expireAfterSeconds; }   // With t\
+his implementation index creation is not necessary to ensure TTL but we stick with MongoDB&#x27;s API here
+
+  try {
+    this.indexes[options.fieldName].insert(this.getAllData());
+  } catch (e) {
+    delete this.indexes[options.fieldName];
+    return callback(e);
+  }
+
+  // We may want to force all options to be persisted including defaults, not just the ones passed the index creation function
+  this.persistence.persistNewState([{ $$indexCreated: options }], function (err) {
+    if (err) { return callback(err); }
+    return callback(null);
+  });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+local.testCase_dbExport_default = function (options, onError) {
+/*
+ * this function will test dbExport&#x27;s default handling-behavior
+ */
+    options = {};
+    options.name = &#x27;testCase_dbExport_default&#x27;;
+    options.table = local.dbTableCreate(options);
+    options.table.<span class="docApiCodeKeywordSpan">ensureIndex</span>({
+        fieldName: &#x27;id&#x27;,
+        unique: true
+    }, local.utility2.onErrorDefault);
+    options.data = local.dbExport();
+    // validate data
+    local.utility2.assertJsonEqual(options.data, &#x27;&quot;testCase_dbExport_default&quot;\n&#x27; +
+        &#x27;{&quot;$$indexCreated&quot;:{&quot;fieldName&quot;:&quot;id&quot;,&quot;unique&quot;:true,&quot;sparse&quot;:false\
+}}&#x27;);
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.export" id="element.Nedb.prototype.export">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>export
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">export = function () {
+<span class="docApiCodeCommentSpan">/*
+ * this function will export the table as serialized-text
+ */
+</span>    var data, self;
+    data = JSON.stringify(String(this.name)) + &#x27;\n&#x27;;
+    self = this;
+    self.getAllData().forEach(function (doc) {
+        data += local.model.serialize(doc) + &#x27;\n&#x27;;
+    });
+    Object.keys(self.indexes).forEach(function (fieldName) {
+        if (fieldName === &quot;_id&quot;) {
+            return;
+        }
+        data += local.model.serialize({ $$indexCreated: {
+            fieldName: fieldName,
+            unique: self.indexes[fieldName].unique,
+            sparse: self.indexes[fieldName].sparse
+        } }) + &#x27;\n&#x27;;
+    });
+    return data.trim();
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+&lt;textarea class=&quot;onkeyup&quot; id=&quot;inputTextarea1&quot;&gt;\n\
+window.table = new window.Nedb();\n\
+table.insert({ field1: &quot;hello&quot;, field2: &quot;world&quot;}, console.log.bind(console));\n\
+\n\
+window.persistentTable1 = window.Nedb.dbTableCreate({ name: &quot;persistentTable1&quot; });\n\
+persistentTable1.insert({ field1: &quot;hello&quot;, field2: &quot;world&quot;}, function () {\n\
+    console.log();\n\
+    console.log(persistentTable1.<span class="docApiCodeKeywordSpan">export</span>());\n\
+});\n\
+\n\
+window.persistentTable2 = window.Nedb.dbTableCreate({ name: &quot;persistentTable2&quot; });\n\
+persistentTable2.insert({ field1: &quot;hello&quot;, field2: &quot;world&quot;}, function () {\n\
+    console.log();\n\
+    console.log(persistentTable2.export());\n\
+});\n\
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.find" id="element.Nedb.prototype.find">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>find
+            <span class="docApiSignatureSpan">(query, projection, callback)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">find = function (query, projection, callback) {
+  switch (arguments.length) {
+    case 1:
+      projection = {};
+      // callback is undefined, will return a cursor
+      break;
+    case 2:
+      if (typeof projection === &#x27;function&#x27;) {
+        callback = projection;
+        projection = {};
+      }   // If not assume projection is an object and callback undefined
+      break;
+  }
+
+  var cursor = new Cursor(this, query, function(err, docs, callback) {
+    var res = [], i;
+
+    if (err) { return callback(err); }
+
+    for (i = 0; i &lt; docs.length; i += 1) {
+      res.push(model.deepCopy(docs[i]));
+    }
+    return callback(null, res);
+  });
+
+  cursor.projection(projection);
+  if (typeof callback === &#x27;function&#x27;) {
+    cursor.exec(callback);
+  } else {
+    return cursor;
+  }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.findOne" id="element.Nedb.prototype.findOne">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>findOne
+            <span class="docApiSignatureSpan">(query, projection, callback)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">findOne = function (query, projection, callback) {
+  switch (arguments.length) {
+    case 1:
+      projection = {};
+      // callback is undefined, will return a cursor
+      break;
+    case 2:
+      if (typeof projection === &#x27;function&#x27;) {
+        callback = projection;
+        projection = {};
+      }   // If not assume projection is an object and callback undefined
+      break;
+  }
+
+  var cursor = new Cursor(this, query, function(err, docs, callback) {
+    if (err) { return callback(err); }
+    if (docs.length === 1) {
+      return callback(null, model.deepCopy(docs[0]));
+    } else {
+      return callback(null, null);
+    }
+  });
+
+  cursor.projection(projection).limit(1);
+  if (typeof callback === &#x27;function&#x27;) {
+    cursor.exec(callback);
+  } else {
+    return cursor;
+  }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.getAllData" id="element.Nedb.prototype.getAllData">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>getAllData
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">getAllData = function () {
+  return this.indexes._id.getAll();
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+}
+if (this.indexes[options.fieldName]) { return callback(null); }
+
+this.indexes[options.fieldName] = new Index(options);
+if (options.expireAfterSeconds !== undefined) { this.ttlIndexes[options.fieldName] = options.expireAfterSeconds; }   // With thi\
+s implementation index creation is not necessary to ensure TTL but we stick with MongoDB&#x27;s API here
+
+try {
+  this.indexes[options.fieldName].insert(this.<span class="docApiCodeKeywordSpan">getAllData</span>());
+} catch (e) {
+  delete this.indexes[options.fieldName];
+  return callback(e);
+}
+
+// We may want to force all options to be persisted including defaults, not just the ones passed the index creation function
+this.persistence.persistNewState([{ $$indexCreated: options }], function (err) {
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.getCandidates" id="element.Nedb.prototype.getCandidates">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>getCandidates
+            <span class="docApiSignatureSpan">(query, dontExpireStaleDocs, callback)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">getCandidates = function (query, dontExpireStaleDocs, callback) {
+  var indexNames = Object.keys(this.indexes)
+    , self = this
+    , usableQueryKeys;
+
+  if (typeof dontExpireStaleDocs === &#x27;function&#x27;) {
+    callback = dontExpireStaleDocs;
+    dontExpireStaleDocs = false;
+  }
+
+
+  async.waterfall([
+  // STEP 1: get candidates list by checking indexes from most to least frequent usecase
+  function (cb) {
+    // For a basic match
+    usableQueryKeys = [];
+    Object.keys(query).forEach(function (k) {
+      if (typeof query[k] === &#x27;string&#x27; || typeof query[k] === &#x27;number&#x27; || typeof query[k] === &#x27;boolean&#x27; || util.isDate(query[k])\
+ || query[k] === null) {
+        usableQueryKeys.push(k);
+      }
+    });
+    usableQueryKeys = _.intersection(usableQueryKeys, indexNames);
+    if (usableQueryKeys.length &gt; 0) {
+      return cb(null, self.indexes[usableQueryKeys[0]].getMatching(query[usableQueryKeys[0]]));
+    }
+
+    // For a $in match
+    usableQueryKeys = [];
+    Object.keys(query).forEach(function (k) {
+      if (query[k] &amp;&amp; query[k].hasOwnProperty(&#x27;$in&#x27;)) {
+        usableQueryKeys.push(k);
+      }
+    });
+    usableQueryKeys = _.intersection(usableQueryKeys, indexNames);
+    if (usableQueryKeys.length &gt; 0) {
+      return cb(null, self.indexes[usableQueryKeys[0]].getMatching(query[usableQueryKeys[0]].$in));
+    }
+
+    // For a comparison match
+    usableQueryKeys = [];
+    Object.keys(query).forEach(function (k) {
+      if (query[k] &amp;&amp; (query[k].hasOwnProperty(&#x27;$lt&#x27;) || query[k].hasOwnProperty(&#x27;$lte&#x27;) || query[k].hasOwnProperty(&#x27;$gt&#x27;) || qu\
+ery[k].hasOwnProperty(&#x27;$gte&#x27;))) {
+        usableQueryKeys.push(k);
+      }
+    });
+    usableQueryKeys = _.intersection(usableQueryKeys, indexNames);
+    if (usableQueryKeys.length &gt; 0) {
+      return cb(null, self.indexes[usableQueryKeys[0]].getBetweenBounds(query[usableQueryKeys[0]]));
+    }
+
+    // By default, return all the DB data
+    return cb(null, self.getAllData());
+  }
+  // STEP 2: remove all expired documents
+  , function (docs) {
+    if (dontExpireStaleDocs) { return callback(null, docs); }
+
+    var expiredDocsIds = [], validDocs = [], ttlIndexesFieldNames = Object.keys(self.ttlIndexes);
+
+    docs.forEach(function (doc) {
+      var valid = true;
+      ttlIndexesFieldNames.forEach(function (i) {
+        if (doc[i] !== undefined &amp;&amp; util.isDate(doc[i]) &amp;&amp; Date.now() &gt; doc[i].getTime() + self.ttlIndexes[i] * 1000) {
+          valid = false;
+        }
+      });
+      if (valid) { validDocs.push(doc); } else { expiredDocsIds.push(doc._id); }
+    });
+
+    async.eachSeries(expiredDocsIds, function (_id, cb) {
+      self._remove({ _id: _id }, {}, function (err) {
+        if (err) { return callback(err); }
+        return cb();
+      });
+    }, function (err) {
+      return callback(null, validDocs);
+    });
+  }]);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+if (self.execFn) {
+  return self.execFn(error, res, _callback);
+} else {
+  return _callback(error, res);
+}
+  }
+
+  this.db.<span class="docApiCodeKeywordSpan">getCandidates</span>(this.query, function (err, candidates) {
+if (err) { return callback(err); }
+
+try {
+  for (i = 0; i &lt; candidates.length; i += 1) {
+    if (model.match(candidates[i], self.query)) {
+      // If a sort is defined, wait for the results to be sorted before applying limit and skip
+      if (!self._sort) {
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.insert" id="element.Nedb.prototype.insert">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>insert
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">insert = function () {
+  this.executor.push({ this: this, fn: this._insert, arguments: arguments });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+        &lt;a\n\
+            href=&quot;https://kaizhu256.github.io/node-sandbox2/build/doc.api.html&quot;\n\
+            target=&quot;_blank&quot;\n\
+        &gt;eval&lt;/a&gt;\n\
+    &lt;/label&gt;\n\
+&lt;textarea class=&quot;onkeyup&quot; id=&quot;inputTextarea1&quot;&gt;\n\
+window.table = new window.Nedb();\n\
+table.<span class="docApiCodeKeywordSpan">insert</span>({ field1: &quot;hello&quot;, field2: &quot;world&quot;}, console.log.bin\
+d(console));\n\
+\n\
+window.persistentTable1 = window.Nedb.dbTableCreate({ name: &quot;persistentTable1&quot; });\n\
+persistentTable1.insert({ field1: &quot;hello&quot;, field2: &quot;world&quot;}, function () {\n\
+    console.log();\n\
+    console.log(persistentTable1.export());\n\
+});\n\
+\n\
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.loadDatabase" id="element.Nedb.prototype.loadDatabase">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>loadDatabase
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">loadDatabase = function () {
+  this.executor.push({ this: this.persistence, fn: this.persistence.loadDatabase, arguments: arguments }, true);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+  // binary is always well-balanced
+  this.indexes = {};
+  this.indexes._id = new Index({ fieldName: &#x27;_id&#x27;, unique: true });
+  this.ttlIndexes = {};
+
+  // Queue a load of the database right away and call the onload handler
+  // By default (no onload handler), if there is an error there, no operation will be possible so warn the user by throwing an e\
+xception
+  if (this.autoload) { this.<span class="docApiCodeKeywordSpan">loadDatabase</span>(options.onload || function (err) {
+    if (err) { throw err; }
+  }); }
+}
+
+util.inherits(Datastore, require(&#x27;events&#x27;).EventEmitter);
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.prepareDocumentForInsertion" id="element.Nedb.prototype.prepareDocumentForInsertion">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>prepareDocumentForInsertion
+            <span class="docApiSignatureSpan">(newDoc)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">prepareDocumentForInsertion = function (newDoc) {
+  var preparedDoc, self = this;
+
+  if (util.isArray(newDoc)) {
+    preparedDoc = [];
+    newDoc.forEach(function (doc) { preparedDoc.push(self.prepareDocumentForInsertion(doc)); });
+  } else {
+    preparedDoc = model.deepCopy(newDoc);
+    if (preparedDoc._id === undefined) { preparedDoc._id = this.createNewId(); }
+    var now = new Date();
+    if (this.timestampData &amp;&amp; preparedDoc.createdAt === undefined) { preparedDoc.createdAt = now; }
+    if (this.timestampData &amp;&amp; preparedDoc.updatedAt === undefined) { preparedDoc.updatedAt = now; }
+    model.checkObject(preparedDoc);
+  }
+
+  return preparedDoc;
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+ */
+Datastore.prototype._insert = function (newDoc, cb) {
+var callback = cb || function () {}
+  , preparedDoc
+  ;
+
+try {
+  preparedDoc = this.<span class="docApiCodeKeywordSpan">prepareDocumentForInsertion</span>(newDoc)
+  this._insertInCache(preparedDoc);
+} catch (e) {
+  return callback(e);
+}
+
+this.persistence.persistNewState(util.isArray(preparedDoc) ? preparedDoc : [preparedDoc], function (err) {
+  if (err) { return callback(err); }
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.remove" id="element.Nedb.prototype.remove">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>remove
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">remove = function () {
+  this.executor.push({ this: this, fn: this._remove, arguments: arguments });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+      break;
+    }
+  }
+
+  // If an error happened, we need to rollback the insert on all other indexes
+  if (error) {
+    for (i = 0; i &lt; failingIndex; i += 1) {
+      this.indexes[keys[i]].<span class="docApiCodeKeywordSpan">remove</span>(doc);
+    }
+
+    throw error;
+  }
+};
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.removeFromIndexes" id="element.Nedb.prototype.removeFromIndexes">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>removeFromIndexes
+            <span class="docApiSignatureSpan">(doc)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">removeFromIndexes = function (doc) {
+  var self = this;
+
+  Object.keys(this.indexes).forEach(function (i) {
+    self.indexes[i].remove(doc);
+  });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+      failingI = i;
+      break;
+    }
+  }
+
+  if (error) {
+    for (i = 0; i &lt; failingI; i += 1) {
+      this.<span class="docApiCodeKeywordSpan">removeFromIndexes</span>(preparedDocs[i]);
+    }
+
+    throw error;
+  }
+};
+
+Datastore.prototype.insert = function () {
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.removeIndex" id="element.Nedb.prototype.removeIndex">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>removeIndex
+            <span class="docApiSignatureSpan">(fieldName, cb)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">removeIndex = function (fieldName, cb) {
+  var callback = cb || function () {};
+
+  delete this.indexes[fieldName];
+
+  this.persistence.persistNewState([{ $$indexRemoved: fieldName }], function (err) {
+    if (err) { return callback(err); }
+    return callback(null);
+  });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.resetIndexes" id="element.Nedb.prototype.resetIndexes">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>resetIndexes
+            <span class="docApiSignatureSpan">(newData)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">resetIndexes = function (newData) {
+  var self = this;
+
+  Object.keys(this.indexes).forEach(function (i) {
+    self.indexes[i].reset(newData);
+  });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+ * @param {Function} cb Optional callback, signature: err
+ */
+Persistence.prototype.loadDatabase = function (cb) {
+var callback = cb || function () {}
+  , self = this
+  ;
+
+self.db.<span class="docApiCodeKeywordSpan">resetIndexes</span>();
+
+// In-memory only datastore
+if (self.inMemoryOnly) { return callback(null); }
+
+async.waterfall([
+  function (cb) {
+    Persistence.ensureDirectoryExists(path.dirname(self.filename), function (err) {
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.update" id="element.Nedb.prototype.update">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>update
+            <span class="docApiSignatureSpan">()</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">update = function () {
+  this.executor.push({ this: this, fn: this._update, arguments: arguments });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+Datastore.prototype.updateIndexes = function (oldDoc, newDoc) {
+var i, failingIndex, error
+  , keys = Object.keys(this.indexes)
+  ;
+
+for (i = 0; i &lt; keys.length; i += 1) {
+  try {
+    this.indexes[keys[i]].<span class="docApiCodeKeywordSpan">update</span>(oldDoc, newDoc);
+  } catch (e) {
+    failingIndex = i;
+    error = e;
+    break;
+  }
+}
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.prototype.updateIndexes" id="element.Nedb.prototype.updateIndexes">
+            function <span class="docApiSignatureSpan">Nedb.prototype.</span>updateIndexes
+            <span class="docApiSignatureSpan">(oldDoc, newDoc)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">updateIndexes = function (oldDoc, newDoc) {
+  var i, failingIndex, error
+    , keys = Object.keys(this.indexes)
+    ;
+
+  for (i = 0; i &lt; keys.length; i += 1) {
+    try {
+      this.indexes[keys[i]].update(oldDoc, newDoc);
+    } catch (e) {
+      failingIndex = i;
+      error = e;
+      break;
+    }
+  }
+
+  // If an error happened, we need to rollback the update on all other indexes
+  if (error) {
+    for (i = 0; i &lt; failingIndex; i += 1) {
+      this.indexes[keys[i]].revertUpdate(oldDoc, newDoc);
+    }
+
+    throw error;
+  }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+  }
+} catch (err) {
+  return callback(err);
+}
+
+// Change the docs in memory
+try {
+  self.<span class="docApiCodeKeywordSpan">updateIndexes</span>(modifications);
+} catch (err) {
+  return callback(err);
+}
+
+// Update the datafile
+var updatedDocs = _.pluck(modifications, &#x27;newDoc&#x27;);
+self.persistence.persistNewState(updatedDocs, function (err) {
+...</pre></li>
+        </ul>
+        
+        
+    </div>
+    
+    <div class="docApiSectionDiv">
+    <h1><a href="#module.Nedb.storage" id="module.Nedb.storage">module Nedb.storage</a></h1>
+        
+        
+        <h2>
+            <a href="#element.Nedb.storage.appendFile" id="element.Nedb.storage.appendFile">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>appendFile
+            <span class="docApiSignatureSpan">(path, data, options, callback_)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">appendFile = function (path, data, options, callback_) {
+  var callback = maybeCallback(arguments[arguments.length - 1]);
+
+  if (!options || typeof options === &#x27;function&#x27;) {
+    options = { encoding: &#x27;utf8&#x27;, mode: 0o666, flag: &#x27;a&#x27; };
+  } else if (typeof options === &#x27;string&#x27;) {
+    options = { encoding: options, mode: 0o666, flag: &#x27;a&#x27; };
+  } else if (typeof options !== &#x27;object&#x27;) {
+    throwOptionsError(options);
+  }
+
+  if (!options.flag)
+    options = util._extend({ flag: &#x27;a&#x27; }, options);
+
+  // force append behavior when using a supplied file descriptor
+  if (isFd(path))
+    options.flag = &#x27;a&#x27;;
+
+  fs.writeFile(path, data, options, callback);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+
+ newDocs.forEach(function (doc) {
+   toPersist += self.afterSerialization(model.serialize(doc)) + &#x27;\n&#x27;;
+ });
+
+ if (toPersist.length === 0) { return callback(null); }
+
+ storage.<span class="docApiCodeKeywordSpan">appendFile</span>(self.filename, toPersist, &#x27;utf8&#x27;, function (err) {
+   return callback(err);
+ });
+};
+
+
+/**
+* From a database&#x27;s raw data, return the corresponding
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.storage.crashSafeWriteFile" id="element.Nedb.storage.crashSafeWriteFile">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>crashSafeWriteFile
+            <span class="docApiSignatureSpan">(filename, data, cb)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">crashSafeWriteFile = function (filename, data, cb) {
+  var callback = cb || function () {}
+    , tempFilename = filename + &#x27;~&#x27;;
+
+  async.waterfall([
+    async.apply(storage.flushToStorage, { filename: path.dirname(filename), isDir: true })
+  , function (cb) {
+      storage.exists(filename, function (exists) {
+        if (exists) {
+          storage.flushToStorage(filename, function (err) { return cb(err); });
+        } else {
+          return cb();
+        }
+      });
+    }
+  , function (cb) {
+      storage.writeFile(tempFilename, data, function (err) { return cb(err); });
+    }
+  , async.apply(storage.flushToStorage, tempFilename)
+  , function (cb) {
+      storage.rename(tempFilename, filename, function (err) { return cb(err); });
+    }
+  , async.apply(storage.flushToStorage, { filename: path.dirname(filename), isDir: true })
+  ], function (err) { return callback(err); })
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+  });
+  Object.keys(this.db.indexes).forEach(function (fieldName) {
+    if (fieldName != &quot;_id&quot;) {   // The special _id index is managed by datastore.js, the others need to be persisted
+      toPersist += self.afterSerialization(model.serialize({ $$indexCreated: { fieldName: fieldName, unique: self.db.indexes[fie\
+ldName].unique, sparse: self.db.indexes[fieldName].sparse }})) + &#x27;\n&#x27;;
+    }
+  });
+
+  storage.<span class="docApiCodeKeywordSpan">crashSafeWriteFile</span>(this.filename, toPersist, function (err) {
+    if (err) { return callback(err); }
+    self.db.emit(&#x27;compaction.done&#x27;);
+    return callback(null);
+  });
+};
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.storage.ensureDatafileIntegrity" id="element.Nedb.storage.ensureDatafileIntegrity">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>ensureDatafileIntegrity
+            <span class="docApiSignatureSpan">(filename, callback)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">ensureDatafileIntegrity = function (filename, callback) {
+  var tempFilename = filename + &#x27;~&#x27;;
+
+  storage.exists(filename, function (filenameExists) {
+    // Write was successful
+    if (filenameExists) { return callback(null); }
+
+    storage.exists(tempFilename, function (oldFilenameExists) {
+      // New database
+      if (!oldFilenameExists) {
+        return storage.writeFile(filename, &#x27;&#x27;, &#x27;utf8&#x27;, function (err) { callback(err); });
+      }
+
+      // Write failed, use old version
+      storage.rename(tempFilename, filename, function (err) { return callback(err); });
+    });
+  });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+
+  // In-memory only datastore
+  if (self.inMemoryOnly) { return callback(null); }
+
+  async.waterfall([
+    function (cb) {
+      Persistence.ensureDirectoryExists(path.dirname(self.filename), function (err) {
+        storage.<span class="docApiCodeKeywordSpan">ensureDatafileIntegrity</span>(self.filename, function (err) {
+          storage.readFile(self.filename, &#x27;utf8&#x27;, function (err, rawData) {
+if (err) { return cb(err); }
+
+try {
+  var treatedData = self.treatRawData(rawData);
+} catch (e) {
+  return cb(e);
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.storage.ensureFileDoesntExist" id="element.Nedb.storage.ensureFileDoesntExist">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>ensureFileDoesntExist
+            <span class="docApiSignatureSpan">(file, callback)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">ensureFileDoesntExist = function (file, callback) {
+  storage.exists(file, function (exists) {
+    if (!exists) { return callback(null); }
+
+    storage.unlink(file, function (err) { return callback(err); });
+  });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">n/a</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.storage.exists" id="element.Nedb.storage.exists">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>exists
+            <span class="docApiSignatureSpan">(path, callback)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">exists = function (path, callback) {
+  if (!nullCheck(path, cb)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = cb;
+  binding.stat(pathModule._makeLong(path), req);
+  function cb(err, stats) {
+    if (callback) callback(err ? false : true);
+  }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+storage.mkdirp = mkdirp;
+
+
+/**
+ * Explicit name ...
+ */
+storage.ensureFileDoesntExist = function (file, callback) {
+  storage.<span class="docApiCodeKeywordSpan">exists</span>(file, function (exists) {
+    if (!exists) { return callback(null); }
+
+    storage.unlink(file, function (err) { return callback(err); });
+  });
+};
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.storage.flushToStorage" id="element.Nedb.storage.flushToStorage">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>flushToStorage
+            <span class="docApiSignatureSpan">(options, callback)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">flushToStorage = function (options, callback) {
+  var filename, flags;
+  if (typeof options === &#x27;string&#x27;) {
+    filename = options;
+    flags = &#x27;r+&#x27;;
+  } else {
+    filename = options.filename;
+    flags = options.isDir ? &#x27;r&#x27; : &#x27;r+&#x27;;
+  }
+
+  // Windows can&#x27;t fsync (FlushFileBuffers) directories. We can live with this as it cannot cause 100% dataloss
+  // except in the very rare event of the first time database is loaded and a crash happens
+  if (flags === &#x27;r&#x27; &amp;&amp; (process.platform === &#x27;win32&#x27; || process.platform === &#x27;win64&#x27;)) { return callback(null); }
+
+  fs.open(filename, flags, function (err, fd) {
+    if (err) { return callback(err); }
+    fs.fsync(fd, function (errFS) {
+      fs.close(fd, function (errC) {
+        if (errFS || errC) {
+          var e = new Error(&#x27;Failed to flush to storage&#x27;);
+          e.errorOnFsync = errFS;
+          e.errorOnClose = errC;
+          return callback(e);
+        } else {
+          return callback(null);
+        }
+      });
+    });
+  });
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+  , tempFilename = filename + &#x27;~&#x27;;
+
+async.waterfall([
+  async.apply(storage.flushToStorage, { filename: path.dirname(filename), isDir: true })
+, function (cb) {
+    storage.exists(filename, function (exists) {
+      if (exists) {
+        storage.<span class="docApiCodeKeywordSpan">flushToStorage</span>(filename, function (err) { return cb(err); });
+      } else {
+        return cb();
+      }
+    });
+  }
+, function (cb) {
+    storage.writeFile(tempFilename, data, function (err) { return cb(err); });
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.storage.mkdirp" id="element.Nedb.storage.mkdirp">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>mkdirp
+            <span class="docApiSignatureSpan">(dir, onError)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">mkdirp = function (dir, onError) {
+<span class="docApiCodeCommentSpan">/*
+ * this function will mkdirp the dir
+ */
+</span>    var error;
+    // optimization - do not re-mkdirp fsDirInitialized
+    if (dir &amp;&amp; dir === local.fsDirInitialized) {
+        onError();
+        return;
+    }
+    try {
+        if (!local.fs.existsSync(dir)) {
+            local.child_process.spawnSync(&#x27;mkdir&#x27;, [&#x27;-p&#x27;, dir], {
+                stdio: [&#x27;ignore&#x27;, 1, 2]
+            });
+        }
+    } catch (errorCaught) {
+        error = errorCaught;
+    }
+    onError(error);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+    onParallel.counter += 1;
+    options = [&#x27;-r&#x27;, &#x27;tmp/aa/bb&#x27;];
+    local.child_process.spawnSync(&#x27;rm&#x27;, options, {
+        stdio: [&#x27;ignore&#x27;, 1, 2]
+    });
+    // test no-dir-exists handling-behavior
+    onParallel.counter += 1;
+    local.storage.<span class="docApiCodeKeywordSpan">mkdirp</span>(&#x27;tmp/aa/bb&#x27;, onParallel);
+    // test dir-exists handling-behavior
+    onParallel.counter += 1;
+    local.storage.mkdirp(&#x27;tmp/aa/bb&#x27;, onParallel);
+    onParallel();
+};
+
+local.testCase_mkdirp_error = function (options, onError) {
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.storage.readFile" id="element.Nedb.storage.readFile">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>readFile
+            <span class="docApiSignatureSpan">(path, options, callback_)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">readFile = function (path, options, callback_) {
+  var callback = maybeCallback(arguments[arguments.length - 1]);
+
+  if (!options || typeof options === &#x27;function&#x27;) {
+    options = { encoding: null, flag: &#x27;r&#x27; };
+  } else if (typeof options === &#x27;string&#x27;) {
+    options = { encoding: options, flag: &#x27;r&#x27; };
+  } else if (typeof options !== &#x27;object&#x27;) {
+    throwOptionsError(options);
+  }
+
+  var encoding = options.encoding;
+  assertEncoding(encoding);
+
+  var flag = options.flag || &#x27;r&#x27;;
+
+  if (!nullCheck(path, callback))
+    return;
+
+  var context = new ReadFileContext(callback, encoding);
+  context.isUserFd = isFd(path); // file descriptor ownership
+  var req = new FSReqWrap();
+  req.context = context;
+  req.oncomplete = readFileAfterOpen;
+
+  if (context.isUserFd) {
+    process.nextTick(function() {
+      req.oncomplete(null, path);
+    });
+    return;
+  }
+
+  binding.open(pathModule._makeLong(path),
+               stringToFlags(flag),
+               0o666,
+               req);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+  // In-memory only datastore
+  if (self.inMemoryOnly) { return callback(null); }
+
+  async.waterfall([
+    function (cb) {
+      Persistence.ensureDirectoryExists(path.dirname(self.filename), function (err) {
+        storage.ensureDatafileIntegrity(self.filename, function (err) {
+          storage.<span class="docApiCodeKeywordSpan">readFile</span>(self.filename, &#x27;utf8&#x27;, function (err, rawData) {
+if (err) { return cb(err); }
+
+try {
+  var treatedData = self.treatRawData(rawData);
+} catch (e) {
+  return cb(e);
+}
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.storage.rename" id="element.Nedb.storage.rename">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>rename
+            <span class="docApiSignatureSpan">(oldPath, newPath, callback)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">rename = function (oldPath, newPath, callback) {
+  callback = makeCallback(callback);
+  if (!nullCheck(oldPath, callback)) return;
+  if (!nullCheck(newPath, callback)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+  binding.rename(pathModule._makeLong(oldPath),
+                 pathModule._makeLong(newPath),
+                 req);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+      });
+    }
+  , function (cb) {
+      storage.writeFile(tempFilename, data, function (err) { return cb(err); });
+    }
+  , async.apply(storage.flushToStorage, tempFilename)
+  , function (cb) {
+      storage.<span class="docApiCodeKeywordSpan">rename</span>(tempFilename, filename, function (err) { return cb(err); });
+    }
+  , async.apply(storage.flushToStorage, { filename: path.dirname(filename), isDir: true })
+  ], function (err) { return callback(err); })
+};
+
+
+/**
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.storage.unlink" id="element.Nedb.storage.unlink">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>unlink
+            <span class="docApiSignatureSpan">(path, callback)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">unlink = function (path, callback) {
+  callback = makeCallback(callback);
+  if (!nullCheck(path, callback)) return;
+  var req = new FSReqWrap();
+  req.oncomplete = callback;
+  binding.unlink(pathModule._makeLong(path), req);
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+/**
+* Explicit name ...
+*/
+storage.ensureFileDoesntExist = function (file, callback) {
+ storage.exists(file, function (exists) {
+   if (!exists) { return callback(null); }
+
+   storage.<span class="docApiCodeKeywordSpan">unlink</span>(file, function (err) { return callback(err); });
+ });
+};
+
+
+/**
+* Flush data in OS buffer to storage if corresponding option is set
+* @param {String} options.filename
+...</pre></li>
+        </ul>
+        
+        
+        
+        <h2>
+            <a href="#element.Nedb.storage.writeFile" id="element.Nedb.storage.writeFile">
+            function <span class="docApiSignatureSpan">Nedb.storage.</span>writeFile
+            <span class="docApiSignatureSpan">(path, data, options, callback_)</span>
+            </a>
+        </h2>
+        <ul>
+        <li>description and source code<pre class="docApiCodePre">writeFile = function (path, data, options, callback_) {
+  var callback = maybeCallback(arguments[arguments.length - 1]);
+
+  if (!options || typeof options === &#x27;function&#x27;) {
+    options = { encoding: &#x27;utf8&#x27;, mode: 0o666, flag: &#x27;w&#x27; };
+  } else if (typeof options === &#x27;string&#x27;) {
+    options = { encoding: options, mode: 0o666, flag: &#x27;w&#x27; };
+  } else if (typeof options !== &#x27;object&#x27;) {
+    throwOptionsError(options);
+  }
+
+  assertEncoding(options.encoding);
+
+  var flag = options.flag || &#x27;w&#x27;;
+
+  if (isFd(path)) {
+    writeFd(path, true);
+    return;
+  }
+
+  fs.open(path, flag, options.mode, function(openErr, fd) {
+    if (openErr) {
+      callback(openErr);
+    } else {
+      writeFd(fd, false);
+    }
+  });
+
+  function writeFd(fd, isUserFd) {
+    var buffer = (data instanceof Buffer) ?
+        data : Buffer.from(&#x27;&#x27; + data, options.encoding || &#x27;utf8&#x27;);
+    var position = /a/.test(flag) ? null : 0;
+
+    writeAll(fd, isUserFd, buffer, 0, buffer.length, position, callback);
+  }
+}</pre></li>
+        <li>example usage<pre class="docApiCodePre">...
+        storage.flushToStorage(filename, function (err) { return cb(err); });
+      } else {
+        return cb();
+      }
+    });
+  }
+, function (cb) {
+    storage.<span class="docApiCodeKeywordSpan">writeFile</span>(tempFilename, data, function (err) { return cb(err); });
+  }
+, async.apply(storage.flushToStorage, tempFilename)
+, function (cb) {
+    storage.rename(tempFilename, filename, function (err) { return cb(err); });
+  }
+, async.apply(storage.flushToStorage, { filename: path.dirname(filename), isDir: true })
+], function (err) { return callback(err); })
+...</pre></li>
+        </ul>
+        
+        
+    </div>
+    
+</div>

@@ -1,0 +1,187 @@
+<svg height="2942" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="2942" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26"></tspan>
+<tspan x="10" y="42">[MODE_BUILD=npmTestPublished] - 2017-02-28T08:28:34Z - npm-testing published-package sandbox2</tspan>
+<tspan x="10" y="58"></tspan>
+<tspan x="10" y="74"></tspan>
+<tspan x="10" y="90">&gt; sandbox2@0.0.10 postinstall /tmp/app/node_modules/sandbox2</tspan>
+<tspan x="10" y="106">&gt; if [ -f lib.jslint.npm-scripts.sh ]; then ./lib.jslint.npm-scripts.sh postinstall; fi</tspan>
+<tspan x="10" y="122"></tspan>
+<tspan x="10" y="138">/tmp/app</tspan>
+<tspan x="10" y="154">└── sandbox2@0.0.10 </tspan>
+<tspan x="10" y="170"></tspan>
+<tspan x="10" y="186">npm WARN enoent ENOENT: no such file or directory, open '/tmp/app/package.json'</tspan>
+<tspan x="10" y="202">npm WARN app No description</tspan>
+<tspan x="10" y="218">npm WARN app No repository field.</tspan>
+<tspan x="10" y="234">npm WARN app No README data</tspan>
+<tspan x="10" y="250">npm WARN app No license field.</tspan>
+<tspan x="10" y="266"></tspan>
+<tspan x="10" y="282">&gt; electron-lite@2017.2.1 postinstall /tmp/app/node_modules/sandbox2/node_modules/electron-lite</tspan>
+<tspan x="10" y="298">&gt; if [ -f lib.electron.npm-scripts.sh ]; then ./lib.electron.npm-scripts.sh postinstall; fi</tspan>
+<tspan x="10" y="314"></tspan>
+<tspan x="10" y="330"></tspan>
+<tspan x="10" y="346">&gt; utility2@2017.2.21 postinstall /tmp/app/node_modules/sandbox2/node_modules/utility2</tspan>
+<tspan x="10" y="362">&gt; if [ -f lib.utility2.npm-scripts.sh ]; then ./lib.utility2.npm-scripts.sh postinstall; fi</tspan>
+<tspan x="10" y="378"></tspan>
+<tspan x="10" y="394"></tspan>
+<tspan x="10" y="410">&gt; sandbox2@0.0.10 postinstall /tmp/app/node_modules/sandbox2</tspan>
+<tspan x="10" y="426">&gt; if [ -f lib.jslint.npm-scripts.sh ]; then ./lib.jslint.npm-scripts.sh postinstall; fi</tspan>
+<tspan x="10" y="442"></tspan>
+<tspan x="10" y="458">sandbox2@0.0.10 /tmp/app/node_modules/sandbox2</tspan>
+<tspan x="10" y="474">├── electron-lite@2017.2.1  (git://github.com/kaizhu256/node-electron-lite.git#5ddc2112522358650\</tspan>
+<tspan x="10" y="490">dd22a688a8ccb9e7ecb9f40)</tspan>
+<tspan x="10" y="506">└── utility2@2017.2.21  (git://github.com/kaizhu256/node-utility2.git#247b086a0bfdabe40a6092e80b\</tspan>
+<tspan x="10" y="522">64404150171f2f)</tspan>
+<tspan x="10" y="538"></tspan>
+<tspan x="10" y="554"></tspan>
+<tspan x="10" y="570">&gt; sandbox2@0.0.10 test /tmp/app/node_modules/sandbox2</tspan>
+<tspan x="10" y="586">&gt; export PORT=$(utility2 shServerPortRandom) &amp;&amp; utility2 test test.js</tspan>
+<tspan x="10" y="602"></tspan>
+<tspan x="10" y="618"></tspan>
+<tspan x="10" y="634">[MODE_BUILD=npmTestPublished] - 2017-02-28T08:28:38Z - npm-testing /tmp/app/node_modules/sandbox\</tspan>
+<tspan x="10" y="650">2</tspan>
+<tspan x="10" y="666"></tspan>
+<tspan x="10" y="682"></tspan>
+<tspan x="10" y="698">covering $ /home/travis/.nvm/versions/node/v7.6.0/bin/node /tmp/app/node_modules/sandbox2/test.j\</tspan>
+<tspan x="10" y="714">s</tspan>
+<tspan x="10" y="730">&gt; server listening on http-port 33498</tspan>
+<tspan x="10" y="746">created api-doc file:///tmp/app/node_modules/sandbox2/tmp/build/api-doc.html</tspan>
+<tspan x="10" y="762"></tspan>
+<tspan x="10" y="778"></tspan>
+<tspan x="10" y="794">browserTest - created electron entry-page /tmp/app/node_modules/sandbox2/tmp/electron.15a83d5f4b\</tspan>
+<tspan x="10" y="810">b0.b72cb8dd2a9c6.html</tspan>
+<tspan x="10" y="826"></tspan>
+<tspan x="10" y="842">[node test-case 1 of 6 passed] - testCase_buildReadme_default</tspan>
+<tspan x="10" y="858">[2339:0228/082841:ERROR:browser_main_loop.cc(231)] Running without the SUID sandbox! See https:/\</tspan>
+<tspan x="10" y="874">/chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more\</tspan>
+<tspan x="10" y="890"> information on developing with the sandbox on.</tspan>
+<tspan x="10" y="906">[node test-case 2 of 6 passed] - testCase_jslintAndPrint_default</tspan>
+<tspan x="10" y="922">[node test-case 3 of 6 passed] - testCase_jslintAndPrint_es6</tspan>
+<tspan x="10" y="938"></tspan>
+<tspan x="10" y="954">browserTest - created electron entry-page /tmp/app/node_modules/sandbox2/tmp/electron.15a83d5f57\</tspan>
+<tspan x="10" y="970">00.d5a2991200c93.html</tspan>
+<tspan x="10" y="986"></tspan>
+<tspan x="10" y="1002">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="1018">(node:2317) DeprecationWarning: _linklist module is deprecated. Please use a userland alternativ\</tspan>
+<tspan x="10" y="1034">e.</tspan>
+<tspan x="10" y="1050">(node:2317) DeprecationWarning: sys is deprecated. Use util instead.</tspan>
+<tspan x="10" y="1066">[2350:0228/082841:ERROR:browser_main_loop.cc(231)] Running without the SUID sandbox! See https:/\</tspan>
+<tspan x="10" y="1082">/chromium.googlesource.com/chromium/src/+/master/docs/linux_suid_sandbox_development.md for more\</tspan>
+<tspan x="10" y="1098"> information on developing with the sandbox on.</tspan>
+<tspan x="10" y="1114">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="1130">&gt; server listening on http-port 41908</tspan>
+<tspan x="10" y="1146">[2339:0228/082842:ERROR:bus.cc(432)] Failed to connect to the bus: Failed to connect to socket /\</tspan>
+<tspan x="10" y="1162">var/run/dbus/system_bus_socket: Connection refused</tspan>
+<tspan x="10" y="1178">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="1194">[2339:0228/082842:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="1210">[2339:0228/082842:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="1226">Xlib:  extension "RANDR" missing on display ":99.0".</tspan>
+<tspan x="10" y="1242">[2350:0228/082842:ERROR:bus.cc(432)] Failed to connect to the bus: Failed to connect to socket /\</tspan>
+<tspan x="10" y="1258">var/run/dbus/system_bus_socket: Connection refused</tspan>
+<tspan x="10" y="1274">[2350:0228/082842:WARNING:audio_manager.cc(314)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="1290">[2350:0228/082842:WARNING:audio_manager.cc(275)] Multiple instances of AudioManager detected</tspan>
+<tspan x="10" y="1306">[2377:0228/082842:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="1322">in process gpu-process. </tspan>
+<tspan x="10" y="1338">[2409:0228/082842:ERROR:sandbox_linux.cc(343)] InitializeSandbox() called with multiple threads \</tspan>
+<tspan x="10" y="1354">in process gpu-process. </tspan>
+<tspan x="10" y="1370">[2339:0228/082842:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
+<tspan x="10" y="1386">[2350:0228/082842:ERROR:browser_gpu_channel_host_factory.cc(131)] Failed to create channel.</tspan>
+<tspan x="10" y="1402"></tspan>
+<tspan x="10" y="1418">browserTest - opened url file:///tmp/app/node_modules/sandbox2/tmp/build/api-doc.html</tspan>
+<tspan x="10" y="1434"></tspan>
+<tspan x="10" y="1450"></tspan>
+<tspan x="10" y="1466">browserTest - opened url http://127.0.0.1:33498?modeTest=1</tspan>
+<tspan x="10" y="1482"></tspan>
+<tspan x="10" y="1498">[2350:0228/082843:INFO:CONSOLE(199)] "</tspan>
+<tspan x="10" y="1514">inputTextareaEval1.js</tspan>
+<tspan x="10" y="1530"> #1 Undeclared 'console'.</tspan>
+<tspan x="10" y="1546">    console // Line 6, Pos 1</tspan>
+<tspan x="10" y="1562"> #2 Undeclared 'console'.</tspan>
+<tspan x="10" y="1578">    console // Line 7, Pos 1</tspan>
+<tspan x="10" y="1594">", source: file:///tmp/app/node_modules/sandbox2/tmp/electron.15a83d5f5700.d5a2991200c93.html (1\</tspan>
+<tspan x="10" y="1610">99)</tspan>
+<tspan x="10" y="1626">[2350:0228/082843:INFO:CONSOLE(199)] "</tspan>
+<tspan x="10" y="1642">inputTextareaCsslint1.css</tspan>
+<tspan x="10" y="1658"> #1 warning - zero-units - Values of 0 shouldn't have units specified.</tspan>
+<tspan x="10" y="1674">    You don't need to specify units when a value is 0.</tspan>
+<tspan x="10" y="1690">    margin: 0px; // line 6, col 13</tspan>
+<tspan x="10" y="1706">", source: file:///tmp/app/node_modules/sandbox2/tmp/electron.15a83d5f5700.d5a2991200c93.html (1\</tspan>
+<tspan x="10" y="1722">99)</tspan>
+<tspan x="10" y="1738">[2350:0228/082843:INFO:CONSOLE(199)] "hello", source: file:///tmp/app/node_modules/sandbox2/tmp/\</tspan>
+<tspan x="10" y="1754">electron.15a83d5f5700.d5a2991200c93.html (199)</tspan>
+<tspan x="10" y="1770">[2350:0228/082843:INFO:CONSOLE(199)] "null", source: file:///tmp/app/node_modules/sandbox2/tmp/e\</tspan>
+<tspan x="10" y="1786">lectron.15a83d5f5700.d5a2991200c93.html (199)</tspan>
+<tspan x="10" y="1802">[2350:0228/082843:INFO:CONSOLE(199)] "[browser test-case 1 of 2 passed] - testCase_jslintAndPrin\</tspan>
+<tspan x="10" y="1818">t_default", source: file:///tmp/app/node_modules/sandbox2/tmp/electron.15a83d5f5700.d5a2991200c9\</tspan>
+<tspan x="10" y="1834">3.html (199)</tspan>
+<tspan x="10" y="1850">[2350:0228/082843:INFO:CONSOLE(199)] "[browser test-case 2 of 2 passed] - testCase_jslintAndPrin\</tspan>
+<tspan x="10" y="1866">t_es6", source: file:///tmp/app/node_modules/sandbox2/tmp/electron.15a83d5f5700.d5a2991200c93.ht\</tspan>
+<tspan x="10" y="1882">ml (199)</tspan>
+<tspan x="10" y="1898">[2350:0228/082844:INFO:CONSOLE(199)] "----------|-----------|-----------|-----------|-----------\</tspan>
+<tspan x="10" y="1914">|</tspan>
+<tspan x="10" y="1930">File      |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
+<tspan x="10" y="1946">----------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="1962">----------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="1978">All files |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="1994">----------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2010">", source: file:///tmp/app/node_modules/sandbox2/tmp/electron.15a83d5f5700.d5a2991200c93.html (1\</tspan>
+<tspan x="10" y="2026">99)</tspan>
+<tspan x="10" y="2042">[2350:0228/082844:INFO:CONSOLE(199)] "created coverage file:///tmp/build/coverage.html/index.htm\</tspan>
+<tspan x="10" y="2058">l", source: file:///tmp/app/node_modules/sandbox2/tmp/electron.15a83d5f5700.d5a2991200c93.html (\</tspan>
+<tspan x="10" y="2074">199)</tspan>
+<tspan x="10" y="2090">[node test-case 4 of 6 passed] - testCase_buildApp_default</tspan>
+<tspan x="10" y="2106"></tspan>
+<tspan x="10" y="2122">browserTest - created screen-capture file:///tmp/app/node_modules/sandbox2/tmp/build/screen-capt\</tspan>
+<tspan x="10" y="2138">ure.npmTestPublished.browser._2Ftmp_2Fapp_2Fnode_modules_2Fsandbox2_2Ftmp_2Fbuild_2Fapi-doc.html\</tspan>
+<tspan x="10" y="2154">.png</tspan>
+<tspan x="10" y="2170"></tspan>
+<tspan x="10" y="2186"></tspan>
+<tspan x="10" y="2202">browserTest - exit-code 0 - file:///tmp/app/node_modules/sandbox2/tmp/build/api-doc.html</tspan>
+<tspan x="10" y="2218"></tspan>
+<tspan x="10" y="2234">[node test-case 5 of 6 passed] - testCase_buildApiDoc_default</tspan>
+<tspan x="10" y="2250"></tspan>
+<tspan x="10" y="2266">browserTest - created screen-capture file:///tmp/app/node_modules/sandbox2/tmp/build/screen-capt\</tspan>
+<tspan x="10" y="2282">ure.npmTestPublished.browser..png</tspan>
+<tspan x="10" y="2298"></tspan>
+<tspan x="10" y="2314"></tspan>
+<tspan x="10" y="2330">browserTest - exit-code 0 - http://127.0.0.1:33498?modeTest=1</tspan>
+<tspan x="10" y="2346"></tspan>
+<tspan x="10" y="2362"></tspan>
+<tspan x="10" y="2378">browserTest - merged coverage from /tmp/app/node_modules/sandbox2/tmp/coverage.npmTestPublished.\</tspan>
+<tspan x="10" y="2394">browser.%2F.json</tspan>
+<tspan x="10" y="2410"></tspan>
+<tspan x="10" y="2426"></tspan>
+<tspan x="10" y="2442">browserTest - merging test-report from /tmp/app/node_modules/sandbox2/tmp/test-report.npmTestPub\</tspan>
+<tspan x="10" y="2458">lished.browser.%2F.json</tspan>
+<tspan x="10" y="2474"></tspan>
+<tspan x="10" y="2490">[node test-case 6 of 6 passed] - testCase_webpage_default</tspan>
+<tspan x="10" y="2506">--------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2522">File                |   % Stmts |% Branches |   % Funcs |   % Lines |</tspan>
+<tspan x="10" y="2538">--------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2554">   sandbox2/        |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="2570">      example.js    |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="2586">      lib.jslint.js |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="2602">      test.js       |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="2618">--------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2634">All files           |       100 |       100 |       100 |       100 |</tspan>
+<tspan x="10" y="2650">--------------------|-----------|-----------|-----------|-----------|</tspan>
+<tspan x="10" y="2666"></tspan>
+<tspan x="10" y="2682">created coverage file:///tmp/app/node_modules/sandbox2/tmp/build/coverage.html/index.html</tspan>
+<tspan x="10" y="2698"></tspan>
+<tspan x="10" y="2714">-------------------------------------------------------</tspan>
+<tspan x="10" y="2730">| test-report - npmTestPublished - browser - / - Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537\</tspan>
+<tspan x="10" y="2746">.36 (KHTML, like Gecko) Chrome/52.0.2743.82 Electron/1.3.13 Safari/537.36 - 2017-02-28T08:28:42.\</tspan>
+<tspan x="10" y="2762">957Z</tspan>
+<tspan x="10" y="2778">|      65 ms            0 failed        2 passed      |</tspan>
+<tspan x="10" y="2794">-------------------------------------------------------</tspan>
+<tspan x="10" y="2810">| test-report - npmTestPublished - node - linux v7.6.0 - 2017-02-28T08:28:38.659Z</tspan>
+<tspan x="10" y="2826">|    6878 ms            0 failed        6 passed      |</tspan>
+<tspan x="10" y="2842">-------------------------------------------------------</tspan>
+<tspan x="10" y="2858"></tspan>
+<tspan x="10" y="2874">created test-report file:///tmp/app/node_modules/sandbox2/tmp/build/test-report.html</tspan>
+<tspan x="10" y="2890"></tspan>
+<tspan x="10" y="2906"></tspan>
+<tspan x="10" y="2922">npmTestPublished - 0 failed tests</tspan>
+</text>
+</svg>
