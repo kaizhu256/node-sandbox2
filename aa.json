@@ -1,8 +1,24 @@
 {
-    // validate schemaDereferenceCircular
-    info: {title: "", version: ""},
-    paths: {"/aa": {get: {responses: {"200": {$ref: "#/x-test/aa"}}}}},
-    "x-test": {aa: {$ref: "#/x-test/aa"}},
-    swagger: "2.0",
+    "info": {
+        "title": "",
+        "version": ""
+    },
+    "paths": {
+        "/aa": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "$ref": "#/x-test/aa"
+                    }
+                }
+            }
+        }
+    },
+    "x-test": {
+        "aa": {
+            "$ref": "#/x-test/aa"
+        }
+    },
+    "swagger": "2.0",
     "x-errorType": "schemaDereferenceCircular"
 }
