@@ -1,5 +1,5 @@
-addons:
-    chrome: stable
+#!! addons:
+    #!! chrome: stable
 before_install:
     # init xvfb
     # http://docs.travis-ci.com/user/gui-and-headless-browsers/
@@ -28,8 +28,7 @@ node_js:
     # - 8
     - node
 script:
-    - which chromium
-    - which chrome
+    - which chromium-browser
     - which google-chrome-stable
     #!! - npm run build-ci
 services:
