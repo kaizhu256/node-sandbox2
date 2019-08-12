@@ -30,6 +30,7 @@ node_js:
 script:
     - which chromium
     - which chrome
+    - which google-chrome-stable
     #!! - npm run build-ci
 services:
     - docker
