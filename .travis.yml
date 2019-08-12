@@ -30,6 +30,7 @@ node_js:
 script:
     - which chromium-browser
     - which google-chrome-stable
+    - chromium-browser --disable-gpu --headless --screenshot --timeout=30000 -screenshot=/tmp/aa.png https://www.example.com
     #!! - npm run build-ci
 services:
     - docker
