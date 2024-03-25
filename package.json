@@ -24,6 +24,7 @@
         "type": "git",
         "url": "git+https://github.com/kaizhu256/node-sandbox2.git"
     },
+    "shCiPublishNpm": 1,
     "scripts": {
         "build-ci": "./npm_scripts.sh",
         "eval": "./npm_scripts.sh",
