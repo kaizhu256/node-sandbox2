@@ -60,4 +60,9 @@ jobs:
           node-version: ${{ matrix.node_version }}
           architecture: ${{ matrix.architecture }}
           registry-url: 'https://registry.npmjs.org'
+      # !! # Publish to npm
+      # !! - run: sh jslint_ci.sh shCiPublishNpm
+        # !! env:
+          # !! NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # !! NPM_REGISTRY: npm
 # base - .github/workflows/publish.yml - end
